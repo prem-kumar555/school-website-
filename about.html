@@ -1,0 +1,1618 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>About Us | Divine Public School</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --navy: #071A35;
+    --navy2: #102D55;
+    --blue: #1C4E80;
+    --gold: #D9AD52;
+    --light: #EAF0F8;
+    --white: #ffffff;
+    --text: #65758b;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #f5f7fb;
+    color: var(--navy);
+}
+
+a {
+    transition: .3s;
+}
+
+
+
+/* HEADER */
+header {
+    background: linear-gradient(90deg, #032b59, #07509b);
+    color: white;
+    padding: 18px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.logo span {
+    display: block;
+    font-size: 12px;
+    color: #ffca28;
+    letter-spacing: 3px;
+    margin-top: 6px;
+}
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    align-items: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+    color: #ffca28;
+}
+
+.login-btn {
+    background: #ffca28;
+    color: #073b78;
+    padding: 11px 22px;
+    border-radius: 25px;
+}
+
+.login-btn:hover {
+    background: white;
+    color: #073b78;
+}
+
+/* HERO */
+.hero {
+    min-height: 490px;
+    display: flex;
+    align-items: center;
+    padding: 80px 8%;
+    color: white;
+    background:linear-gradient(90deg,
+    rgba(2,39,82,0.98),
+    rgba(2,53,105,0.82),
+    rgba(2,53,105,0.05)),
+    url("https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1600&q=85");
+
+    background-position: center;
+    background-size: cover;
+    color: white;
+}
+
+.hero-content {
+    max-width: 750px;
+    animation: fadeUp 1s ease;
+}
+
+.hero-label {
+    display: inline-block;
+    padding: 10px 19px;
+    border: 1px solid var(--gold);
+    border-radius: 30px;
+    color: #f4d889;
+    font-size: 11px;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-size: clamp(38px,5vw,60px);
+    line-height: 1.2;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    color: var(--gold);
+}
+
+.hero p {
+    max-width: 650px;
+    color: #e0e9f5;
+    font-size: 15px;
+    line-height: 2;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 13px 25px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.btn-gold {
+    background: var(--gold);
+    color: var(--navy);
+}
+
+.btn-outline {
+    border: 2px solid white;
+    color: white;
+}
+
+.btn:hover {
+    transform: translateY(-4px);
+    background: white;
+    color: var(--navy);
+}
+
+/* BREADCRUMB */
+.breadcrumb {
+    padding: 15px 8%;
+    background: white;
+    font-size: 12px;
+    color: var(--text);
+}
+
+.breadcrumb a {
+    color: var(--blue);
+    text-decoration: none;
+}
+
+/* SECTION COMMON */
+section {
+    padding: 80px 8%;
+}
+
+.section-heading {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 50px;
+}
+
+.section-heading span {
+    color: #b48728;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.section-heading h2 {
+    color: var(--navy);
+    font-size: clamp(27px,3.5vw,38px);
+    margin-top: 12px;
+}
+
+.heading-line {
+    width: 75px;
+    height: 4px;
+    background: var(--gold);
+    margin: 15px auto;
+    border-radius: 10px;
+}
+
+.section-heading p {
+    color: var(--text);
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+/* INTRODUCTION */
+.intro {
+    background: white;
+}
+
+.intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 55px;
+    align-items: center;
+}
+
+.intro-image {
+    position: relative;
+}
+
+.intro-image img {
+    width: 100%;
+    height: 390px;
+    object-fit: cover;
+    border-radius: 18px;
+    box-shadow: 0 15px 35px #071a3520;
+}
+
+.image-label {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    background: #071a35eF;
+    color: white;
+    font-size: 13px;
+    text-align: center;
+}
+
+.intro-content .small-title {
+    color: #b48728;
+    font-size: 12px;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+.intro-content h2 {
+    font-size: 34px;
+    line-height: 1.4;
+    margin: 15px 0 20px;
+}
+
+.intro-content h2 span {
+    color: #b48728;
+}
+
+.intro-content p {
+    color: var(--text);
+    font-size: 14px;
+    line-height: 2;
+    margin-bottom: 16px;
+}
+
+.intro-points {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-top: 22px;
+}
+
+.intro-point {
+    padding: 13px;
+    background: #edf3fa;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.intro-point span {
+    color: #b48728;
+    margin-right: 6px;
+}
+
+/* EDUCATIONAL PHILOSOPHY */
+.philosophy {
+    background: #eaf0f8;
+}
+
+.philosophy-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 23px;
+}
+
+.philosophy-card {
+    background: white;
+    padding: 32px 25px;
+    border-radius: 15px;
+    border-bottom: 4px solid var(--gold);
+    box-shadow: 0 10px 30px #071a3510;
+    transition: .3s;
+}
+
+.philosophy-card:hover {
+    transform: translateY(-9px);
+    box-shadow: 0 15px 35px #071a3520;
+}
+
+.philosophy-icon {
+    width: 65px;
+    height: 65px;
+    border-radius: 15px;
+    background: #eaf0f8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.philosophy-card h3 {
+    font-size: 19px;
+    margin-bottom: 12px;
+    color: var(--navy);
+}
+
+.philosophy-card p {
+    color: var(--text);
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+/* MISSION VISION */
+.mission {
+    background: linear-gradient(120deg,var(--navy),var(--navy2));
+    color: white;
+}
+
+.mission .section-heading h2 {
+    color: white;
+}
+
+.mission .section-heading p {
+    color: #d4e0ef;
+}
+
+.mission .section-heading span {
+    color: var(--gold);
+}
+
+.mission-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.mission-card {
+    background: #ffffff0c;
+    border: 1px solid #ffffff25;
+    padding: 38px;
+    border-radius: 16px;
+    transition: .3s;
+}
+
+.mission-card:hover {
+    background: #ffffff15;
+    transform: translateY(-6px);
+}
+
+.mission-card .icon {
+    font-size: 40px;
+    margin-bottom: 18px;
+}
+
+.mission-card h3 {
+    font-size: 24px;
+    color: var(--gold);
+    margin-bottom: 15px;
+}
+
+.mission-card p {
+    color: #d5e0ef;
+    font-size: 14px;
+    line-height: 2;
+}
+
+/* VALUES */
+.values {
+    background: white;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 22px;
+}
+
+.value-card {
+    padding: 27px 20px;
+    background: #f5f8fc;
+    border-radius: 14px;
+    text-align: center;
+    border: 1px solid #e2eaf4;
+    transition: .3s;
+}
+
+.value-card:hover {
+    background: var(--navy);
+    color: white;
+    transform: translateY(-7px);
+}
+
+.value-card .icon {
+    font-size: 38px;
+    margin-bottom: 13px;
+}
+
+.value-card h3 {
+    font-size: 17px;
+    margin-bottom: 10px;
+}
+
+.value-card p {
+    color: var(--text);
+    font-size: 12px;
+    line-height: 1.9;
+}
+
+.value-card:hover p {
+    color: #d5e0ef;
+}
+
+/* ACADEMIC SECTION */
+.academics {
+    background: #eaf0f8;
+}
+
+.academic-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 50px;
+}
+
+.academic-image img {
+    width: 100%;
+    height: 360px;
+    object-fit: cover;
+    border-radius: 17px;
+}
+
+.academic-content h2 {
+    font-size: 30px;
+    margin-bottom: 17px;
+}
+
+.academic-content p {
+    color: var(--text);
+    font-size: 14px;
+    line-height: 2;
+    margin-bottom: 20px;
+}
+
+.academic-list {
+    list-style: none;
+}
+
+.academic-list li {
+    margin-bottom: 13px;
+    padding: 13px;
+    background: white;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.academic-list li span {
+    color: #b48728;
+    margin-right: 9px;
+}
+
+/* DEVELOPMENT */
+.development {
+    background: white;
+}
+
+.development-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 22px;
+}
+
+.development-card {
+    overflow: hidden;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px #071a3512;
+    transition: .3s;
+}
+
+.development-card:hover {
+    transform: translateY(-7px);
+}
+
+.development-card img {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+    display: block;
+}
+
+.development-card .content {
+    padding: 23px;
+}
+
+.development-card h3 {
+    color: var(--navy);
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.development-card p {
+    color: var(--text);
+    font-size: 12px;
+    line-height: 1.9;
+}
+
+/* FACILITIES */
+.facilities {
+    background: #eaf0f8;
+}
+
+.facility-grid {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 17px;
+}
+
+.facility-card {
+    background: white;
+    text-align: center;
+    padding: 25px 13px;
+    border-radius: 12px;
+    transition: .3s;
+}
+
+.facility-card:hover {
+    background: var(--navy);
+    color: white;
+    transform: translateY(-5px);
+}
+
+.facility-card .icon {
+    font-size: 35px;
+    margin-bottom: 12px;
+}
+
+.facility-card h3 {
+    font-size: 14px;
+}
+
+.facility-card p {
+    color: var(--text);
+    font-size: 11px;
+    line-height: 1.7;
+    margin-top: 8px;
+}
+
+.facility-card:hover p {
+    color: #dce6f3;
+}
+
+/* PRINCIPAL */
+.principal {
+    background: white;
+}
+
+.principal-box {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 40px;
+    align-items: center;
+    padding: 40px;
+    background: #f5f8fc;
+    border-radius: 20px;
+    box-shadow: 0 12px 35px #071a3510;
+}
+
+.principal-image {
+width: 250px;
+height: 300px;
+background: linear-gradient(135deg, var(--navy), var(--blue));
+border: 5px solid var(--gold);
+border-radius: 15px;
+display: flex;
+align-items: center;
+justify-content: center;
+overflow: hidden;
+}
+
+.principal-image img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+display: block;
+}
+
+.principal-text .label {
+    color: #b48728;
+    letter-spacing: 2px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.principal-text h2 {
+    font-size: 29px;
+    margin: 12px 0;
+}
+
+.principal-text h4 {
+    color: #b48728;
+    font-size: 14px;
+    margin-bottom: 18px;
+}
+
+.principal-text p {
+    color: var(--text);
+    font-size: 13px;
+    line-height: 2;
+}
+
+.signature {
+    color: var(--navy);
+    font-weight: 700;
+    margin-top: 20px;
+    font-size: 13px;
+}
+
+/* WHY CHOOSE US */
+.why {
+    background: #eaf0f8;
+}
+
+.why-grid {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 17px;
+}
+
+.why-item {
+    background: white;
+    border-radius: 12px;
+    padding: 22px;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.why-item .icon {
+    font-size: 28px;
+}
+
+.why-item h3 {
+    font-size: 15px;
+    margin-bottom: 7px;
+}
+
+.why-item p {
+    font-size: 12px;
+    line-height: 1.8;
+    color: var(--text);
+}
+
+/* CTA */
+.cta {
+    text-align: center;
+    padding: 75px 7%;
+    color: white;
+    background:
+    linear-gradient(120deg,rgba(7,26,53,.95),rgba(28,78,128,.91)),
+    url("school2.png") center/cover;
+}
+
+.cta h2 {
+    font-size: clamp(27px,4vw,38px);
+    margin-bottom: 15px;
+}
+
+.cta p {
+    max-width: 650px;
+    margin: auto;
+    color: #dce6f3;
+    font-size: 14px;
+    line-height: 2;
+}
+
+.cta a {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 14px 30px;
+    background: var(--gold);
+    color: var(--navy);
+    border-radius: 7px;
+    font-weight: 700;
+    font-size: 13px;
+    text-decoration: none;
+}
+
+.cta a:hover {
+    background: white;
+    transform: translateY(-4px);
+}
+
+/* FOOTER */
+footer {
+    background: linear-gradient(90deg, #032b59, #07509b);
+    color: white;
+    padding: 35px 5%;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.footer-box h2,
+.footer-box h3 {
+    margin-bottom: 15px;
+}
+
+.footer-box p {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #e1edff;
+}
+
+.footer-box a {
+    color: #ffca28;
+    text-decoration: none;
+}
+
+.copyright {
+    text-align: center;
+    border-top: 1px solid #557ba5;
+    padding-top: 20px;
+    margin-top: 25px;
+    font-size: 14px;
+}
+
+/* ANIMATION */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* RESPONSIVE */
+@media(max-width:950px) {
+    header {
+        justify-content: center;
+    }
+
+    nav {
+        justify-content: center;
+    }
+}
+
+@media(max-width:1000px) {
+    .facility-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .footer-content {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .intro-grid,
+    .academic-grid {
+        gap: 30px;
+    }
+}
+
+@media(max-width:750px) {
+    .intro-grid,
+    .academic-grid,
+    .mission-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .philosophy-grid,
+    .values-grid,
+    .development-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .principal-box {
+        grid-template-columns: 1fr;
+        padding: 25px;
+        text-align: center;
+    }
+
+    .principal-image {
+        max-width: 260px;
+        width: 100%;
+        margin: auto;
+    }
+
+    .why-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media(max-width:550px) {
+    .logo {
+        text-align: center;
+        font-size: 21px;
+    }
+
+    nav {
+        gap: 12px;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
+}
+
+@media(max-width:500px) {
+    section {
+        padding: 55px 6%;
+    }
+
+    .philosophy-grid,
+    .values-grid,
+    .development-grid,
+    .facility-grid,
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        padding: 65px 6%;
+    }
+
+    .hero h1 {
+        font-size: 39px;
+    }
+
+    .intro-content h2 {
+        font-size: 27px;
+    }
+
+    .intro-points {
+        grid-template-columns: 1fr;
+    }
+
+    .mission-card {
+        padding: 27px;
+    }
+
+    .intro-image img {
+        height: 280px;
+    }
+
+    .academic-image img {
+        height: 260px;
+    }
+
+    .topbar {
+        justify-content: center;
+        text-align: center;
+    }
+}
+</style>
+</head>
+
+<body>
+
+
+
+<!-- HEADER -->
+<header>
+
+    <div class="logo">
+        📘 Divine Public School
+        <span>LEARN • GROW • ACHIEVE</span>
+    </div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html" class="active">About US</a>
+        <a href="academics.html">Academics</a>
+        <a href="admission.html">Admission</a>
+        <a href="facilities.html">Facilities</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="notice.html">Notice</a>
+        <a href="contact.html">Contact</a>
+        <a href="login.html" class="login-btn">Login</a>
+    </nav>
+
+</header>
+
+<!-- HERO SECTION -->
+<div class="hero">
+
+    <div class="hero-content">
+
+        <div class="hero-label">
+            ✦ ABOUT DIVINE PUBLIC SCHOOL ✦
+        </div>
+
+        <h1>
+            Education Today,<br>
+            <span>Leadership Tomorrow.</span>
+        </h1>
+
+        <p>
+            Welcome to Divine Public School, where education
+            goes beyond classrooms. We believe in nurturing
+            young minds, developing strong values and preparing
+            students to create a brighter future.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="#about" class="btn btn-gold">Explore Our School →</a>
+            <a href="admission.html" class="btn btn-outline">Admission</a>
+        </div>
+
+    </div>
+
+</div>
+<!-- INTRODUCTION -->
+<section class="intro" id="about">
+
+    <div class="section-heading">
+        <span>GET TO KNOW US</span>
+        <h2>Welcome to Divine Public School</h2>
+        <div class="heading-line"></div>
+        <p>
+            A learning community dedicated to knowledge,
+            character development and lifelong success.
+        </p>
+    </div>
+
+    <div class="intro-grid">
+
+        <div class="intro-image">
+            <img src="https://png.pngtree.com/thumb_back/fw800/background/20210908/pngtree-school-building-afternoon-school-campus-photography-map-with-map-image_825166.jpg" alt="School campus">
+            <div class="image-label">
+                Inspiring Minds • Building Character • Creating Futures
+            </div>
+        </div>
+
+        <div class="intro-content">
+
+            <div class="small-title">OUR INSTITUTION</div>
+
+            <h2>
+                A Place Where <span>Dreams Become Reality</span>
+            </h2>
+
+            <p>
+                Divine Public School is dedicated to creating
+                an educational environment where every child
+                receives opportunities to learn, explore,
+                participate and grow.
+            </p>
+
+            <p>
+                We believe that every student is unique and
+                possesses special talents. Our educational
+                approach encourages curiosity, creativity,
+                discipline, teamwork and confidence.
+            </p>
+
+            <p>
+                We aim to make learning meaningful by combining
+                academic knowledge with practical understanding,
+                positive attitudes and essential life skills.
+            </p>
+
+            <div class="intro-points">
+                <div class="intro-point"><span>✦</span> Quality Education</div>
+                <div class="intro-point"><span>✦</span> Strong Values</div>
+                <div class="intro-point"><span>✦</span> Student Growth</div>
+                <div class="intro-point"><span>✦</span> Holistic Learning</div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- EDUCATIONAL PHILOSOPHY -->
+<section class="philosophy">
+
+    <div class="section-heading">
+        <span>OUR APPROACH</span>
+        <h2>Our Educational Philosophy</h2>
+        <div class="heading-line"></div>
+        <p>
+            We believe that education should develop the mind,
+            strengthen character and inspire students to make
+            positive contributions to society.
+        </p>
+    </div>
+
+    <div class="philosophy-grid">
+
+        <div class="philosophy-card">
+            <div class="philosophy-icon">📖</div>
+            <h3>Learning by Understanding</h3>
+            <p>
+                We encourage students to understand concepts,
+                ask questions and develop independent thinking
+                rather than simply memorising information.
+            </p>
+        </div>
+
+        <div class="philosophy-card">
+            <div class="philosophy-icon">🌱</div>
+            <h3>Individual Development</h3>
+            <p>
+                Every child has different abilities and interests.
+                We encourage students to identify their strengths
+                and continuously improve their skills.
+            </p>
+        </div>
+
+        <div class="philosophy-card">
+            <div class="philosophy-icon">🌍</div>
+            <h3>Responsible Citizenship</h3>
+            <p>
+                We promote respect, kindness, environmental
+                awareness and responsibility towards society
+                and the world around us.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- MISSION AND VISION -->
+<section class="mission">
+
+    <div class="section-heading">
+        <span>OUR PURPOSE</span>
+        <h2>Mission & Vision</h2>
+        <div class="heading-line"></div>
+        <p>
+            Our purpose guides everything we do and shapes
+            the future we want to create for our students.
+        </p>
+    </div>
+
+    <div class="mission-grid">
+
+        <div class="mission-card">
+
+            <div class="icon">🎯</div>
+
+            <h3>Our Mission</h3>
+
+            <p>
+                Our mission is to provide meaningful and quality
+                education in a supportive and inspiring environment.
+                We aim to develop academic excellence, creativity,
+                critical thinking, confidence and strong moral values.
+                We want every student to become a responsible,
+                knowledgeable and capable individual.
+            </p>
+
+        </div>
+
+        <div class="mission-card">
+
+            <div class="icon">🌟</div>
+
+            <h3>Our Vision</h3>
+
+            <p>
+                Our vision is to create a learning community
+                that inspires excellence, innovation and lifelong
+                learning. We aspire to prepare students to face
+                future challenges with confidence, knowledge,
+                compassion and a strong sense of responsibility.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CORE VALUES -->
+<section class="values">
+
+    <div class="section-heading">
+        <span>WHAT WE BELIEVE IN</span>
+        <h2>Our Core Values</h2>
+        <div class="heading-line"></div>
+        <p>
+            The principles that guide our students,
+            teachers and entire school community.
+        </p>
+    </div>
+
+    <div class="values-grid">
+
+        <div class="value-card">
+            <div class="icon">📚</div>
+            <h3>Knowledge</h3>
+            <p>
+                Developing curiosity, understanding
+                and a passion for learning.
+            </p>
+        </div>
+
+        <div class="value-card">
+            <div class="icon">🤝</div>
+            <h3>Unity</h3>
+            <p>
+                Building friendship, cooperation,
+                respect and teamwork.
+            </p>
+        </div>
+
+        <div class="value-card">
+            <div class="icon">⭐</div>
+            <h3>Discipline</h3>
+            <p>
+                Encouraging responsibility,
+                punctuality and good habits.
+            </p>
+        </div>
+
+        <div class="value-card">
+            <div class="icon">💡</div>
+            <h3>Creativity</h3>
+            <p>
+                Inspiring innovation, imagination
+                and original ideas.
+            </p>
+        </div>
+
+        <div class="value-card">
+            <div class="icon">❤️</div>
+            <h3>Integrity</h3>
+            <p>
+                Practising honesty, kindness
+                and ethical behaviour.
+            </p>
+        </div>
+
+        <div class="value-card">
+            <div class="icon">🏆</div>
+            <h3>Excellence</h3>
+            <p>
+                Striving for continuous improvement
+                and personal achievement.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ACADEMIC EXCELLENCE -->
+<section class="academics">
+
+    <div class="section-heading">
+        <span>OUR LEARNING ENVIRONMENT</span>
+        <h2>Academic Excellence</h2>
+        <div class="heading-line"></div>
+        <p>
+            Encouraging meaningful learning, intellectual
+            development and a strong academic foundation.
+        </p>
+    </div>
+
+    <div class="academic-grid">
+
+        <div class="academic-image">
+            <img
+                src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1000&q=85"
+                alt="Students learning in classroom">
+        </div>
+
+        <div class="academic-content">
+
+            <h2>Learning for a Better Tomorrow</h2>
+
+            <p>
+                Education is the foundation of personal and
+                professional growth. We encourage students
+                to develop a strong understanding of subjects
+                while learning to apply their knowledge
+                in everyday situations.
+            </p>
+
+            <ul class="academic-list">
+                <li><span>✦</span> Concept-based learning</li>
+                <li><span>✦</span> Communication and language skills</li>
+                <li><span>✦</span> Critical and logical thinking</li>
+                <li><span>✦</span> Digital awareness and technology</li>
+                <li><span>✦</span> Problem-solving abilities</li>
+                <li><span>✦</span> Regular learning and assessment</li>
+            </ul>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- HOLISTIC DEVELOPMENT -->
+<section class="development">
+
+    <div class="section-heading">
+        <span>BEYOND THE CLASSROOM</span>
+        <h2>Holistic Student Development</h2>
+        <div class="heading-line"></div>
+        <p>
+            We believe that true education develops
+            academic, physical, social and creative abilities.
+        </p>
+    </div>
+
+    <div class="development-grid">
+
+        <div class="development-card">
+            <img
+                src="https://img.freepik.com/premium-photo/college-students-leading-activities-school-gymnasium_1324785-79482.jpg"
+                alt="Students at school">
+            <div class="content">
+                <h3>Student Activities</h3>
+                <p>
+                    Encouraging participation, teamwork,
+                    leadership and confidence through
+                    educational and group activities.
+                </p>
+            </div>
+        </div>
+
+        <div class="development-card">
+            <img
+                src="https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=800&q=85"
+                alt="Basketball sports">
+            <div class="content">
+                <h3>Sports & Fitness</h3>
+                <p>
+                    Promoting physical fitness, sportsmanship,
+                    teamwork, discipline and a healthy
+                    attitude towards life.
+                </p>
+            </div>
+        </div>
+
+        <div class="development-card">
+            <img
+                src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=800&q=85"
+                alt="Creative art activities">
+            <div class="content">
+                <h3>Arts & Creativity</h3>
+                <p>
+                    Supporting artistic expression, imagination,
+                    cultural appreciation and creative
+                    problem-solving.
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FACILITIES -->
+<section class="facilities">
+
+    <div class="section-heading">
+        <span>SUPPORTING LEARNING</span>
+        <h2>Our Learning Facilities</h2>
+        <div class="heading-line"></div>
+        <p>
+            A positive learning environment encourages
+            exploration, discovery and personal development.
+        </p>
+    </div>
+
+    <div class="facility-grid">
+
+        <div class="facility-card">
+            <div class="icon">📚</div>
+            <h3>Library</h3>
+            <p>Encouraging reading and knowledge.</p>
+        </div>
+
+        <div class="facility-card">
+            <div class="icon">💻</div>
+            <h3>Computer Learning</h3>
+            <p>Developing digital and technology skills.</p>
+        </div>
+
+        <div class="facility-card">
+            <div class="icon">🔬</div>
+            <h3>Science Learning</h3>
+            <p>Exploring scientific concepts and discovery.</p>
+        </div>
+
+        <div class="facility-card">
+            <div class="icon">🏃</div>
+            <h3>Sports Activities</h3>
+            <p>Supporting fitness and teamwork.</p>
+        </div>
+
+        <div class="facility-card">
+            <div class="icon">🎨</div>
+            <h3>Art & Craft</h3>
+            <p>Developing creativity and imagination.</p>
+        </div>
+
+        <div class="facility-card">
+            <div class="icon">🎭</div>
+            <h3>Cultural Activities</h3>
+            <p>Celebrating talent and cultural expression.</p>
+        </div>
+
+        <div class="facility-card">
+            <div class="icon">🧑‍🏫</div>
+            <h3>Classrooms</h3>
+            <p>Creating a positive learning atmosphere.</p>
+        </div>
+
+        <div class="facility-card">
+            <div class="icon">🌳</div>
+            <h3>Green Environment</h3>
+            <p>Promoting environmental awareness.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- PRINCIPAL MESSAGE -->
+<section class="principal">
+
+    <div class="section-heading">
+        <span>WORDS OF INSPIRATION</span>
+        <h2>Principal's Message</h2>
+        <div class="heading-line"></div>
+        <p>
+            A message of encouragement, learning
+            and success for our school community.
+        </p>
+    </div>
+
+    <div class="principal-box">
+
+        <div class="principal-image">
+            <img src="https://static.vecteezy.com/system/resources/thumbnails/036/473/547/small_2x/ai-generated-portrait-of-confident-caucasian-female-teacher-standing-in-classroom-photo.jpeg" alt="Principal of Divine Public School">
+        </div>
+
+        <div class="principal-text">
+
+            <div class="label">A Message from Principal's Desk</div>
+
+            <h2>A Message from the Principal's Desk</h2>
+
+            <h4>Principal | Divine Public School</h4>
+
+            <p>
+                Dear Students, Parents and Teachers,
+                <br><br>
+
+                Education is not simply about acquiring
+                knowledge; it is about building character,
+                developing confidence and discovering
+                one's true potential.
+               <br>
+
+                At Divine Public School, we believe that
+                every child deserves opportunities to learn,
+                explore, grow and succeed. Our aim is to
+                encourage students to become responsible,
+                respectful and independent individuals.
+                <br>
+
+                We believe that the partnership between
+                students, parents and teachers plays an
+                important role in creating a positive
+                educational experience.
+                <br>
+
+                Let us work together to inspire young minds
+                and build a brighter future.
+            </p>
+
+            <div class="signature">
+                I wish great success to everyone!!<br>
+                <b>(Mrs. Priya Sharma)</b><br>
+                Principal<br>
+                Divine Public School
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- WHY CHOOSE US -->
+<section class="why">
+
+    <div class="section-heading">
+        <span>THE DIVINE DIFFERENCE</span>
+        <h2>Why Choose Divine Public School?</h2>
+        <div class="heading-line"></div>
+        <p>
+            We believe in creating opportunities for every
+            student to learn, grow and achieve.
+        </p>
+    </div>
+
+    <div class="why-grid">
+
+        <div class="why-item">
+            <div class="icon">🎓</div>
+            <div>
+                <h3>Focus on Education</h3>
+                <p>
+                    Encouraging strong academic foundations
+                    and meaningful understanding.
+                </p>
+            </div>
+        </div>
+
+        <div class="why-item">
+            <div class="icon">🌟</div>
+            <div>
+                <h3>Overall Development</h3>
+                <p>
+                    Supporting intellectual, physical,
+                    social and creative growth.
+                </p>
+            </div>
+        </div>
+
+        <div class="why-item">
+            <div class="icon">🤝</div>
+            <div>
+                <h3>Positive Relationships</h3>
+                <p>
+                    Encouraging respect, cooperation
+                    and communication.
+                </p>
+            </div>
+        </div>
+
+        <div class="why-item">
+            <div class="icon">💡</div>
+            <div>
+                <h3>Creative Learning</h3>
+                <p>
+                    Inspiring curiosity, imagination
+                    and independent thinking.
+                </p>
+            </div>
+        </div>
+
+        <div class="why-item">
+            <div class="icon">❤️</div>
+            <div>
+                <h3>Strong Moral Values</h3>
+                <p>
+                    Developing honesty, kindness,
+                    discipline and responsibility.
+                </p>
+            </div>
+        </div>
+
+        <div class="why-item">
+            <div class="icon">🚀</div>
+            <div>
+                <h3>Future Readiness</h3>
+                <p>
+                    Encouraging life skills, confidence
+                    and preparation for future challenges.
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CALL TO ACTION -->
+<div class="cta">
+
+    <h2>Give Your Child a Brighter Future</h2>
+
+    <p>
+        Every great journey begins with a step.
+        Join Divine Public School and become a part
+        of a learning community that believes in
+        knowledge, unity, growth and achievement.
+    </p>
+
+    <a href="admission.html">
+        Explore Admission Opportunities →
+    </a>
+
+</div>
+
+<!-- FOOTER -->
+<footer id="contact">
+
+    <div class="footer-content">
+
+        <div class="footer-box">
+
+            <h2>📘 Divine Public School</h2>
+
+            <p>Learn • Grow • Achieve</p>
+
+            <p>Shaping Bright Minds for a Better Tomorrow.</p>
+
+        </div>
+
+        <div class="footer-box">
+
+            <h3>School Address</h3>
+
+            <p>📍Divine Public school <br>near institute of technology <br>Delhi,India.</p>
+
+        </div>
+
+        <div class="footer-box">
+
+            <h3>Contact Us</h3>
+
+            <p>📞 +91 1234567890</p>
+
+            <p>✉️ DivinePublicSchool@gmail.com</p>
+
+        </div>
+
+        <div class="footer-box">
+
+            <h3>Quick Navigation</h3>
+
+            <p><a href="index.html">Home</a></p>
+            <p><a href="about.html">About Us</a></p>
+            <p><a href="index.html#principal">Principal's Message</a></p>
+            <p><a href="admission.html">Admission</a></p>
+            <p><a href="notice.html">Notices</a></p>
+
+        </div>
+
+    </div>
+
+    <div class="copyright">
+
+        <p>
+            © 2026 Divine Public School.
+            All Rights Reserved.
+        </p>
+
+    </div>
+
+</footer>
+
+</body>
+</html>

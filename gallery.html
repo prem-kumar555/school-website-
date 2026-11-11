@@ -1,0 +1,607 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gallery | Divine Public School</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --navy: #071A35;
+    --royal: #102D55;
+    --blue: #1C4E80;
+    --gold: #D9AD52;
+    --light: #EAF0F8;
+    --white: #ffffff;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #f5f7fb;
+    color: #26364a;
+}
+
+
+
+/* HEADER */
+header {
+    background: linear-gradient(90deg, #032b59, #07509b);
+    color: white;
+    padding: 18px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.logo span {
+    display: block;
+    font-size: 12px;
+    color: #ffca28;
+    letter-spacing: 3px;
+    margin-top: 6px;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    align-items: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #ffca28;
+}
+
+.login-btn {
+    background: #ffca28;
+    color: #073b78;
+    padding: 11px 22px;
+    border-radius: 25px;
+}
+
+/* HERO */
+.hero {
+    min-height: 360px;
+    background:
+        linear-gradient(rgba(7,26,53,0.83), rgba(7,26,53,0.83)),
+        url("https://img.freepik.com/premium-photo/students-performing-play-stage-school-auditorium-parents-audience_1302739-14382.jpg") center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 60px 20px;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    margin-bottom: 12px;
+}
+
+.hero-content h1 span {
+    color: var(--gold);
+}
+
+.hero-content p {
+    font-size: 15px;
+    color: #e5eaf2;
+    max-width: 650px;
+    margin: auto;
+    line-height: 1.8;
+}
+
+.hero-line {
+    width: 75px;
+    height: 4px;
+    background: var(--gold);
+    margin: 20px auto;
+    border-radius: 5px;
+}
+
+/* INTRODUCTION */
+.intro {
+    text-align: center;
+    padding: 65px 8% 35px;
+}
+
+.section-title {
+    color: var(--navy);
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+.section-title span {
+    color: var(--gold);
+}
+
+.intro p {
+    max-width: 800px;
+    margin: auto;
+    color: #667085;
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+/* FILTER BUTTONS */
+.filters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 30px 15px;
+}
+
+.filters button {
+    border: 1px solid var(--navy);
+    background: white;
+    color: var(--navy);
+    padding: 10px 23px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.filters button:hover,
+.filters button.active {
+    background: var(--navy);
+    color: white;
+    border-color: var(--gold);
+}
+
+/* GALLERY */
+.gallery {
+    padding: 20px 7% 75px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.gallery-item {
+    position: relative;
+    height: 260px;
+    overflow: hidden;
+    border-radius: 13px;
+    background: #dce4ef;
+    box-shadow: 0 7px 22px rgba(7,26,53,0.10);
+    cursor: pointer;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.gallery-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 35px 18px 17px;
+    color: white;
+    background: linear-gradient(transparent, rgba(7,26,53,0.95));
+}
+
+.gallery-caption h3 {
+    font-size: 17px;
+    margin-bottom: 4px;
+}
+
+.gallery-caption p {
+    font-size: 12px;
+    color: #e2e8f0;
+}
+
+/* IMAGE VIEWER */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    inset: 0;
+    background: rgba(0,0,0,0.93);
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 85vh;
+    object-fit: contain;
+    border: 3px solid white;
+    border-radius: 8px;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+/* HIGHLIGHT SECTION */
+.highlight {
+    background: var(--navy);
+    padding: 65px 8%;
+    text-align: center;
+    color: white;
+}
+
+.highlight h2 {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.highlight h2 span {
+    color: var(--gold);
+}
+
+.highlight p {
+    max-width: 750px;
+    margin: auto;
+    color: #d5deeb;
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+/* FOOTER */
+footer {
+    background: linear-gradient(90deg, #032b59, #07509b);
+    color: white;
+    padding: 35px 5%;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.footer-box h2,
+.footer-box h3 {
+    margin-bottom: 15px;
+}
+
+.footer-box p {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #e1edff;
+}
+
+.footer-box a {
+    color: #ffca28;
+    text-decoration: none;
+}
+
+.copyright {
+    text-align: center;
+    border-top: 1px solid #557ba5;
+    padding-top: 20px;
+    margin-top: 25px;
+    font-size: 14px;
+}
+
+/* RESPONSIVE */
+@media(max-width: 900px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(max-width: 600px) {
+    header {
+        justify-content: center;
+    }
+
+    .logo {
+        text-align: center;
+        font-size: 21px;
+    }
+
+    nav {
+        justify-content: center;
+        gap: 12px;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
+
+    .hero-content h1 {
+        font-size: 34px;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-item {
+        height: 240px;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+
+    .section-title {
+        font-size: 26px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+
+
+<!-- HEADER -->
+<header>
+    <div class="logo">
+        📘 Divine Public School
+        <span>LEARN • GROW • ACHIEVE</span>
+    </div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About US</a>
+        <a href="academics.html">Academics</a>
+        <a href="admission.html">Admission</a>
+        <a href="facilities.html">Facilities</a>
+        <a href="gallery.html" class="active">Gallery</a>
+        <a href="notice.html">Notice</a>
+        <a href="contact.html">Contact</a>
+        <a href="login.html" class="login-btn">Login</a>
+    </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-content">
+        <h1>Our <span>Gallery</span></h1>
+        <div class="hero-line"></div>
+        <p>
+            Every picture tells a story. Explore the memorable moments,
+            celebrations, achievements and activities of Divine Public School.
+        </p>
+    </div>
+</section>
+
+<!-- INTRODUCTION -->
+<section class="intro">
+    <h2 class="section-title">Life at <span>Divine Public School</span></h2>
+    <p>
+        Our school is a place where students learn, explore, create and grow.
+        From classroom activities to sports competitions and cultural celebrations,
+        every moment contributes to a memorable learning experience.
+        Take a look at the special moments captured in our school gallery.
+    </p>
+</section>
+
+<!-- FILTERS -->
+<div class="filters">
+    <button class="active" onclick="filterGallery('all', this)">All Photos</button>
+    <button onclick="filterGallery('academic', this)">Academics</button>
+    <button onclick="filterGallery('sports', this)">Sports</button>
+    <button onclick="filterGallery('events', this)">Events</button>
+    <button onclick="filterGallery('activities', this)">Activities</button>
+</div>
+
+<!-- GALLERY -->
+<section class="gallery" id="gallery">
+
+    <div class="gallery-item academic" onclick="openImage(this)">
+        <img src="https://static.vecteezy.com/system/resources/thumbnails/075/427/205/small_2x/classroom-with-wooden-desks-and-chairs-and-whiteboard-wall-and-clock-hanging-free-photo.jpeg" alt="Classroom learning">
+        <div class="gallery-caption">
+            <h3>Classroom Learning</h3>
+            <p>Creating a positive learning environment where students gain knowledge, develop skills, and build a bright future.</p>
+        </div>
+    </div>
+
+    <div class="gallery-item sports" onclick="openImage(this)">
+        <img src="https://tse1.mm.bing.net/th/id/OIP.bp75jBatEx2mPSmqw075fQHaE8?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt="School sports">
+        <div class="gallery-caption">
+            <h3>Sports Activities</h3>
+            <p>Encouraging teamwork, discipline, and sportsmanship through exciting games and physical activities.</p>
+        </div>
+    </div>
+
+    <div class="gallery-item events" onclick="openImage(this)">
+        <img src="https://sdplanets.com/wp-content/uploads/2022/12/annualfunction-19.jpg" alt="Annual function">
+        <div class="gallery-caption">
+            <h3>Annual Function</h3>
+            <p>Celebrating talent, achievements, and unforgettable moments through vibrant cultural performances.</p>
+        </div>
+    </div>
+
+    <div class="gallery-item activities" onclick="openImage(this)">
+        <img src="https://static.wixstatic.com/media/cf3ea2_104917770eda42f0ac90a0945e1636d9~mv2.webp/v1/fill/w_980,h_551,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/cf3ea2_104917770eda42f0ac90a0945e1636d9~mv2.webp" alt="Art and creativity">
+        <div class="gallery-caption">
+            <h3>Art & Creativity</h3>
+            <p>Inspiring young minds to express their imagination and creativity through art and craft.</p>
+        </div>
+    </div>
+
+    <div class="gallery-item events" onclick="openImage(this)">
+        <img src="https://img.freepik.com/premium-photo/indian-independence-day-celebration-school-kids-with-flags-illustration_960080-642.jpg?w=2000" alt="Independence Day">
+        <div class="gallery-caption">
+            <h3>Independence Day</h3>
+            <p>Celebrating the spirit of freedom, patriotism, and unity with pride and enthusiasm.</p>
+        </div>
+    </div>
+
+    <div class="gallery-item academic" onclick="openImage(this)">
+        <img src="https://thumbs.dreamstime.com/b/school-library-bookshelves-filled-reading-materials-students-faculty-school-library-bookshelves-filled-276133085.jpg" alt="School library">
+        <div class="gallery-caption">
+            <h3>Library</h3>
+            <p>Discovering the joy of reading and exploring a world of knowledge through books.</p>
+        </div>
+    </div>
+
+    <div class="gallery-item sports" onclick="openImage(this)">
+        <img src="https://www.cambridgeindependent.co.uk/_media/img/G1T2DZJH0T22RASKAZ4W.jpg" alt="Football activity">
+        <div class="gallery-caption">
+            <h3>Football Competition</h3>
+            <p>Encouraging teamwork, discipline, and sportsmanship through exciting games and physical activities.</p>
+        </div>
+    </div>
+
+    <div class="gallery-item activities" onclick="openImage(this)">
+        <img src="https://img.freepik.com/premium-photo/group-elementary-school-students-work-science-experiment-classroom_14117-737127.jpg" alt="Science activity">
+        <div class="gallery-caption">
+            <h3>Science Activities</h3>
+            <p>Promoting curiosity, innovation, and practical learning through exciting scientific experiments.</p>
+        </div>
+    </div>
+
+    <div class="gallery-item events" onclick="openImage(this)">
+        <img src="https://resources.finalsite.net/images/t_image_size_4/v1684172892/tulsaschoolsorg/uga5ldzxovhixlchscrc/CooperFashion-49.jpg" alt="Fashion show">
+        <div class="gallery-caption">
+            <h3>School Fashion Show</h3>
+            <p>Showcasing confidence, creativity, and talent through a colourful celebration of style and personality.</p>
+        </div>
+    </div>
+
+</section>
+
+<!-- IMAGE VIEWER -->
+<div class="lightbox" id="lightbox" onclick="closeImage()">
+    <span class="close">&times;</span>
+    <img id="lightbox-img" src="" alt="Selected gallery image">
+</div>
+
+<!-- HIGHLIGHT -->
+<section class="highlight">
+    <h2>Memories That <span>Last Forever</span></h2>
+    <p>
+        At Divine Public School, we believe that education goes beyond textbooks.
+        Every event, activity and achievement helps students discover their potential
+        and develop lifelong memories. We celebrate every step of their journey.
+    </p>
+</section>
+
+<!-- FOOTER -->
+<footer id="contact">
+    <div class="footer-content">
+
+        <div class="footer-box">
+            <h2>📘 Divine Public School</h2>
+            <p>Learn • Grow • Achieve</p>
+            <p>Shaping Bright Minds for a Better Tomorrow.</p>
+        </div>
+
+        <div class="footer-box">
+            <h3>School Address</h3>
+            <p>📍Divine Public school <br>near institute of technology <br>Delhi,India</p>
+        </div>
+
+        <div class="footer-box">
+            <h3>Contact Us</h3>
+            <p>📞 +91 1234567890</p>
+            <p>✉️ DivinePublicSchool@gmail.com</p>
+        </div>
+
+        <div class="footer-box">
+            <h3>Quick Navigation</h3>
+            <p><a href="index.html#home">Home</a></p>
+            <p><a href="about.html">About Us</a></p>
+            <p><a href="index.html#principal">Principal's Message</a></p>
+            <p><a href="admission.html">Admission</a></p>
+            <p><a href="notice.html">Notices</a></p>
+        </div>
+
+    </div>
+
+    <div class="copyright">
+        <p>
+            © 2026 Divine Public School.
+            All Rights Reserved.
+        </p>
+    </div>
+</footer>
+
+<script>
+// FILTER GALLERY
+function filterGallery(category, button) {
+    let items = document.querySelectorAll(".gallery-item");
+    let buttons = document.querySelectorAll(".filters button");
+
+    buttons.forEach(btn => btn.classList.remove("active"));
+    button.classList.add("active");
+
+    items.forEach(item => {
+        if (category === "all" || item.classList.contains(category)) {
+            item.style.display = "block";
+        } else {
+            item.style.display = "none";
+        }
+    });
+}
+
+// OPEN IMAGE
+function openImage(element) {
+    let image = element.querySelector("img");
+    document.getElementById("lightbox-img").src = image.src;
+    document.getElementById("lightbox").style.display = "flex";
+}
+
+// CLOSE IMAGE
+function closeImage() {
+    document.getElementById("lightbox").style.display = "none";
+    document.getElementById("lightbox-img").src = "";
+}
+
+// CLOSE WITH ESCAPE KEY
+document.addEventListener("keydown", function(event) {
+    if (event.key === "Escape") {
+        closeImage();
+    }
+});
+</script>
+
+</body>
+</html>

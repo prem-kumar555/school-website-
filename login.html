@@ -1,0 +1,741 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Login | Divine Public School</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+    background: #f1f5fc;
+    color: #17365d;
+}
+
+/* HEADER */
+header {
+    background: linear-gradient(90deg, #032b59, #07509b);
+    color: white;
+    padding: 18px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.logo span {
+    display: block;
+    font-size: 12px;
+    color: #ffca28;
+    letter-spacing: 3px;
+    margin-top: 6px;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    align-items: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #ffca28;
+}
+
+.login-btn {
+    background: #ffca28;
+    color: #073b78;
+    padding: 11px 22px;
+    border-radius: 25px;
+}
+
+
+/* MAIN */
+.main {
+    min-height: 680px;
+    padding: 65px 7%;
+    display: grid;
+    grid-template-columns: 1fr 440px;
+    gap: 65px;
+    align-items: center;
+    background:
+    linear-gradient(90deg,
+    rgba(2,39,82,0.98),
+    rgba(2,53,105,0.82),
+    rgba(2,53,105,0.05)),
+    url("https://static.vecteezy.com/system/resources/thumbnails/048/068/285/small_2x/exterior-of-a-modern-school-building-with-stairs-going-up-and-down-photo.jpeg");
+
+    background-position: center;
+    background-size: cover;
+    color: white;
+}
+
+/* WELCOME */
+.welcome {
+    animation: slideLeft 1s ease;
+}
+
+.welcome h3 {
+    color: #d59b18;
+    font-size: 24px;
+    margin-bottom: 12px;
+}
+.welcome h1{
+    color: white;
+    font-size: clamp(36px, 4vw, 54px);
+    line-height: 1.2;
+    margin-bottom: 15px;
+}
+
+.welcome h1 span{
+    color: #ffca28;
+    font-size: clamp(36px, 4vw, 54px);
+    line-height: 1.2;
+    margin-bottom: 15px;
+}
+
+.welcome h2 {
+    color: #0875c9;
+    font-size: 23px;
+    margin-bottom: 20px;
+}
+
+.welcome p {
+    color:white;
+    line-height: 1.9;
+    font-size: 16px;
+    max-width: 490px;
+}
+
+.school-icon {
+    font-size: 110px;
+    margin-top: 35px;
+    filter: drop-shadow(0 8px 10px #17365d30);
+}
+
+.welcome-line {
+    width: 85px;
+    height: 5px;
+    background: #e5ae32;
+    border-radius: 10px;
+    margin-top: 22px;
+}
+
+/* LOGIN CARD */
+.login-card {
+    background: rgba(255,255,255,0.95);
+    padding: 38px;
+    border-radius: 22px;
+    box-shadow: 0 18px 50px rgba(10,45,90,0.15);
+    border: 1px solid #dce7f5;
+    animation: slideRight 1s ease;
+    transition: 0.3s;
+}
+
+.login-card:hover {
+    box-shadow: 0 22px 60px rgba(10,45,90,0.20);
+}
+
+.card-logo {
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.card-logo .symbol {
+    width: 75px;
+    height: 75px;
+    background: linear-gradient(135deg, #092c60, #0875c9);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 38px;
+    margin: auto;
+    box-shadow: 0 7px 18px #0875c940;
+}
+
+.card-logo h2 {
+    color: #092c60;
+    margin: 13px 0 7px;
+    font-size: 23px;
+}
+
+.card-logo p {
+    color: #d49b21;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.login-card h1 {
+    font-size: 30px;
+    color: #092c60;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    color: #718096;
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+/* INPUTS */
+.form-group {
+    margin-bottom: 19px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #17365d;
+    margin-bottom: 9px;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #d4dfed;
+    border-radius: 9px;
+    outline: none;
+    font-size: 14px;
+    background: #f8faff;
+    color: #17365d;
+    transition: 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #0875c9;
+    background: white;
+    box-shadow: 0 0 0 4px #0875c91a;
+}
+
+.password-box {
+    display: flex;
+    align-items: center;
+    border: 1px solid #d4dfed;
+    border-radius: 9px;
+    background: #f8faff;
+}
+
+.password-box input {
+    border: none;
+    background: transparent;
+    flex: 1;
+    min-width: 0;
+}
+
+.password-box:focus-within {
+    border-color: #0875c9;
+    box-shadow: 0 0 0 4px #0875c91a;
+}
+
+.show-password {
+    padding: 10px;
+    cursor: pointer;
+    color: #0875c9;
+    border: none;
+    background: transparent;
+    font-size: 18px;
+}
+
+/* OPTIONS */
+.options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    margin: 8px 0 23px;
+}
+
+.options label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.options a,
+.new-user a {
+    color: #0875c9;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.options a:hover,
+.new-user a:hover {
+    text-decoration: underline;
+}
+
+/* LOGIN BUTTON */
+.login-btn {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(120deg, #092c60, #0875c9);
+    color: white;
+    border: none;
+    border-radius: 9px;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 6px 15px #0875c930;
+}
+
+.login-btn:hover {
+    background: linear-gradient(120deg, #d49b21, #edb83d);
+    color: #092c60;
+    transform: translateY(-2px);
+}
+
+.new-user {
+    text-align: center;
+    margin-top: 23px;
+    font-size: 13px;
+    color: #68798d;
+}
+
+.message {
+    margin-top: 15px;
+    font-size: 13px;
+    text-align: center;
+    line-height: 1.5;
+}
+
+/* FOOTER */
+footer {
+    background: linear-gradient(90deg, #032b59, #07509b);
+    color: white;
+    padding: 35px 5%;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.footer-box h2,
+.footer-box h3 {
+    margin-bottom: 15px;
+}
+
+.footer-box p {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #e1edff;
+}
+
+.footer-box a {
+    color: #ffca28;
+    text-decoration: none;
+}
+
+.copyright {
+    text-align: center;
+    border-top: 1px solid #557ba5;
+    padding-top: 20px;
+    margin-top: 25px;
+    font-size: 14px;
+}
+
+/* ANIMATIONS */
+@keyframes slideLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-35px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideRight {
+    from {
+        opacity: 0;
+        transform: translateX(35px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* RESPONSIVE */
+@media(max-width: 950px) {
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .main {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        padding: 45px 5%;
+    }
+
+    .welcome {
+        text-align: center;
+    }
+
+    .welcome p {
+        margin: auto;
+    }
+
+    .welcome-line {
+        margin: 20px auto;
+    }
+
+    .school-icon {
+        display: none;
+    }
+
+    .login-card {
+        width: 100%;
+        max-width: 480px;
+        margin: auto;
+    }
+}
+
+@media(max-width: 650px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        justify-content: center;
+    }
+
+    .logo {
+        text-align: center;
+    }
+
+    nav {
+        justify-content: center;
+        gap: 12px;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
+
+    .login-card {
+        padding: 25px 19px;
+    }
+
+    .options {
+        flex-wrap: wrap;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="logo">
+        📘 Divine Public School
+        <span>LEARN • GROW • ACHIEVE</span>
+    </div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="academics.html">Academics</a>
+        <a href="admission.html">Admission</a>
+        <a href="facilities.html">Facilities</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="notice.html">Notice</a>
+        <a href="contact.html">Contact</a>
+        
+    </nav>
+</header>
+
+<!-- MAIN SECTION -->
+<main class="main">
+
+    <!-- WELCOME SECTION -->
+    <section class="welcome">
+
+        <h3>Welcome to</h3>
+
+        <h1>Divine <span>Public School</span></h1>
+
+        <h2>Your Future, Our Priority</h2>
+
+        <p>
+            Login to access your account and stay connected
+            with your school. Explore your academic progress,
+            notices and important school information.
+        </p>
+
+        <div class="school-icon">🎓</div>
+
+        <div class="welcome-line"></div>
+
+    </section>
+
+    <!-- LOGIN FORM -->
+    <section class="login-card">
+
+        <div class="card-logo">
+
+            <div class="symbol">📘</div>
+
+            <h2>Divine Public School</h2>
+
+            <p>LEARN • GROW • ACHIEVE</p>
+
+        </div>
+
+        <h1>Welcome to Divine Public School</h1>
+
+        <p class="subtitle">
+            Please enter your details to continue.
+        </p>
+
+        <form id="loginForm">
+
+            <div class="form-group">
+
+                <label for="role">Login Type</label>
+
+                <select id="role" required>
+                    <option value="">Select Login Type</option>
+                    <option value="Student">Student</option>
+                    <option value="Teacher">Teacher</option>
+                    <option value="Parent">Parent</option>
+                </select>
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="username">
+                    Username / Roll Number
+                </label>
+
+                <input
+                    type="text"
+                    id="username"
+                    placeholder="Enter username or roll number"
+                    required
+                >
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="password">Password</label>
+
+                <div class="password-box">
+
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Enter your password"
+                        required
+                    >
+
+                    <button
+                        type="button"
+                        class="show-password"
+                        id="togglePassword"
+                        aria-label="Show password"
+                    >👁</button>
+
+                </div>
+
+            </div>
+
+            <div class="options">
+
+                <label>
+                    <input type="checkbox" id="remember">
+                    Remember me
+                </label>
+
+                <a href="contact.html">Forgot Password?</a>
+
+            </div>
+
+            <button type="submit" class="login-btn">
+                Login Now →
+            </button>
+
+            <p id="message" class="message" aria-live="polite"></p>
+
+        </form>
+
+        <div class="new-user">
+            Need an account?
+            <a href="contact.html">Contact School</a>
+        </div>
+
+    </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer id="contact">
+
+    <div class="footer-content">
+
+        <div class="footer-box">
+
+            <h2>📘 Divine Public School</h2>
+
+            <p>Learn • Grow • Achieve</p>
+
+            <p>Shaping Bright Minds for a Better Tomorrow.</p>
+
+        </div>
+
+        <div class="footer-box">
+
+            <h3>School Address</h3>
+
+            <p>📍Divine Public school <br>near institute of technology <br>Delhi,India</p>
+
+        </div>
+
+        <div class="footer-box">
+
+            <h3>Contact Us</h3>
+
+            <p>📞 +91 1234567890</p>
+
+            <p>✉️ DivinePublicSchool@gmail.com</p>
+
+        </div>
+
+        <div class="footer-box">
+
+            <h3>Quick Navigation</h3>
+
+            <p><a href="index.html#home">Home</a></p>
+            <p><a href="about.html">About Us</a></p>
+            <p><a href="index.html#principal">Principal's Message</a></p>
+            <p><a href="admission.html">Admission</a></p>
+            <p><a href="notice.html">Notices</a></p>
+
+        </div>
+
+    </div>
+
+    <div class="copyright">
+
+        <p>
+            © 2026 Divine Public School.
+            All Rights Reserved.
+        </p>
+
+    </div>
+
+</footer>
+
+<!-- JAVASCRIPT -->
+<script>
+
+const passwordInput = document.getElementById("password");
+
+const togglePassword = document.getElementById("togglePassword");
+
+const loginForm = document.getElementById("loginForm");
+
+const message = document.getElementById("message");
+
+// SHOW / HIDE PASSWORD
+
+togglePassword.addEventListener("click", function() {
+
+    if (passwordInput.type === "password") {
+
+        passwordInput.type = "text";
+
+        togglePassword.textContent = "🙈";
+
+        togglePassword.setAttribute(
+            "aria-label",
+            "Hide password"
+        );
+
+    } else {
+
+        passwordInput.type = "password";
+
+        togglePassword.textContent = "👁";
+
+        togglePassword.setAttribute(
+            "aria-label",
+            "Show password"
+        );
+
+    }
+
+});
+
+// LOGIN FORM
+
+loginForm.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    const role = document.getElementById("role").value;
+
+    const username = document.getElementById("username").value.trim();
+
+    const password = passwordInput.value;
+
+    if (!role || !username || !password) {
+
+        message.style.color = "red";
+
+        message.textContent = "Please fill in all fields.";
+
+        return;
+
+    }
+
+    message.style.color = "#0875c9";
+
+    message.textContent =
+        "Demo only: Login form submitted for " + role +
+        ". A secure school login system is required to verify your account.";
+
+});
+
+</script>
+
+</body>
+</html>

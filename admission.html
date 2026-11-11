@@ -1,0 +1,1184 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admissions | Divine Public School</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --navy: #061d3a;
+    --blue: #103f75;
+    --gold: #e8b94f;
+    --light: #f4f7fb;
+    --white: #ffffff;
+    --text: #5d6b7d;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--light);
+    color: var(--navy);
+}
+
+a {
+    text-decoration: none;
+}
+
+/* HEADER */
+header {
+    width: 100%;
+    padding: 18px 5%;
+    background: linear-gradient(90deg, #032b59, #07509b);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    font-family: Arial, sans-serif;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.logo span {
+    display: block;
+    font-size: 12px;
+    color: #ffca28;
+    letter-spacing: 3px;
+    margin-top: 6px;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    align-items: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+    color: #ffca28;
+}
+
+.login-btn {
+    background: #ffca28;
+    color: #073b78;
+    padding: 11px 22px;
+    border-radius: 25px;
+}
+
+/* HERO */
+.hero {
+    min-height: 610px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 80px 8%;
+    overflow: hidden;
+    background:
+    linear-gradient(90deg, rgba(3,20,43,.95), rgba(3,20,43,.70), rgba(3,20,43,.22)),
+    url("https://img.freepik.com/premium-photo/school-computer-lab-filled-with-students-desktop-computers_167857-19303.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+.hero-content {
+    max-width: 720px;
+    color: white;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-tag {
+    display: inline-block;
+    color: var(--gold);
+    border: 1px solid rgba(232,185,79,.7);
+    background: rgba(232,185,79,.1);
+    padding: 9px 17px;
+    border-radius: 30px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+}
+
+.hero h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(42px, 6vw, 72px);
+    line-height: 1.12;
+    margin-bottom: 22px;
+}
+
+.hero h2 span {
+    color: var(--gold);
+}
+
+.hero p {
+    max-width: 580px;
+    color: #d8e2ee;
+    font-size: 16px;
+    line-height: 1.9;
+    margin-bottom: 30px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 27px;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 14px;
+    transition: .3s;
+    border-radius :50px;
+}
+
+.btn-gold {
+    background: var(--gold);
+    color: var(--navy);
+}
+
+.btn-outline {
+    border: 1px solid white;
+    color: white;
+}
+
+.btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0,0,0,.2);
+}
+
+/* SCHOOL HIGHLIGHTS */
+.school-highlights {
+    background: white;
+    padding: 35px 8%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    box-shadow: 0 8px 30px rgba(0,0,0,.05);
+}
+
+.highlight {
+    text-align: center;
+    border-right: 1px solid #e4eaf1;
+    padding: 5px 15px;
+}
+
+.highlight:last-child {
+    border: none;
+}
+
+.highlight h3 {
+    color: var(--blue);
+    font-family: 'Playfair Display', serif;
+    font-size: 21px;
+}
+
+.highlight p {
+    color: var(--text);
+    font-size: 13px;
+    line-height: 1.7;
+    margin-top: 7px;
+}
+
+/* GENERAL SECTION */
+section {
+    padding: 85px 8%;
+}
+
+.section-top {
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto 45px;
+}
+
+.section-top span {
+    color: #bd8b20;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.section-top h2 {
+    font-family: 'Playfair Display', serif;
+    color: var(--navy);
+    font-size: clamp(29px, 4vw, 42px);
+    margin: 12px 0;
+}
+
+.section-top p {
+    color: var(--text);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* WELCOME */
+.welcome {
+    background: white;
+}
+
+.welcome-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 65px;
+    align-items: center;
+}
+
+.welcome-image {
+    position: relative;
+}
+
+.welcome-image img {
+    width: 100%;
+    height: 410px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.image-label {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    background: #071a35ef;
+    color: white;
+    font-size: 13px;
+    text-align: center;
+}
+
+.welcome-text span {
+    color: #bd8b20;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.welcome-text h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 38px;
+    line-height: 1.25;
+    margin: 14px 0 20px;
+}
+
+.welcome-text p {
+    color: var(--text);
+    font-size: 14px;
+    line-height: 1.9;
+    margin-bottom: 16px;
+}
+
+.check-list {
+    list-style: none;
+    margin: 22px 0;
+}
+
+.check-list li {
+    margin-bottom: 12px;
+    color: #35485e;
+    font-size: 14px;
+}
+
+.check-list li::before {
+    content: "✓";
+    color: #b88922;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+/* PROCESS */
+.process {
+    background: #071A35;
+}
+
+.process-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.process-card {
+    background: rgb(255, 255, 255);
+    border-radius: 10px;
+    padding: 30px 22px;
+    position: relative;
+    border-bottom: 3px solid transparent;
+    transition: .3s;
+}
+
+.process-card:hover {
+    transform: translateY(-8px);
+    border-bottom-color: var(--gold);
+    box-shadow: 0 12px 25px rgba(0,0,0,.08);
+}
+
+.process-number {
+    font-family: 'Playfair Display', serif;
+    color: #5079ad;
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.process-card h3 {
+    font-size: 18px;
+    margin: 12px 0;
+}
+
+.process-card p {
+    font-size: 13px;
+    line-height: 1.8;
+    color:rgb(8, 8, 7);
+}
+
+/* GUIDELINES */
+.guidelines {
+    background: white;
+}
+
+.guideline-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.guideline-card {
+    background: #f5f8fc;
+    border-radius: 12px;
+    padding: 32px;
+    border: 1px solid #e8edf4;
+}
+
+.guideline-heading {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 23px;
+}
+
+.guideline-icon {
+    width: 50px;
+    height: 50px;
+    display: grid;
+    place-items: center;
+    background: var(--navy);
+    color: var(--gold);
+    font-size: 23px;
+    border-radius: 10px;
+}
+
+.guideline-heading h3 {
+    font-size: 21px;
+}
+
+.guideline-card ul {
+    list-style: none;
+}
+
+.guideline-card li {
+    padding: 12px 0;
+    border-bottom: 1px solid #e1e7ef;
+    color: var(--text);
+    font-size: 14px;
+}
+
+.guideline-card li:last-child {
+    border: none;
+}
+
+.guideline-card li::before {
+    content: "✓";
+    color: #bd8b20;
+    font-weight: bold;
+    margin-right: 12px;
+}
+
+/* WHY US */
+.why {
+    background: var(--navy);
+    color: white;
+}
+
+.why .section-top h2 {
+    color: white;
+}
+
+.why .section-top p {
+    color: #b9c8d9;
+}
+
+.why-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.why-card {
+    padding: 30px;
+    border: 1px solid rgba(255,255,255,.13);
+    background: rgba(255,255,255,.05);
+    border-radius: 10px;
+    transition: .3s;
+}
+
+.why-card:hover {
+    background: rgba(255,255,255,.11);
+    transform: translateY(-5px);
+}
+
+.why-icon {
+    font-size: 32px;
+    margin-bottom: 17px;
+}
+
+.why-card h3 {
+    color: var(--gold);
+    margin-bottom: 10px;
+}
+
+.why-card p {
+    color: #c1cedd;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+/* FORM */
+.application {
+    background: #eef3f9;
+}
+
+.form-wrapper {
+    max-width: 950px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: .75fr 1.5fr;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 12px 40px rgba(3,29,58,.1);
+}
+
+.form-info {
+    background: linear-gradient(145deg, #061d3a, #124d83);
+    padding: 40px 30px;
+    color: white;
+}
+
+.form-info h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    margin-bottom: 17px;
+}
+
+.form-info p {
+    color: #d0dce9;
+    font-size: 13px;
+    line-height: 1.9;
+    margin-bottom: 25px;
+}
+
+.info-line {
+    border-top: 1px solid rgba(255,255,255,.2);
+    padding-top: 18px;
+    margin-top: 18px;
+}
+
+.info-line strong {
+    color: var(--gold);
+    display: block;
+    margin-bottom: 5px;
+}
+
+.info-line small {
+    color: #d0dce9;
+}
+
+.form-area {
+    padding: 40px;
+}
+
+.form-area h3 {
+    font-size: 24px;
+    margin-bottom: 7px;
+}
+
+.form-area > p {
+    color: var(--text);
+    font-size: 13px;
+    margin-bottom: 25px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+}
+
+.field.full {
+    grid-column: 1 / -1;
+}
+
+.field label {
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.field input,
+.field select,
+.field textarea {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #dce3ec;
+    border-radius: 6px;
+    outline: none;
+    font-family: inherit;
+    font-size: 13px;
+    background: #fbfcfe;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+    border-color: var(--blue);
+    box-shadow: 0 0 0 3px rgba(16,63,117,.08);
+}
+
+.field textarea {
+    resize: vertical;
+    min-height: 90px;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 15px;
+    background: var(--navy);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    margin-top: 22px;
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.submit-btn:hover {
+    background: #bd8b20;
+    color: var(--navy);
+}
+
+#formMessage {
+    color: #176b3a;
+    text-align: center;
+    font-size: 13px;
+    margin-top: 15px;
+}
+
+/* CTA Section*/
+.cta {
+    background: var(--navy);
+    padding: 45px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+}
+
+.cta h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    color:#d6ad16
+}
+
+.cta p {
+    color: #d6ad16;
+    margin-top: 7px;
+    font-size: 14px;
+}
+
+.cta a {
+    background: var(--navy);
+    color:#d6ad16;
+    padding: 15px 25px;
+    border-radius: 5px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+/* FOOTER */
+footer {
+    background: linear-gradient(90deg, #032b59, #07509b);
+    color: white;
+    padding: 35px 5%;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.footer-box h2,
+.footer-box h3 {
+    margin-bottom: 15px;
+}
+
+.footer-box p {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #e1edff;
+}
+
+.footer-box a {
+    color: #ffca28;
+    text-decoration: none;
+}
+
+.copyright {
+    text-align: center;
+    border-top: 1px solid #557ba5;
+    padding-top: 20px;
+}
+
+/* RESPONSIVE */
+@media(max-width: 950px) {
+    header,
+    nav {
+        justify-content: center;
+    }
+
+    .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .welcome-grid {
+        gap: 35px;
+    }
+
+    .form-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(max-width: 650px) {
+    nav {
+        gap: 12px;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
+
+    .hero {
+        min-height: 520px;
+        padding: 60px 6%;
+        background-position: center;
+    }
+
+    .hero h2 {
+        font-size: 42px;
+    }
+
+    section {
+        padding: 60px 6%;
+    }
+
+    .school-highlights {
+        padding: 25px 6%;
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .highlight {
+        border-right: none;
+        border-bottom: 1px solid #e4eaf1;
+        padding: 0 0 18px;
+    }
+
+    .highlight:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+
+    .welcome-grid,
+    .guideline-grid,
+    .why-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .welcome-image img {
+        height: 300px;
+    }
+
+    .image-label {
+        left: 10px;
+        right: 10px;
+    }
+
+    .process-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-area {
+        padding: 25px 18px;
+    }
+
+    .form-info {
+        padding: 30px 22px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .field.full {
+        grid-column: auto;
+    }
+
+    .cta {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media(max-width: 550px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="logo">
+        📘 Divine Public School
+        <span>LEARN • GROW • ACHIEVE</span>
+    </div>
+
+    <nav>
+        <a href="index.html#home">Home</a>
+        <a href="about.html">About US</a>
+        <a href="academics.html">Academics</a>
+        <a href="admission.html" class="active">Admission</a>
+        <a href="facilities.html">Facilities</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="notice.html">Notice</a>
+        <a href="contact.html">Contact</a>
+        <a href="login.html" class="login-btn">Login</a>
+    </nav>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+    <div class="hero-content">
+        <span class="hero-tag">ADMISSIONS • NEW SESSION</span>
+
+        <h2>Begin Your Child's<br>
+        Journey Towards <span>Excellence.</span></h2>
+
+        <p>
+            Every great future begins with a great education.
+            Join Divine Public School and discover a world of
+            knowledge, opportunities, creativity and success.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="#application" class="btn btn-gold">Apply for Admission →</a>
+            <a href="#process" class="btn btn-outline">Explore Admission Process</a>
+        </div>
+    </div>
+</div>
+
+<!-- SCHOOL HIGHLIGHTS -->
+<div class="school-highlights">
+    <div class="highlight">
+        <h3>Meaningful Learning</h3>
+        <p>Encouraging curiosity, understanding and a lifelong love of learning.</p>
+    </div>
+    <div class="highlight">
+        <h3>All-Round Development</h3>
+        <p>Making space for academic growth, creativity, confidence and values.</p>
+    </div>
+    <div class="highlight">
+        <h3>A Supportive Community</h3>
+        <p>Building positive connections among students, teachers and families.</p>
+    </div>
+</div>
+
+<!-- WELCOME -->
+<section class="welcome">
+    <div class="welcome-grid">
+        <div class="welcome-image">
+            <img src="https://static.wixstatic.com/media/e7e8ff_032a2334e97a4ea8be4ad27957e13df0~mv2.jpg/v1/fill/w_1000,h_667,al_c,q_85,usm_0.66_1.00_0.01/e7e8ff_032a2334e97a4ea8be4ad27957e13df0~mv2.jpg"
+                 alt="School students learning">
+            <div class="image-label">
+                Inspiring Minds • Building Character • Creating Futures
+            </div>
+        </div>
+
+        <div class="welcome-text">
+            <span>WELCOME TO OUR SCHOOL</span>
+            <h2>Where Learning Meets Opportunity</h2>
+
+            <p>
+                At Divine Public School, education goes beyond textbooks.
+                We believe in nurturing young minds, developing strong
+                values and preparing students for a successful future.
+            </p>
+
+            <p>
+                Our learning environment encourages curiosity, teamwork,
+                creativity, discipline and confidence in every student.
+            </p>
+
+            <ul class="check-list">
+                <li>Student-centred learning environment</li>
+                <li>Academic and co-curricular opportunities</li>
+                <li>Focus on values and personality development</li>
+                <li>Supportive teachers and learning community</li>
+            </ul>
+
+            <a href="about.html" class="btn btn-gold">Discover Our School →</a>
+        </div>
+    </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process" id="process">
+    <div class="section-top">
+        <span>YOUR JOURNEY STARTS HERE</span>
+        <h2 style="color:white">Simple Admission Process</h2>
+        <p>
+            We have designed a clear admission process to help parents
+            take the first step towards their child's bright future.
+        </p>
+    </div>
+
+    <div class="process-grid">
+        <div class="process-card">
+            <div class="process-number">01</div>
+            <h3>Make an Enquiry</h3>
+            <p>Contact the school office or submit the online enquiry form.</p>
+        </div>
+
+        <div class="process-card">
+            <div class="process-number">02</div>
+            <h3>Complete Application</h3>
+            <p>Fill in the official application form with accurate information.</p>
+        </div>
+
+        <div class="process-card">
+            <div class="process-number">03</div>
+            <h3>Submit Documents</h3>
+            <p>Provide the required documents for school verification.</p>
+        </div>
+
+        <div class="process-card">
+            <div class="process-number">04</div>
+            <h3>Admission Confirmation</h3>
+            <p>Complete the remaining formalities after school approval.</p>
+        </div>
+    </div>
+</section>
+
+<!-- GUIDELINES -->
+<section class="guidelines">
+    <div class="section-top">
+        <span>PLAN YOUR APPLICATION</span>
+        <h2>Admission Guidelines</h2>
+        <p>Important information for parents and guardians.</p>
+    </div>
+
+    <div class="guideline-grid">
+        <div class="guideline-card">
+            <div class="guideline-heading">
+                <div class="guideline-icon">🎓</div>
+                <h3>Eligibility Criteria</h3>
+            </div>
+            <ul>
+                <li>Admission is subject to seat availability.</li>
+                <li>Age criteria depend on the class applied for.</li>
+                <li>Previous academic records may be required.</li>
+                <li>Students must complete admission formalities.</li>
+                <li>Final admission is subject to school approval.</li>
+            </ul>
+        </div>
+
+        <div class="guideline-card">
+            <div class="guideline-heading">
+                <div class="guideline-icon">📁</div>
+                <h3>Required Documents</h3>
+            </div>
+            <ul>
+                <li>Student's birth certificate.</li>
+                <li>Recent passport-size photographs.</li>
+                <li>Previous class report card, if applicable.</li>
+                <li>Transfer Certificate, where applicable.</li>
+                <li>Parent or guardian contact details.</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section class="why">
+    <div class="section-top">
+        <span>THE DIVINE ADVANTAGE</span>
+        <h2>A Foundation for a Brighter Future</h2>
+        <p>We encourage students to discover their potential and become confident individuals.</p>
+    </div>
+
+    <div class="why-grid">
+        <div class="why-card">
+            <div class="why-icon">📚</div>
+            <h3>Academic Excellence</h3>
+            <p>Building knowledge, understanding and a lifelong love for learning.</p>
+        </div>
+
+        <div class="why-card">
+            <div class="why-icon">🏅</div>
+            <h3>Sports & Activities</h3>
+            <p>Encouraging teamwork, discipline, creativity and participation.</p>
+        </div>
+
+        <div class="why-card">
+            <div class="why-icon">🌟</div>
+            <h3>Personal Growth</h3>
+            <p>Developing confidence, leadership, responsibility and good values.</p>
+        </div>
+    </div>
+</section>
+
+<!-- APPLICATION FORM -->
+<section class="application" id="application">
+    <div class="section-top">
+        <span>TAKE THE FIRST STEP</span>
+        <h2>Admission Enquiry</h2>
+        <p>Share your details with us to begin your admission enquiry.</p>
+    </div>
+
+    <div class="form-wrapper">
+
+        <div class="form-info">
+            <h3>Let's Build a Bright Future Together.</h3>
+            <p>
+                We are happy to guide you through the admission process.
+                Complete the enquiry form and contact the school office
+                for further information.
+            </p>
+
+            <div class="info-line">
+                <strong>📍 School Address</strong>
+                <small>Divine Public school, near institute of technology, Delhi,India.</small>
+            </div>
+
+            <div class="info-line">
+                <strong>☎ Contact Number</strong>
+                <small>+91 1234567890</small>
+            </div>
+
+            <div class="info-line">
+                <strong>✉ Email Address</strong>
+                <small>DivinePublicSchool@gmail.com</small>
+            </div>
+        </div>
+
+        <div class="form-area">
+            <h3>Student Details</h3>
+            <p>Fields marked with * are mandatory.</p>
+
+            <form id="admissionForm">
+                <div class="form-grid">
+
+                    <div class="field">
+                        <label for="studentName">Student Full Name *</label>
+                        <input type="text" id="studentName"
+                               placeholder="Enter student name" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="dob">Date of Birth *</label>
+                        <input type="date" id="dob" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="parentName">Parent / Guardian Name *</label>
+                        <input type="text" id="parentName"
+                               placeholder="Enter parent name" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="phone">Mobile Number *</label>
+                        <input type="tel" id="phone"
+                               placeholder="10-digit mobile number"
+                               pattern="[0-9]{10}" maxlength="10" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email"
+                               placeholder="Enter email address">
+                    </div>
+
+                    <div class="field">
+                        <label for="class">Class Applying For *</label>
+                        <select id="class" required>
+                            <option value="">Select Class</option>
+                            <option>Nursery</option>
+                            <option>LKG</option>
+                            <option>UKG</option>
+                            <option>Class 1</option>
+                            <option>Class 2</option>
+                            <option>Class 3</option>
+                            <option>Class 4</option>
+                            <option>Class 5</option>
+                            <option>Class 6</option>
+                            <option>Class 7</option>
+                            <option>Class 8</option>
+                            <option>Class 9</option>
+                            <option>Class 10</option>
+                            <option>Class 11</option>
+                            <option>Class 12</option>
+                        </select>
+                    </div>
+
+                    <div class="field full">
+                        <label for="address">Residential Address *</label>
+                        <textarea id="address"
+                                  placeholder="Enter complete address"
+                                  required></textarea>
+                    </div>
+
+                    <div class="field full">
+                        <label for="message">Your Message</label>
+                        <textarea id="message"
+                                  placeholder="Any additional information (optional)"></textarea>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    Submit Enquiry →
+                </button>
+
+                <p id="formMessage" role="status"></p>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<div class="cta">
+    <div>
+    <h2>Admissions Open at Divine Public School</h2>
+    <p style="color:white;">Discover quality education, strong values and opportunities for success.</p>
+</div>
+    <a href="#application">Enquire Now →</a>
+</div>
+
+<!-- FOOTER -->
+<footer id="contact">
+
+    <div class="footer-content">
+
+        <div class="footer-box">
+            <h2>📘 Divine Public School</h2>
+            <p>Learn • Grow • Achieve</p>
+            <p>Shaping Bright Minds for a Better Tomorrow.</p>
+        </div>
+
+        <div class="footer-box">
+            <h3>School Address</h3>
+            <p>📍Divine Public school <br>near institute of technology <br>Delhi,India</p>
+        </div>
+
+        <div class="footer-box">
+            <h3>Contact Us</h3>
+            <p>📞 +91 1234567890</p>
+            <p>✉️ DivinePublicSchool@gmail.com</p>
+        </div>
+
+        <div class="footer-box">
+            <h3>Quick Navigation</h3>
+            <p><a href="index.html">Home</a></p>
+            <p><a href="about.html">About Us</a></p>
+            <p><a href="index.html#principal">Principal's Message</a></p>
+            <p><a href="admission.html">Admission</a></p>
+            <p><a href="notice.html">Notices</a></p>
+        </div>
+
+    </div>
+
+    <div class="copyright">
+        <p>© 2026 Divine Public School. All Rights Reserved.</p>
+    </div>
+
+</footer>
+
+<script>
+document.getElementById("admissionForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const name = document.getElementById("studentName").value.trim();
+
+    document.getElementById("formMessage").textContent =
+        "Thank you, " + name +
+        "! Your admission enquiry was submitted.";
+
+    this.reset();
+});
+</script>
+
+</body>
+</html>
