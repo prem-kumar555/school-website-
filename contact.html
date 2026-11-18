@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us | Divine Public School</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    background: #f4f8ff;
+    color: #082d61;
+}
+
+/* HEADER */
+header {
+    background: linear-gradient(90deg, #032b59, #07509b);
+    color: white;
+    padding: 18px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.logo span {
+    display: block;
+    font-size: 12px;
+    color: #ffca28;
+    letter-spacing: 3px;
+    margin-top: 6px;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    align-items: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #ffca28;
+}
+
+.login-btn {
+    background: #ffca28;
+    color: #073b78;
+    padding: 11px 22px;
+    border-radius: 25px;
+}
+
+/* HERO */
+.contact-hero {
+    min-height: 300px;
+    background: linear-gradient(rgba(3,43,89,0.85), rgba(37, 102, 177, 0.85)),
+                url('https://admin.expatica.com/lu/wp-content/uploads/sites/7/2023/11/classroom-computers.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.hero-content {
+    max-width: 750px;
+}
+
+.hero-content span {
+    color: #ffca28;
+    font-size: 13px;
+    letter-spacing: 3px;
+    font-weight: 600;
+}
+
+.hero-content h1 {
+    color: white;
+    font-size: 42px;
+    margin: 12px 0;
+}
+
+.hero-content p {
+    color: #e4edfa;
+    line-height: 1.8;
+    font-size: 15px;
+}
+
+/* COMMON */
+.section-heading {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-heading span {
+    color: #d49b00;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.section-heading h2 {
+    color: #032b59;
+    font-size: 30px;
+    margin: 10px 0;
+}
+
+.section-heading p {
+    color: #66758a;
+    font-size: 14px;
+}
+
+/* CONTACT INFORMATION */
+.contact-info {
+    padding: 70px 7%;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.info-card {
+    background: #032b59;
+    padding: 30px 22px;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+    transition: 0.3s;
+}
+
+.info-card:hover {
+    transform: translateY(-7px);
+}
+
+.info-icon {
+    width: 60px;
+    height: 60px;
+    background: #fff4cf;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 18px;
+    font-size: 26px;
+}
+
+.info-card h3 {
+    color: white;
+    margin-bottom: 12px;
+    font-size: 19px;
+}
+
+.info-card p {
+    color: #c1d1e6;
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+.info-card a {
+    color: #07509b;
+    text-decoration: none;
+}
+
+/* MESSAGE FORM */
+.message-section {
+    padding: 70px 7%;
+    background: #eaf1fa;
+}
+
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 35px;
+    max-width: 1150px;
+    margin: auto;
+}
+
+.contact-details {
+    background: linear-gradient(145deg, #032b59, #07509b);
+    padding: 40px 30px;
+    border-radius: 12px;
+    color: white;
+}
+
+.contact-details h2 {
+    font-size: 27px;
+    margin-bottom: 15px;
+}
+
+.contact-details > p {
+    color: #dce8f8;
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+.detail-item {
+    display: flex;
+    gap: 15px;
+    margin: 24px 0;
+    align-items: flex-start;
+}
+
+.detail-item span {
+    font-size: 23px;
+}
+
+.detail-item h4 {
+    color: #ffca28;
+    margin-bottom: 5px;
+}
+
+.detail-item p {
+    color: #e4edfa;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.contact-form {
+    background: white;
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+}
+
+.contact-form h2 {
+    color: #032b59;
+    font-size: 25px;
+    margin-bottom: 8px;
+}
+
+.contact-form > p {
+    color: #778398;
+    font-size: 13px;
+    margin-bottom: 25px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    color: #082d61;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #d5deeb;
+    border-radius: 6px;
+    outline: none;
+    font-family: inherit;
+    font-size: 13px;
+    background: #fbfdff;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #07509b;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    background: #032b59;
+    color: white;
+    font-size: 15px;
+    font-weight: 700;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-style:bold;
+}
+
+.submit-btn:hover {
+    background: #f0b900;
+    transform: translateY(-2px);
+}
+
+/* OFFICE HOURS */
+.office-section {
+    padding: 65px 7%;
+    text-align: center;
+    background:#032b59;
+}
+
+.office-box {
+    max-width: 750px;
+    margin: auto;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+}
+
+.office-box h3 {
+    color: #032b59;
+    font-size: 22px;
+    margin-bottom: 18px;
+}
+
+.office-box p {
+    color: black;
+    font-size: 14px;
+    margin: 12px 0;
+}
+.office-section h2{
+    color:white;
+}
+
+/* LOCATION */
+.location-section {
+    padding: 60px 7%;
+    background: #eaf1fa;
+}
+
+.location-box {
+    max-width: 1100px;
+    margin: auto;
+    background: white;
+    padding: 30px;
+    text-align: center;
+    border-radius: 12px;
+}
+
+.location-box h2 {
+    color: #032b59;
+    margin-bottom: 12px;
+}
+
+.location-box p {
+    color: #66758a;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.location-note {
+    margin-top: 15px;
+    font-size: 12px !important;
+}
+
+/* FOOTER */
+footer {
+    background: linear-gradient(90deg, #032b59, #07509b);
+    color: white;
+    padding: 35px 5%;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.footer-box h2,
+.footer-box h3 {
+    margin-bottom: 15px;
+}
+
+.footer-box p {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #e1edff;
+}
+
+.footer-box a {
+    color: #ffca28;
+    text-decoration: none;
+}
+
+.copyright {
+    text-align: center;
+    border-top: 1px solid #557ba5;
+    padding-top: 20px;
+    margin-top: 25px;
+    font-size: 14px;
+}
+/* RESPONSIVE */
+@media(max-width: 900px) {
+    header {
+        justify-content: center;
+    }
+
+    nav {
+        justify-content: center;
+    }
+
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(max-width: 650px) {
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .hero-content h1 {
+        font-size: 30px;
+    }
+
+    .section-heading h2 {
+        font-size: 25px;
+    }
+
+    .contact-form,
+    .contact-details {
+        padding: 25px 20px;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+
+    nav {
+        gap: 12px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="logo">
+        📘 Divine Public School
+        <span>LEARN • GROW • ACHIEVE</span>
+    </div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About US</a>
+        <a href="academics.html">Academics</a>
+        <a href="admission.html">Admission</a>
+        <a href="facilities.html">Facilities</a>
+        <a href="gallery.html" class="active">Gallery</a>
+        <a href="notice.html">Notice</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="login.html" class="login-btn">Login</a>
+    </nav>
+</header>
+
+<!-- HERO SECTION -->
+<section class="contact-hero">
+    <div class="hero-content">
+        <span>WE ARE HERE TO HELP</span>
+        <h1>Contact Us</h1>
+        <p>
+            Have questions about admissions, academics or school activities?
+            Connect with Divine Public School. We would be happy to assist you.
+        </p>
+    </div>
+</section>
+
+<!-- CONTACT INFORMATION -->
+<section class="contact-info">
+
+    <div class="section-heading">
+        <span>GET IN TOUCH</span>
+        <h2>We Would Love to Hear From You</h2>
+        <p>Reach out to us through any of the following contact details.</p>
+    </div>
+
+    <div class="info-grid">
+
+        <div class="info-card">
+            <div class="info-icon">📍</div>
+            <h3>Our Address</h3>
+            <p>
+                Divine Public School<br>
+                Near Institute of Technology<br>
+                Delhi, India
+            </p>
+        </div>
+
+        <div class="info-card">
+            <div class="info-icon">📞</div>
+            <h3>Phone Number</h3>
+            <p>
+                <a href="tel:+911234567890">+91 1234567890</a><br>
+                Contact our school office for assistance.
+            </p>
+        </div>
+
+        <div class="info-card">
+            <div class="info-icon">✉️</div>
+            <h3>Email Address</h3>
+            <p>
+                <a href="mailto:DivinePublicSchool@gmail.com">
+                    DivinePublicSchool@gmail.com
+                </a><br>
+                Send us your queries anytime.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<!-- CONTACT FORM -->
+<section class="message-section">
+
+    <div class="section-heading">
+        <span>CONTACT FORM</span>
+        <h2>Send Us a Message</h2>
+        <p>Fill out the form and share your questions with our school team.</p>
+    </div>
+
+    <div class="contact-wrapper">
+
+        <div class="contact-details">
+            <h2>Let's Connect!</h2>
+            <p>
+                We welcome questions and suggestions from parents,
+                students and visitors. Our school office is available
+                to guide you.
+            </p>
+
+            <div class="detail-item">
+                <span>📍</span>
+                <div>
+                    <h4>Visit Our School</h4>
+                    <p>Divine Public School,Near Institute of Technology,<br>Delhi, India.</p>
+                </div>
+            </div>
+
+            <div class="detail-item">
+                <span>📞</span>
+                <div>
+                    <h4>Call Us</h4>
+                    <p>+91 1234567890</p>
+                </div>
+            </div>
+
+            <div class="detail-item">
+                <span>✉️</span>
+                <div>
+                    <h4>Email Us</h4>
+                    <p>DivinePublicSchool@gmail.com</p>
+                </div>
+            </div>
+        </div>
+
+        <form class="contact-form" id="contactForm">
+
+            <h2>Get in Touch With Us</h2>
+            <p>Please provide your details below.</p>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name"
+                           placeholder="Enter your full name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email"
+                           placeholder="Enter your email" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone"
+                           placeholder="Enter your phone number">
+                </div>
+
+                <div class="form-group">
+                    <label for="subject">Subject *</label>
+                    <select id="subject" required>
+                        <option value="">Select Subject</option>
+                        <option>Admission Enquiry</option>
+                        <option>Academic Information</option>
+                        <option>Fee Related Query</option>
+                        <option>General Enquiry</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Your Message *</label>
+                <textarea id="message"
+                          placeholder="Write your message here..."
+                          required></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">
+                Send 
+            </button>
+
+        </form>
+    </div>
+</section>
+
+<!-- OFFICE HOURS -->
+<section class="office-section">
+
+    <div class="section-heading">
+        <span>VISIT US</span>
+        <h2>School Office Hours</h2>
+        <p>Plan your visit during our regular office timings.</p>
+    </div>
+
+    <div class="office-box">
+        <h3>🕒 Office Timing</h3>
+        <p><strong>Monday – Friday:</strong> 8:00 AM – 3:00 PM</p>
+        <p><strong>Saturday:</strong> 8:00 AM – 1:00 PM</p>
+        <p><strong>Sunday:</strong> Closed</p>
+    </div>
+
+</section>
+
+<!-- LOCATION -->
+<section class="location-section">
+
+    <div class="section-heading">
+        <span>FIND US</span>
+        <h2>Our School Location</h2>
+        <p>We look forward to welcoming you to our campus.</p>
+    </div>
+
+    <div class="location-box">
+        <h2>📍 Divine Public School</h2>
+        <p>
+            Near Institute of Technology,<br>
+            Delhi, India.
+        </p>
+        <p class="location-note">
+            Please confirm the school's exact address before visiting.
+        </p>
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer id="contact">
+    <div class="footer-content">
+
+        <div class="footer-box">
+            <h2>📘 Divine Public School</h2>
+            <p>Learn • Grow • Achieve</p>
+            <p>Shaping Bright Minds for a Better Tomorrow.</p>
+        </div>
+
+        <div class="footer-box">
+            <h3>School Address</h3>
+            <p>📍Divine Public school <br>near institute of technology <br>Delhi,India</p>
+        </div>
+
+        <div class="footer-box">
+            <h3>Contact Us</h3>
+            <p>📞 +91 1234567890</p>
+            <p>✉️ DivinePublicSchool@gmail.com</p>
+        </div>
+
+        <div class="footer-box">
+            <h3>Quick Navigation</h3>
+            <p><a href="index.html#home">Home</a></p>
+            <p><a href="about.html">About Us</a></p>
+            <p><a href="index.html#principal">Principal's Message</a></p>
+            <p><a href="admission.html">Admission</a></p>
+            <p><a href="notice.html">Notices</a></p>
+        </div>
+
+    </div>
+
+    <div class="copyright">
+        <p>
+            © 2026 Divine Public School.
+            All Rights Reserved.
+        </p>
+    </div>
+</footer>
+   
+
+</footer>
+
+<script>
+document.getElementById("contactForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    alert("Thank you for contacting Divine Public School! This is a demo form. Your message has not been sent.");
+
+    this.reset();
+});
+</script>
+
+</body>
+</html>

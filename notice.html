@@ -3,26 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Notice & Circulars | Divine Public School</title>
 
-<title>Divine Public School</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-
-/* GENERAL */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
-
-html {
-    scroll-behavior: smooth;
 }
 
 body {
-    background: #f4f8ff;
+    font-family: 'Poppins', Arial, sans-serif;
+    background: #f4f7fc;
     color: #082d61;
+}
+
+a {
+    text-decoration: none;
 }
 
 /* HEADER */
@@ -69,7 +68,8 @@ nav a {
     transition: 0.3s;
 }
 
-nav a:hover {
+nav a:hover,
+nav a.active {
     color: #ffca28;
 }
 
@@ -78,6 +78,582 @@ nav a:hover {
     color: #073b78;
     padding: 11px 22px;
     border-radius: 25px;
+}
+
+
+/* HERO SECTION */
+.notice-hero {
+    position: relative;
+    min-height: 390px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background:
+        linear-gradient(90deg, rgba(3,43,89,0.94), rgba(3,43,89,0.70)),
+        url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1600&q=85');
+
+    background-position: center;
+    background-size: cover;
+    padding: 75px 7%;
+    color: white;
+}
+
+.hero-content {
+    max-width: 780px;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-tag {
+    display: inline-block;
+    color: #ffca28;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 12px;
+}
+
+.hero-content h1 {
+    font-size: 46px;
+    font-weight: 800;
+    line-height: 1.2;
+    margin: 12px 0 18px;
+    color: white;
+}
+
+.hero-content h1 span {
+    color: #ffca28;
+}
+
+.hero-content p {
+    color: #e0eafa;
+    font-size: 15px;
+    line-height: 1.9;
+    max-width: 650px;
+    margin-bottom: 25px;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 25px;
+}
+button {
+    border-radius: 25px;
+}
+.hero-btn {
+    display: inline-block;
+    padding: 13px 25px;
+    border-radius: 5px;
+    font-size: 13px;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.hero-btn-primary {
+    background: #ffca28;
+    color: #032b59;
+    border: 2px solid #ffca28;
+}
+
+.hero-btn-primary:hover {
+    background: white;
+    border-color: white;
+}
+
+.hero-btn-outline {
+    color: white;
+    border: 2px solid white;
+}
+
+.hero-btn-outline:hover {
+    background: white;
+    color: #032b59;
+}
+
+.breadcrumb {
+    margin-top: 30px;
+    font-size: 12px;
+    color: #dce8f8;
+}
+
+.breadcrumb a {
+    color: #ffca28;
+    transition: 0.3s;
+}
+
+.breadcrumb a:hover {
+    color: white;
+}
+
+/* HERO RESPONSIVE */
+@media(max-width: 650px) {
+    .notice-hero {
+        min-height: 350px;
+        padding: 60px 6%;
+    }
+
+    .hero-content h1 {
+        font-size: 33px;
+    }
+
+    .hero-content p {
+        font-size: 13px;
+    }
+
+    .hero-tag {
+        font-size: 10px;
+        letter-spacing: 2px;
+    }
+
+    .hero-buttons {
+        gap: 10px;
+    }
+
+    .hero-btn {
+        padding: 11px 17px;
+        font-size: 12px;
+    }
+}
+
+/* MAIN CONTAINER */
+.container {
+    width: 86%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* IMPORTANT NOTICE */
+.featured-section {
+    padding: 45px 0 25px;
+}
+
+.featured-card {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 25px;
+    background: white;
+    border-left: 5px solid #ffca28;
+    border-radius: 10px;
+    padding: 28px 32px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+.featured-label {
+    display: inline-block;
+    color: #b37e00;
+    background: #fff4d2;
+    padding: 6px 12px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    border-radius: 4px;
+}
+
+.featured-card h2 {
+    color: #032b59;
+    font-size: 21px;
+    margin: 13px 0 8px;
+}
+
+.featured-card p {
+    color: #718096;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.featured-date {
+    align-self: center;
+    text-align: center;
+    background: #f1f5fb;
+    padding: 15px 22px;
+    border-radius: 8px;
+    min-width: 100px;
+}
+
+.featured-date strong {
+    display: block;
+    color: #032b59;
+    font-size: 29px;
+}
+
+.featured-date span {
+    font-size: 10px;
+    color: #738198;
+    font-weight: 600;
+}
+
+/* NOTICE BOARD */
+.notice-section {
+    padding: 55px 0 75px;
+}
+
+.section-heading {
+    margin-bottom: 28px;
+}
+
+.section-heading span {
+    color: #b88700;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.section-heading h2 {
+    color: #032b59;
+    font-size: 29px;
+    margin: 8px 0;
+}
+
+.section-heading p {
+    color: #78879b;
+    font-size: 13px;
+}
+
+/* SEARCH AND FILTER */
+.notice-tools {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    background: white;
+    padding: 17px;
+    border-radius: 9px;
+    margin-bottom: 25px;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.04);
+}
+
+.search-box {
+    flex: 1;
+    min-width: 200px;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 13px 15px;
+    border: 1px solid #dce4ef;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 12px;
+    outline: none;
+}
+
+.search-box input:focus {
+    border-color: #07509b;
+}
+
+.filter-box select {
+    padding: 13px 15px;
+    border: 1px solid #dce4ef;
+    border-radius: 6px;
+    font-family: inherit;
+    color: #082d61;
+    font-size: 12px;
+    background: white;
+    outline: none;
+}
+
+/* NOTICE LIST */
+.notice-list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.notice-item {
+    display: grid;
+    grid-template-columns: 85px 1fr auto;
+    align-items: center;
+    gap: 25px;
+    padding: 28px;
+    background: white;
+    border: 1px solid #edf1f7;
+    border-radius: 9px;
+    transition: 0.3s;
+}
+
+.notice-item:hover {
+    border-color: #b9cce3;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 22px rgba(3,43,89,0.07);
+}
+
+.notice-date {
+    background: #f0f5fc;
+    border-radius: 7px;
+    text-align: center;
+    padding: 15px 7px;
+}
+
+.notice-date strong {
+    display: block;
+    color: #032b59;
+    font-size: 30px;
+}
+
+.notice-date span {
+    color: #b88700;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.notice-info {
+    min-width: 0;
+}
+
+.notice-category {
+    color: #07509b;
+    background: #eaf2fc;
+    padding: 6px 11px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.notice-info h3 {
+    color: #032b59;
+    font-size: 18px;
+    margin: 12px 0 8px;
+}
+
+.notice-info p {
+    color: #7b899b;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.notice-meta {
+    color: #9ba7b7;
+    font-size: 12px;
+    margin-top: 11px;
+}
+
+.notice-action a {
+    display: inline-block;
+    border: 1px solid #07509b;
+    color: #07509b;
+    padding: 12px 17px;
+    border-radius: 5px;
+    font-size: 13px;
+    font-weight: 600;
+    white-space: nowrap;
+    transition: 0.3s;
+}
+
+.notice-action a:hover {
+    background: #07509b;
+    color: white;
+}
+
+.no-notice {
+    display: none;
+    background: white;
+    text-align: center;
+    padding: 35px;
+    color: #718096;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+/* EVENTS */
+.events-section {
+    padding: 65px 0;
+    background: #eaf1fa;
+}
+
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.event-card {
+    background: white;
+    border-radius: 10px;
+    padding: 30px;
+    border-top: 4px solid #ffca28;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.04);
+}
+
+.event-icon {
+    font-size: 29px;
+    margin-bottom: 15px;
+}
+
+.event-card h3 {
+    color: #032b59;
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+
+.event-card p {
+    color: #78879b;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.event-card span {
+    display: inline-block;
+    margin-top: 16px;
+    color: #07509b;
+    background: #edf4fc;
+    padding: 7px 12px;
+    border-radius: 5px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+/* NOTICE GUIDELINES */
+.guidelines-section {
+    padding: 65px 0;
+}
+
+.guidelines-box {
+    background: white;
+    padding: 100px;
+    border-radius: 10px;
+    border: 1px solid #e7edf5;
+}
+
+.guidelines-box h2 {
+    color: #032b59;
+    font-size: 40px;
+    margin-bottom: 5px;
+}
+
+.guidelines-box ul {
+    padding-left: 20px;
+}
+
+.guidelines-box li {
+    color: #4f73aa;
+    font-size: 12px;
+    line-height: 2.1;
+}
+
+/* FOOTER */
+footer {
+    background: linear-gradient(90deg, #032b59, #07509b);
+    color: white;
+    padding: 35px 5%;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.footer-box h2,
+.footer-box h3 {
+    margin-bottom: 18px;
+}
+
+.footer-box p {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #e1edff;
+}
+
+.footer-box a {
+    color: #ffca28;
+    text-decoration: none;
+}
+
+.copyright {
+    text-align: center;
+    border-top: 1px solid #557ba5;
+    padding-top: 20px;
+    margin-top: 25px;
+    font-size: 14px;
+}
+
+/* RESPONSIVE */
+@media(max-width: 900px) {
+    header {
+        justify-content: center;
+    }
+
+    nav {
+        justify-content: center;
+    }
+
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .events-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(max-width: 650px) {
+    .container {
+        width: 90%;
+    }
+
+    .logo {
+        width: 100%;
+        text-align: center;
+        font-size: 21px;
+    }
+
+    nav {
+        width: 100%;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
+
+    .hero-content h1 {
+        font-size: 32px;
+    }
+
+    .featured-card {
+        grid-template-columns: 1fr;
+    }
+
+    .featured-date {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .notice-item {
+        grid-template-columns: 70px 1fr;
+        gap: 16px;
+        padding: 20px;
+    }
+
+    .notice-action {
+        grid-column: 2;
+    }
+
+    .notice-action a {
+        padding: 8px 12px;
+    }
+
+    .events-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-heading h2 {
+        font-size: 24px;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+
+    nav {
+        gap: 12px;
+    }
 }
 </style>
 </head>
@@ -99,11 +675,454 @@ nav a:hover {
         <a href="admission.html">Admission</a>
         <a href="facilities.html">Facilities</a>
         <a href="gallery.html">Gallery</a>
-        <a href="notice.html">Notice</a>
-        <a href="contact.html">Contact</a>
+        <a href="notice.html" class="active">Notice</a>
+        <a href="contact.html">Contact Us</a>
         <a href="login.html" class="login-btn">Login</a>
     </nav>
+
 </header>
+
+
+<!-- HERO SECTION -->
+<section class="notice-hero">
+
+    <div class="hero-content">
+
+        <span class="hero-tag">
+            DIVINE PUBLIC SCHOOL • INFORMATION CENTRE
+        </span>
+
+        <h1>
+            Stay Updated With
+            <span>School Notices</span>
+        </h1>
+
+        <p>
+            Stay informed about the latest school announcements,
+            important circulars, examination updates, academic
+            activities and upcoming events. Find all essential
+            school information in one place.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#noticeList" class="hero-btn hero-btn-primary">
+                Explore Notices →
+            </a>
+
+            <a href="contact.html" class="hero-btn hero-btn-outline">
+                Contact School
+            </a>
+        </div>
+    </div>
+</section>
+
+
+<!-- MAIN CONTENT -->
+<main>
+
+<div class="container">
+
+    <!-- FEATURED NOTICE -->
+    <section class="featured-section">
+
+        <div class="featured-card">
+
+            <div>
+                <span class="featured-label">★ IMPORTANT ANNOUNCEMENT</span>
+
+                <h2>Important School Announcements & Updates</h2>
+
+                <p>
+                    Students and parents are requested to regularly visit
+                    the notice board for important information regarding
+                    academics, school activities, examinations and events.
+                </p>
+            </div>
+
+            <div class="featured-date">
+                <strong>18</strong>
+                <span>NOV 2026</span>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- LATEST CIRCULARS -->
+    <section class="notice-section">
+
+        <div class="section-heading">
+            <span>OFFICIAL SCHOOL UPDATES</span>
+            <h2>Latest Notices & Circulars</h2>
+            <p>
+                Access important school information and announcements.
+            </p>
+        </div>
+
+        <!-- SEARCH AND FILTER -->
+        <div class="notice-tools">
+
+            <div class="search-box">
+                <input type="text" id="noticeSearch"
+                       placeholder="🔍 Search notices by title...">
+            </div>
+
+            <div class="filter-box">
+                <select id="noticeFilter">
+                    <option value="all">All Categories</option>
+                    <option value="academic">Academic</option>
+                    <option value="examination">Examination</option>
+                    <option value="event">Events</option>
+                    <option value="general">General</option>
+                    <option value="holiday">Holiday</option>
+                </select>
+            </div>
+
+        </div>
+
+        <!-- NOTICE ITEMS -->
+        <div class="notice-list" id="noticeList">
+
+            <article class="notice-item" data-category="academic">
+
+                <div class="notice-date">
+                    <strong>18</strong>
+                    <span>NOV 2026</span>
+                </div>
+
+                <div class="notice-info">
+                    <span class="notice-category">ACADEMIC</span>
+                    <h3>Parent-Teacher Meeting Notice</h3>
+                    <p>
+                        Parents are invited to discuss their child's
+                        academic progress and overall development.
+                        Please check the school communication for details.
+                    </p>
+                    <div class="notice-meta">
+                        Academic Session 2026–27
+                    </div>
+                </div>
+
+                <div class="notice-action">
+                    <a href="contact.html">Enquire Now →</a>
+                </div>
+
+            </article>
+
+            <article class="notice-item" data-category="academic">
+
+                <div class="notice-date">
+                    <strong>20</strong>
+                    <span>NOV 2026</span>
+                </div>
+
+                <div class="notice-info">
+                    <span class="notice-category">ACADEMIC</span>
+                    <h3>Assignment Submission Guidelines</h3>
+                    <p>
+                        Students are requested to complete and submit
+                        their pending assignments to their respective
+                        subject teachers.
+                    </p>
+                    <div class="notice-meta">
+                        For All Classes
+                    </div>
+                </div>
+
+                <div class="notice-action">
+                    <a href="contact.html">Enquire Now →</a>
+                </div>
+
+            </article>
+
+            <article class="notice-item" data-category="examination">
+
+                <div class="notice-date">
+                    <strong>24</strong>
+                    <span>NOV 2026</span>
+                </div>
+
+                <div class="notice-info">
+                    <span class="notice-category">EXAMINATION</span>
+                    <h3>Examination Preparation Guidelines</h3>
+                    <p>
+                        Students should complete their syllabus,
+                        revise important topics and follow the
+                        instructions provided by subject teachers.
+                    </p>
+                    <div class="notice-meta">
+                        Classes X and XII
+                    </div>
+                </div>
+
+                <div class="notice-action">
+                    <a href="contact.html">Enquire Now →</a>
+                </div>
+
+            </article>
+
+            <article class="notice-item" data-category="event">
+
+                <div class="notice-date">
+                    <strong>02</strong>
+                    <span>DEC 2026</span>
+                </div>
+
+                <div class="notice-info">
+                    <span class="notice-category">EVENT</span>
+                    <h3>Annual Function Announcement</h3>
+                    <p>
+                        Students participating in cultural performances
+                        should follow the practice schedule shared by
+                        their respective coordinators.
+                    </p>
+                    <div class="notice-meta">
+                        Cultural Activities
+                    </div>
+                </div>
+
+                <div class="notice-action">
+                    <a href="contact.html">Enquire Now →</a>
+                </div>
+
+            </article>
+
+            <article class="notice-item" data-category="event">
+
+                <div class="notice-date">
+                    <strong>10</strong>
+                    <span>DEC 2026</span>
+                </div>
+
+                <div class="notice-info">
+                    <span class="notice-category">EVENT</span>
+                    <h3>Annual Sports Competition</h3>
+                    <p>
+                        Students are encouraged to participate in
+                        different sporting activities and demonstrate
+                        teamwork and sportsmanship.
+                    </p>
+                    <div class="notice-meta">
+                        Sports Department
+                    </div>
+                </div>
+
+                <div class="notice-action">
+                    <a href="contact.html">Enquire Now →</a>
+                </div>
+
+            </article>
+
+            <article class="notice-item" data-category="holiday">
+
+                <div class="notice-date">
+                    <strong>15</strong>
+                    <span>DEC 2026</span>
+                </div>
+
+                <div class="notice-info">
+                    <span class="notice-category">HOLIDAY</span>
+                    <h3>Holiday Calendar Information</h3>
+                    <p>
+                        Parents and students should refer to the
+                        official school holiday calendar for
+                        vacation and holiday-related information.
+                    </p>
+                    <div class="notice-meta">
+                        General Information
+                    </div>
+                </div>
+
+                <div class="notice-action">
+                    <a href="contact.html">Enquire Now →</a>
+                </div>
+
+            </article>
+
+        </div>
+
+        <div class="no-notice" id="noNotice">
+            No matching notices found. Please try another search.
+        </div>
+
+    </section>
+
+</div>
+
+<!-- UPCOMING EVENTS -->
+<section class="events-section">
+
+    <div class="container">
+
+        <div class="section-heading">
+            <span>SCHOOL CALENDAR</span>
+            <h2>Upcoming Events</h2>
+            <p>Stay connected with upcoming school activities.</p>
+        </div>
+
+        <div class="events-grid">
+
+            <div class="event-card">
+                <div class="event-icon">🎭</div>
+                <h3>Annual Function</h3>
+                <p>
+                    A celebration of students' talent, creativity
+                    and achievements through cultural performances.
+                </p>
+                <span>02 December 2026</span>
+            </div>
+
+            <div class="event-card">
+                <div class="event-icon">🏆</div>
+                <h3>Sports Competition</h3>
+                <p>
+                    An opportunity for students to demonstrate
+                    teamwork, sportsmanship and sporting skills.
+                </p>
+                <span>10 December 2026</span>
+            </div>
+
+            <div class="event-card">
+                <div class="event-icon">🎨</div>
+                <h3>Art & Creativity Day</h3>
+                <p>
+                    Students showcase their imagination and
+                    artistic abilities through creative activities.
+                </p>
+                <span>15 December 2026</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- GUIDELINES -->
+<section class="guidelines-section">
+
+    <div class="container">
+
+        <div class="guidelines-box">
+            <h2>Important Notice Board Guidelines</h2>
+
+            <ul>
+                <li>Students should check the notice board regularly.</li>
+                <li>Parents should read important school announcements carefully.</li>
+                <li>Follow the dates and instructions mentioned in official circulars.</li>
+                <li>Contact the school office for clarification about any notice.</li>
+                <li>Only official school communications should be treated as confirmed announcements.</li>
+            </ul>
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer id="contact">
+
+    <div class="footer-content">
+
+        <div class="footer-box">
+
+            <h2>📘 Divine Public School</h2>
+
+            <p>Learn • Grow • Achieve</p>
+
+            <p>Shaping Bright Minds for a Better Tomorrow.</p>
+
+        </div>
+
+        <div class="footer-box">
+
+            <h3>School Address</h3>
+
+            <p>📍Divine Public school <br>near institute of technology <br>Delhi,India.</p>
+
+        </div>
+
+        <div class="footer-box">
+
+            <h3>Contact Us</h3>
+
+            <p>📞 +91 1234567890</p>
+
+            <p>✉️ DivinePublicSchool@gmail.com</p>
+
+        </div>
+
+        <div class="footer-box">
+
+            <h3>Quick Navigation</h3>
+
+            <p><a href="index.html">Home</a></p>
+            <p><a href="about.html">About Us</a></p>
+            <p><a href="index.html#principal">Principal's Message</a></p>
+            <p><a href="admission.html">Admission</a></p>
+            <p><a href="notice.html">Notices</a></p>
+
+        </div>
+
+    </div>
+
+    <div class="copyright">
+
+        <p>
+            © 2026 Divine Public School.
+            All Rights Reserved.
+        </p>
+
+    </div>
+
+</footer>
+
+<!-- SEARCH AND FILTER JAVASCRIPT -->
+<script>
+const searchInput = document.getElementById("noticeSearch");
+const filterSelect = document.getElementById("noticeFilter");
+const noticeItems = document.querySelectorAll(".notice-item");
+const noNotice = document.getElementById("noNotice");
+
+function filterNotices() {
+
+    const searchText = searchInput.value.toLowerCase().trim();
+    const selectedCategory = filterSelect.value;
+
+    let visibleCount = 0;
+
+    noticeItems.forEach(function(notice) {
+
+        const title = notice.querySelector("h3").textContent.toLowerCase();
+        const description = notice.querySelector("p").textContent.toLowerCase();
+        const category = notice.dataset.category;
+
+        const matchesSearch =
+            title.includes(searchText) ||
+            description.includes(searchText);
+
+        const matchesCategory =
+            selectedCategory === "all" ||
+            category === selectedCategory;
+
+        if (matchesSearch && matchesCategory) {
+            notice.style.display = "grid";
+            visibleCount++;
+        } else {
+            notice.style.display = "none";
+        }
+
+    });
+
+    noNotice.style.display = visibleCount === 0 ? "block" : "none";
+}
+
+searchInput.addEventListener("input", filterNotices);
+filterSelect.addEventListener("change", filterNotices);
+</script>
 
 </body>
 </html>

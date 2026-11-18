@@ -33,7 +33,7 @@ body {
     color: #26364a;
 }
 
-/* HEADER - UNCHANGED */
+/* HEADER */
 header {
     background: linear-gradient(90deg, #032b59, #07509b);
     color: white;
@@ -45,38 +45,47 @@ header {
     gap: 15px;
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 1000;
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
 .logo {
-    font-size: 24px;
-    font-weight: 700;
+    font-size: 25px;
+    font-weight: bold;
 }
 
 .logo span {
     display: block;
-    font-size: 11px;
+    font-size: 12px;
     color: #ffca28;
     letter-spacing: 3px;
-    margin-top: 5px;
+    margin-top: 6px;
 }
 
 nav {
     display: flex;
-    gap: 18px;
     flex-wrap: wrap;
+    gap: 18px;
+    align-items: center;
 }
 
 nav a {
     color: white;
     text-decoration: none;
     font-size: 14px;
-    font-weight: 600;
+    font-weight: bold;
+    transition: 0.3s;
 }
 
 nav a:hover {
-    color: var(--gold);
+    color: #ffca28;
+}
+
+.login-btn {
+    background: #ffca28;
+    color: #073b78;
+    padding: 11px 22px;
+    border-radius: 25px;
 }
 
 /* HERO */
@@ -320,47 +329,78 @@ nav a:hover {
     color: var(--gold);
 }
 
-/* FOOTER - UNCHANGED */
+/* FOOTER */
 footer {
     background: linear-gradient(90deg, #032b59, #07509b);
     color: white;
-    padding: 30px 5%;
-    text-align: center;
+    padding: 35px 5%;
 }
 
-footer h3 {
-    margin-bottom: 8px;
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
 }
 
-footer p {
-    font-size: 13px;
+.footer-box h2,
+.footer-box h3 {
+    margin-bottom: 15px;
+}
+
+.footer-box p {
+    font-size: 14px;
     line-height: 1.8;
+    color: #e1edff;
+}
+
+.footer-box a {
+    color: #ffca28;
+    text-decoration: none;
+}
+
+.copyright {
+    text-align: center;
+    border-top: 1px solid #557ba5;
+    padding-top: 20px;
+    margin-top: 25px;
+    font-size: 14px;
 }
 
 /* RESPONSIVE */
-@media(max-width: 1000px) {
+@media(max-width: 950px) {
+    header {
+        justify-content: center;
+    }
+
+    nav {
+        justify-content: center;
+    }
+
     .photo-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-content {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media(max-width: 600px) {
-    header {
-        justify-content: center;
-    }
-
     .logo {
         text-align: center;
         font-size: 21px;
     }
 
     nav {
-        justify-content: center;
         gap: 12px;
     }
 
     nav a {
         font-size: 12px;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
     }
 
     .hero h1 {
@@ -402,7 +442,7 @@ footer p {
 
 <body>
 
-<!-- HEADER - UNCHANGED -->
+<!-- HEADER -->
 <header>
     <div class="logo">
         📘 Divine Public School
@@ -416,7 +456,9 @@ footer p {
         <a href="admission.html">Admission</a>
         <a href="facilities.html">Facilities</a>
         <a href="gallery.html">Gallery</a>
-        <a href="contact.html">Contact</a>
+        <a href="notice.html">Notice</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="login.html" class="login-btn">Login</a>
     </nav>
 </header>
 
@@ -458,11 +500,39 @@ footer p {
     <p class="lightbox-caption" id="lightbox-caption"></p>
 </div>
 
-<!-- FOOTER - UNCHANGED -->
-<footer>
-    <h3>📘 Divine Public School</h3>
-    <p>Learn • Grow • Achieve</p>
-    <p>© 2026 Divine Public School. All Rights Reserved.</p>
+<!-- FOOTER -->
+<footer id="contact">
+    <div class="footer-content">
+        <div class="footer-box">
+            <h2>📘 Divine Public School</h2>
+            <p>Learn • Grow • Achieve</p>
+            <p>Shaping Bright Minds for a Better Tomorrow.</p>
+        </div>
+
+        <div class="footer-box">
+            <h3>School Address</h3>
+            <p>📍Divine Public school <br>near institute of technology <br>Delhi,India.</p>
+        </div>
+
+        <div class="footer-box">
+            <h3>Contact Us</h3>
+            <p>📞 +91 1234567890</p>
+            <p>✉️ DivinePublicSchool@gmail.com</p>
+        </div>
+
+        <div class="footer-box">
+            <h3>Quick Navigation</h3>
+            <p><a href="index.html">Home</a></p>
+            <p><a href="about.html">About Us</a></p>
+            <p><a href="index.html#principal">Principal's Message</a></p>
+            <p><a href="admission.html">Admission</a></p>
+            <p><a href="notice.html">Notices</a></p>
+        </div>
+    </div>
+
+    <div class="copyright">
+        <p>© 2026 Divine Public School. All Rights Reserved.</p>
+    </div>
 </footer>
 
 <script>
@@ -475,12 +545,12 @@ const galleryData = [
     title: "Classroom Learning",
     description: "Creating a positive learning environment where students gain knowledge and develop skills.",
     photos: [
-        ["https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=900&q=85", "Interactive Classroom"],
-        ["https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=900&q=85", "Student Learning"],
-        ["https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&w=900&q=85", "Group Study"],
-        ["https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=900&q=85", "Classroom Activities"],
-        ["https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=900&q=85", "Learning Together"],
-        ["https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&w=900&q=85", "Knowledge Sharing"]
+        ["https://images.stockcake.com/public/6/b/b/6bbf911b-8207-4085-927f-3a621d3dc81a_large/interactive-classroom-activity-stockcake.jpg", "Interactive Classroom"],
+        ["https://tse2.mm.bing.net/th/id/OIP.euLXdooxUs520lTLtexsOwAAAA?r=0&rs=1&pid=ImgDetMain&o=7&rm=3", "Student Learning"],
+        ["https://static.wixstatic.com/media/863f70_5a66c1769f0043429dd90bbb4ba527be~mv2.webp/v1/fill/w_828,h_547,al_c,q_85,enc_avif,quality_auto/863f70_5a66c1769f0043429dd90bbb4ba527be~mv2.webp", "Group Study"],
+        ["https://images.stockcake.com/public/4/1/0/410d3371-a803-4c5a-a1cb-a35d18909944_large/focused-classroom-activity-stockcake.jpg", "Classroom Activities"],
+        ["https://images.stockcake.com/public/1/8/0/180942e3-beb7-4e9a-9097-71433ad6a379_large/students-learning-together-stockcake.jpg", "Learning Together"],
+        ["https://skalvi.com/wp-content/uploads/2026/01/Untitled-design-8-1024x576.png", "Knowledge Sharing"]
     ]
 },
 
@@ -489,9 +559,9 @@ const galleryData = [
     title: "Sports Activities",
     description: "Encouraging teamwork, discipline, fitness and sportsmanship.",
     photos: [
-        ["https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=900&q=85", "Running Activities"],
-        ["https://images.unsplash.com/photo-1521412644187-c49fa049e84d?auto=format&fit=crop&w=900&q=85", "Outdoor Sports"],
-        ["https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=900&q=85", "Fitness Activities"],
+        ["https://www.sdcc.ie/images_upload/en/activesouthdublin/get-active/active-youth/Primary-School-Fun-Run-%E2%80%93-Children-Running-on-Track-Outdoors.png", "Running Activities"],
+        ["https://lmps.ind.in/wp-content/uploads/2025/01/IMG_0504-1024x683.jpg", "Outdoor Sports"],
+        ["https://tse2.mm.bing.net/th/id/OIP.6PYmTLRvxF-4u6sPTnvw1AHaDt?r=0&rs=1&pid=ImgDetMain&o=7&rm=3", "Fitness Activities"],
         ["https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=900&q=85", "Athletic Events"],
         ["https://images.unsplash.com/photo-1521412644187-c49fa049e84d?auto=format&fit=crop&w=900&q=85", "Team Sports"],
         ["https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=900&q=85", "Sports Training"]
@@ -503,11 +573,11 @@ const galleryData = [
     title: "Annual Function",
     description: "Celebrating talent, achievements and unforgettable cultural performances.",
     photos: [
-        ["https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=900&q=85", "Stage Performance"],
-        ["https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=900&q=85", "Cultural Celebration"],
-        ["https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=900&q=85", "School Events"],
-        ["https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=900&q=85", "Dance Performance"],
-        ["https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=900&q=85", "Special Moments"],
+        ["https://img.freepik.com/premium-photo/students-performing-play-stage-school-auditorium-parents-audience_1302739-14382.jpg", "Stage Performance"],
+        ["https://painfreeproductivity.com/wp-content/uploads/2025/05/image_6838c6486191d7.76559500-1.jpeg", "Cultural Celebration"],
+        ["https://images.pexels.com/photos/26593312/pexels-photo-26593312.jpeg?cs=srgb&dl=pexels-nasirun-khan-102497153-26593312.jpg&fm=jpg", "School Events"],
+        ["https://th.bing.com/th/id/OIP.s7msfCtJCf9qObMxo3VvGQHaFQ?r=0&o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3", "Dance Performance"],
+        ["https://salwanpublicschooltdsc.edu.in/wp-content/uploads/2024/11/IMG-20241019-WA0013.jpg", "Special Moments"],
         ["https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=900&q=85", "Celebration Day"]
     ]
 },
@@ -517,12 +587,12 @@ const galleryData = [
     title: "Art & Creativity",
     description: "Inspiring students to express imagination through art and creative work.",
     photos: [
-        ["https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=900&q=85", "Creative Artwork"],
-        ["https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?auto=format&fit=crop&w=900&q=85", "Painting Activities"],
-        ["https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?auto=format&fit=crop&w=900&q=85", "Art and Craft"],
-        ["https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=900&q=85", "Creative Designs"],
-        ["https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?auto=format&fit=crop&w=900&q=85", "Colourful Paintings"],
-        ["https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?auto=format&fit=crop&w=900&q=85", "Craft Activities"]
+        ["https://static.vecteezy.com/system/resources/thumbnails/041/894/267/small_2x/ai-generated-a-classroom-transformed-into-a-stage-for-artistic-expression-and-creative-exploration-photo.jpeg", "Creative Artwork"],
+        ["https://cdn.cdnparenting.com/articles/2018/04/338324834-H.jpg", "Painting Activities"],
+        ["https://tse4.mm.bing.net/th/id/OIP.gOU_Sw_vP71WF_1lZRFzaAHaE7?r=0&rs=1&pid=ImgDetMain&o=7&rm=3", "Art and Craft"],
+        ["https://arteascuola.com/wp-content/uploads/2023/05/IMG_3406-copia-scaled.jpg", "Creative Designs"],
+        ["https://static.vecteezy.com/system/resources/thumbnails/050/357/732/small_2x/students-work-together-to-create-a-colorful-mural-on-the-side-of-the-school-building-showcasing-the-diversity-of-plants-grown-in-their-edible-schoolyard-photo.jpg", "Colourful Paintings"],
+        ["https://static.wixstatic.com/media/cf3ea2_104917770eda42f0ac90a0945e1636d9~mv2.webp/v1/fill/w_980,h_551,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/cf3ea2_104917770eda42f0ac90a0945e1636d9~mv2.webp", "Craft Activities"]
     ]
 },
 
@@ -531,12 +601,9 @@ const galleryData = [
     title: "Independence Day",
     description: "Celebrating freedom, unity and patriotism with pride and enthusiasm.",
     photos: [
-        ["https://images.unsplash.com/photo-1532375810709-75b1da00537c?auto=format&fit=crop&w=900&q=85", "National Celebration"],
-        ["https://images.unsplash.com/photo-1509099836639-18ba1795216d?auto=format&fit=crop&w=900&q=85", "School Celebration"],
-        ["https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?auto=format&fit=crop&w=900&q=85", "Unity and Pride"],
-        ["https://images.unsplash.com/photo-1532375810709-75b1da00537c?auto=format&fit=crop&w=900&q=85", "Patriotic Moments"],
-        ["https://images.unsplash.com/photo-1509099836639-18ba1795216d?auto=format&fit=crop&w=900&q=85", "National Spirit"],
-        ["https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?auto=format&fit=crop&w=900&q=85", "Celebrating Freedom"]
+        ["https://i.pinimg.com/736x/7e/0d/f7/7e0df737f0e400df93188644506609e5.jpg", "Patriotic Moments"],
+        ["https://2.bp.blogspot.com/-ZX515I6XrRM/Tk-BCsMOzKI/AAAAAAAAADE/QAyKVUDXg-E/s1600/independence+day.JPG", "National Spirit"],
+        ["https://presidencyschoolnorth.org/wp-content/uploads/2024/10/E13.webp", "Celebrating Freedom"]
     ]
 },
 
@@ -545,12 +612,9 @@ const galleryData = [
     title: "Library",
     description: "Discovering the joy of reading and exploring a world of knowledge.",
     photos: [
-        ["https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=900&q=85", "Library Bookshelves"],
-        ["https://images.unsplash.com/photo-1507738978512-35798112892c?auto=format&fit=crop&w=900&q=85", "Reading Space"],
-        ["https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=900&q=85", "Book Collection"],
-        ["https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=900&q=85", "Knowledge Centre"],
-        ["https://images.unsplash.com/photo-1507738978512-35798112892c?auto=format&fit=crop&w=900&q=85", "Quiet Reading Area"],
-        ["https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=900&q=85", "Learning Through Books"]
+        ["https://thumbs.dreamstime.com/b/school-library-bookshelves-filled-reading-materials-students-faculty-school-library-bookshelves-filled-276133085.jpg", "Library Interior"],
+        ["https://i.pinimg.com/originals/91/a1/94/91a194704c4353a71c9b5a14bcbc6f6a.jpg", "Book Collection"],
+        ["https://d2rzw8waxoxhv2.cloudfront.net/imagine/medium/hes91977/1666036495453-671-60.jpg", "Quiet Reading Area"],
     ]
 },
 
@@ -559,12 +623,9 @@ const galleryData = [
     title: "Football Competition",
     description: "Encouraging teamwork, discipline and sportsmanship through football.",
     photos: [
-        ["https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=900&q=85", "Football Match"],
-        ["https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=900&q=85", "Football Training"],
-        ["https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=900&q=85", "Team Practice"],
-        ["https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=900&q=85", "Football Tournament"],
-        ["https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=900&q=85", "Team Performance"],
-        ["https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=900&q=85", "Sports Competition"]
+        ["https://www.daviessports.co.uk/media/suynaub5/davies_sports_3v3_football_blog_header-1.png?rmode=max&width=500&height=500", "Football Match"],
+        ["https://www.centralfoundationboys.co.uk/wp-content/uploads/2022/08/Y8-Y9-Pre-Season-Football-2022-2.jpg", "Football Training"],
+        ["https://tse2.mm.bing.net/th/id/OIP.cZaer3b4t2dtTdZ_wFYQnAHaE4?r=0&rs=1&pid=ImgDetMain&o=7&rm=3", "football Competition"]
     ]
 },
 
@@ -573,12 +634,9 @@ const galleryData = [
     title: "Science Activities",
     description: "Promoting curiosity, innovation and practical learning through experiments.",
     photos: [
-        ["https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=900&q=85", "Science Experiments"],
-        ["https://images.unsplash.com/photo-1507413245164-6160d8298b31?auto=format&fit=crop&w=900&q=85", "Science Laboratory"],
-        ["https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=900&q=85", "Scientific Discovery"],
-        ["https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=900&q=85", "Practical Learning"],
-        ["https://images.unsplash.com/photo-1507413245164-6160d8298b31?auto=format&fit=crop&w=900&q=85", "Laboratory Activities"],
-        ["https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=900&q=85", "Innovation Projects"]
+        ["https://media.istockphoto.com/id/1901754737/photo/secondary-or-high-school-students-studying-wind-turbines-in-science-class-with-teacher.jpg?s=612x612&w=0&k=20&c=guQqTfb3xCAzqwM9CWBt0RmR5S3vO9W-evPx9vf8OkQ=", "Science Experiments"],
+        ["https://tse1.mm.bing.net/th/id/OIP.mGLUiKXFT0elEMmudSVrvgHaE8?r=0&rs=1&pid=ImgDetMain&o=7&rm=3", "Science Laboratory"],
+        ["https://www.mysoorunews.com/wp-content/uploads/2024/12/Vikasa-Parva-1-1024x576.jpeg", "Innovation Projects"]
     ]
 },
 
@@ -587,12 +645,9 @@ const galleryData = [
     title: "School Fashion Show",
     description: "Showcasing confidence, creativity and student talent.",
     photos: [
-        ["https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=900&q=85", "Fashion and Style"],
-        ["https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=900&q=85", "Creative Outfits"],
-        ["https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=900&q=85", "Fashion Collection"],
-        ["https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=900&q=85", "Style Presentation"],
-        ["https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=900&q=85", "Creative Fashion"],
-        ["https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=900&q=85", "Fashion Designs"]
+        ["https://tse2.mm.bing.net/th/id/OIP.7jetzVTELyA-31cLzQHXbgHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3", "Fashion and Style"],
+        ["https://tse4.mm.bing.net/th/id/OIP.T0jXBVqrt8-3_LVfmnObxgHaE8?r=0&rs=1&pid=ImgDetMain&o=7&rm=3", "Creative Outfits"],
+        ["https://tse2.mm.bing.net/th/id/OIP.ROt7tsz1h8cEpOV8O7UVHgHaE8?r=0&rs=1&pid=ImgDetMain&o=7&rm=3", "Fashion Designs"]
     ]
 }
 
@@ -621,7 +676,6 @@ galleryData.forEach(category => {
 
     const grid = document.createElement("div");
     grid.className = "photo-grid";
-
     category.photos.forEach((photo, index) => {
 
         const card = document.createElement("div");

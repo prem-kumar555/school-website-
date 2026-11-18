@@ -34,45 +34,58 @@ body {
 /* HEADER */
 
 header {
-    background: linear-gradient(120deg, #06152e, #12396c);
-    padding: 17px 7%;
+    background: linear-gradient(90deg, #032b59, #07509b);
+    color: white;
+    padding: 18px 5%;
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
     flex-wrap: wrap;
     gap: 15px;
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
 .logo {
-    color: white;
-    font-size: 22px;
-    font-weight: 700;
+    font-size: 25px;
+    font-weight: bold;
 }
 
 .logo span {
-    color: var(--gold);
+    display: block;
+    font-size: 12px;
+    color: #ffca28;
+    letter-spacing: 3px;
+    margin-top: 6px;
 }
 
 nav {
     display: flex;
     flex-wrap: wrap;
-    gap: 19px;
+    gap: 18px;
+    align-items: center;
 }
 
 nav a {
     color: white;
     text-decoration: none;
-    font-size: 13px;
+    font-size: 14px;
+    font-weight: bold;
     transition: 0.3s;
 }
 
 nav a:hover,
 nav a.active {
-    color: var(--gold);
+    color: #ffca28;
+}
+
+.login-btn {
+    background: #ffca28;
+    color: #073b78;
+    padding: 11px 22px;
+    border-radius: 25px;
 }
 
 /* HERO */
@@ -80,8 +93,7 @@ nav a.active {
 .hero {
     min-height: 440px;
     background:
-    linear-gradient(rgba(3,17,40,0.82), rgba(3,17,40,0.82)),
-    url("https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1600&q=85");
+    url("https://conferenceinc.net/post/wp-content/uploads/2023/07/Academic-Articles-1024x577.jpg");
     background-position: center;
     background-size: cover;
     display: flex;
@@ -191,12 +203,21 @@ section {
 }
 
 .programme-card {
+    display: flex;
+    flex-direction: column;
     background: white;
     border: 1px solid #e5eaf2;
     border-radius: 13px;
     overflow: hidden;
     box-shadow: 0 7px 24px rgba(0,0,0,0.06);
     transition: 0.3s;
+    color: inherit;
+    text-decoration: none;
+}
+
+.programme-card:focus-visible {
+    outline: 3px solid var(--gold);
+    outline-offset: 3px;
 }
 
 .programme-card:hover {
@@ -229,6 +250,7 @@ section {
 
 .card-body {
     padding: 25px;
+    flex: 1;
 }
 
 .card-body h4 {
@@ -609,42 +631,39 @@ section {
 /* FOOTER */
 
 footer {
-    background: #041329;
+    background: linear-gradient(90deg, #032b59, #07509b);
     color: white;
-    padding: 45px 8% 18px;
+    padding: 35px 5%;
 }
 
-.footer-grid {
+.footer-content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 30px;
-    margin-bottom: 30px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
 }
 
-footer h3 {
-    color: var(--gold);
+.footer-box h2,
+.footer-box h3 {
     margin-bottom: 15px;
 }
 
-footer p,
-footer a {
-    color: #c6d1e0;
-    font-size: 13px;
-    line-height: 2;
-    text-decoration: none;
-    display: block;
+.footer-box p {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #e1edff;
 }
 
-footer a:hover {
-    color: var(--gold);
+.footer-box a {
+    color: #ffca28;
+    text-decoration: none;
 }
 
 .copyright {
     text-align: center;
-    border-top: 1px solid #29405f;
-    padding-top: 18px;
-    color: #aebbd0;
-    font-size: 12px;
+    border-top: 1px solid #557ba5;
+    padding-top: 20px;
+    margin-top: 25px;
+    font-size: 14px;
 }
 
 /* MOBILE */
@@ -660,6 +679,10 @@ footer a:hover {
         gap: 12px;
     }
 
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
     .hero h1 {
         font-size: 34px;
     }
@@ -672,6 +695,13 @@ footer a:hover {
         font-size: 25px;
     }
 }
+
+@media(max-width: 600px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* Automatic Image Slider */
 .slider-section {
     padding: 60px 8%;
@@ -814,6 +844,103 @@ footer a:hover {
     line-height: 1.9;
     color: #dce6f5;
 }
+/* FAQ SECTION */
+
+.faq-section {
+    background: #f4f7fc;
+}
+
+.faq-container {
+    max-width: 950px;
+    margin: auto;
+}
+
+.faq-item {
+    background: white;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    border: 1px solid #e3e9f1;
+    overflow: hidden;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.04);
+    transition: 0.3s;
+}
+
+.faq-item:hover {
+    border-color: #e5b94b;
+}
+
+.faq-item summary {
+    padding: 20px 23px;
+    cursor: pointer;
+    color: #071b3a;
+    font-size: 15px;
+    font-weight: 600;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-item summary::after {
+    content: "⌄";
+    color: #bd8c20;
+    font-size: 25px;
+    transition: transform 0.3s;
+}
+
+.faq-item[open] summary::after {
+    transform: rotate(180deg);
+}
+
+.faq-item[open] summary {
+    color: #bd8c20;
+    border-bottom: 1px solid #edf0f5;
+}
+
+.faq-answer {
+    padding: 18px 23px;
+    font-size: 13px;
+    line-height: 1.9;
+    color: #536176;
+    animation: faqOpen 0.3s ease;
+}
+
+.faq-answer a {
+    color: #123b70;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.faq-answer a:hover {
+    color: #bd8c20;
+}
+
+@keyframes faqOpen {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media(max-width: 600px) {
+    .faq-item summary {
+        font-size: 13px;
+        padding: 16px;
+    }
+
+    .faq-answer {
+        padding: 15px 16px;
+    }
+}
 </style>
 </head>
 
@@ -822,16 +949,21 @@ footer a:hover {
 <!-- HEADER -->
 
 <header>
-    <div class="logo">DIVINE <span>PUBLIC SCHOOL</span></div>
+    <div class="logo">
+        📘 Divine Public School
+        <span>LEARN • GROW • ACHIEVE</span>
+    </div>
 
     <nav>
         <a href="index.html">Home</a>
-        <a href="about.html">About</a>
+        <a href="about.html">About US</a>
         <a href="academics.html" class="active">Academics</a>
         <a href="admission.html">Admission</a>
+        <a href="facilities.html">Facilities</a>
         <a href="gallery.html">Gallery</a>
-        <a href="notice.html">Notices</a>
-        <a href="contact.html">Contact</a>
+        <a href="notice.html">Notice</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="login.html" class="login-btn">Login</a>
     </nav>
 </header>
 
@@ -892,7 +1024,7 @@ footer a:hover {
 
         <!-- NURSERY TO UKG -->
 
-        <div class="programme-card">
+        <a class="programme-card" href="admission.html#application">
 
             <div class="card-top">
                 <div class="number">01 / EARLY YEARS</div>
@@ -922,12 +1054,12 @@ footer a:hover {
                 </ul>
 
             </div>
-        </div>
+        </a>
 
 
         <!-- CLASS 1 TO 5 -->
 
-        <div class="programme-card">
+        <a class="programme-card" href="admission.html#application">
 
             <div class="card-top">
                 <div class="number">02 / PRIMARY</div>
@@ -957,12 +1089,12 @@ footer a:hover {
                 </ul>
 
             </div>
-        </div>
+        </a>
 
 
         <!-- CLASS 6 TO 10 -->
 
-        <div class="programme-card">
+        <a class="programme-card" href="admission.html#application">
 
             <div class="card-top">
                 <div class="number">03 / MIDDLE & SECONDARY</div>
@@ -992,12 +1124,12 @@ footer a:hover {
                 </ul>
 
             </div>
-        </div>
+        </a>
 
 
         <!-- CLASS 11 TO 12 -->
 
-        <div class="programme-card">
+        <a class="programme-card" href="admission.html#application">
 
             <div class="card-top">
                 <div class="number">04 / SENIOR SECONDARY</div>
@@ -1027,7 +1159,7 @@ footer a:hover {
                 </ul>
 
             </div>
-        </div>
+        </a>
 
     </div>
 
@@ -1340,31 +1472,32 @@ footer a:hover {
         </p>
     </div>
 
-</section><!-- Automatic Image Slider -->
+</section>
+<!-- Automatic Image Slider -->
 <section class="slider-section">
 
-    <h2>Glimpses of Divine Public School</h2>
+    <h2>Glimpses of <span style="color:#bd8c20">Divine Public School</span></h2>
 
     <p>Explore our learning environment and school activities.</p>
 
     <div class="image-slider">
 
-        <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7"
+        <img src="https://travelbud.com/hubfs/Imported_Blog_Media/Thailand-Classroom-1-1.jpg"
              class="active" alt="Classroom Learning">
 
-        <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d"
+        <img src="https://www.jks.edu.sa/wp-content/uploads/2023/10/Lab_3-scaled.jpg"
              alt="Science Laboratory">
 
-        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b"
+        <img src="https://images.pexels.com/photos/8466776/pexels-photo-8466776.jpeg?cs=srgb&dl=pexels-anastasia-shuraeva-8466776.jpg&fm=jpg"
              alt="Student Learning">
 
-        <img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66"
+        <img src="https://i.pinimg.com/originals/6d/13/13/6d1313e2948d96ef5dd777eb13cb2948.jpg"
              alt="School Library">
 
-        <img src="https://images.unsplash.com/photo-1529390079861-591de354faf5"
+        <img src="https://images.pexels.com/photos/15149190/pexels-photo-15149190.jpeg?cs=srgb&dl=pexels-xhemphoto-15149190.jpg&fm=jpg"
              alt="Sports Activities">
 
-        <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f"
+        <img src="https://www.willindiachange.org/media/pics/IMG_3796.webp"
              alt="Art and Creativity">
 
     </div>
@@ -1402,7 +1535,113 @@ footer a:hover {
     </div>
 
 </section>
+<!-- FREQUENTLY ASKED QUESTIONS -->
 
+<section class="faq-section" id="faq">
+
+    <div class="section-heading">
+        <h2>Frequently Asked <span>Questions</span></h2>
+        <div class="line"></div>
+        <p>
+            Find answers to common questions about our academic
+            programmes, teaching methods and student development.
+        </p>
+    </div>
+
+    <div class="faq-container">
+
+        <details class="faq-item">
+            <summary>1. Which classes are available at Divine Public School?</summary>
+            <div class="faq-answer">
+                Our academic structure covers Nursery to Class XII,
+                with learning programmes designed for different age groups.
+            </div>
+        </details>
+
+        <details class="faq-item">
+            <summary>2. Which streams are available in Classes XI and XII?</summary>
+            <div class="faq-answer">
+                Students can contact the school to confirm the available
+                streams and subject combinations for senior secondary classes.
+            </div>
+        </details>
+
+        <details class="faq-item">
+            <summary>3. What teaching methods does the school follow?</summary>
+            <div class="faq-answer">
+                Our teaching approach focuses on concept-based learning,
+                classroom discussions, practical activities, projects
+                and student participation.
+            </div>
+        </details>
+
+        <details class="faq-item">
+            <summary>4. How are students assessed?</summary>
+            <div class="faq-answer">
+                Students are evaluated through periodic tests,
+                assignments, projects, half-yearly examinations
+                and annual examinations.
+            </div>
+        </details>
+
+        <details class="faq-item">
+            <summary>5. Does the school provide computer education?</summary>
+            <div class="faq-answer">
+                Computer education helps students develop digital
+                literacy, technology awareness and practical computer skills.
+            </div>
+        </details>
+
+        <details class="faq-item">
+            <summary>6. Does the school organise educational visits and workshops?</summary>
+            <div class="faq-answer">
+                Educational visits, workshops and expert interactions
+                can help students understand real-world applications
+                and explore different career opportunities.
+            </div>
+        </details>
+
+        <details class="faq-item">
+            <summary>7. How does the school support students beyond academics?</summary>
+            <div class="faq-answer">
+                The school encourages participation in sports,
+                cultural programmes, creative activities, teamwork
+                and personality development opportunities.
+            </div>
+        </details>
+
+        <details class="faq-item">
+            <summary>8. How can parents check their child's academic progress?</summary>
+            <div class="faq-answer">
+                Parents can stay updated through report cards,
+                parent-teacher meetings and the school's communication
+                channels, according to school arrangements.
+            </div>
+        </details>
+
+        <details class="faq-item">
+            <summary>9. How can I apply for admission?</summary>
+            <div class="faq-answer">
+                Visit our admission page to learn about the admission
+                process, eligibility and required documents.
+                <br><br>
+                <a href="admission.html#process">Explore Admissions →</a>
+            </div>
+        </details>
+
+        <details class="faq-item">
+            <summary>10. How can I contact the school for more information?</summary>
+            <div class="faq-answer">
+                You can visit our Contact page to find the school's
+                contact information and send your enquiry.
+                <br><br>
+                <a href="contact.html">Contact Us →</a>
+            </div>
+        </details>
+
+    </div>
+
+</section>
 
 <!-- CALL TO ACTION -->
 
@@ -1422,47 +1661,43 @@ footer a:hover {
 
 <!-- FOOTER -->
 
-<footer>
+<footer id="contact">
 
-    <div class="footer-grid">
+    <div class="footer-content">
 
-        <div>
-            <h3>Divine Public School</h3>
-            <p>
-                Empowering students with knowledge, confidence,
-                creativity and strong values.
-            </p>
+        <div class="footer-box">
+            <h2>📘 Divine Public School</h2>
+            <p>Learn • Grow • Achieve</p>
+            <p>Shaping Bright Minds for a Better Tomorrow.</p>
         </div>
 
-        <div>
-            <h3>Quick Links</h3>
-            <a href="index.html">Home</a>
-            <a href="about.html">About Us</a>
-            <a href="academics.html">Academics</a>
-            <a href="admission.html">Admissions</a>
-            <a href="gallery.html">Gallery</a>
+        <div class="footer-box">
+            <h3>School Address</h3>
+            <p>📍Divine Public school <br>near institute of technology <br>Delhi,India.</p>
         </div>
 
-        <div>
-            <h3>Student Corner</h3>
-            <a href="notice.html">School Notices</a>
-            <a href="result.html">Results</a>
-            <a href="event.html">Events</a>
-            <a href="examination.html">Examinations</a>
-        </div>
-
-        <div>
+        <div class="footer-box">
             <h3>Contact Us</h3>
-            <p>Divine Public School</p>
-            <p>Email: info@divinepublicschool.com</p>
-            <p>Phone: +91 XXXXX XXXXX</p>
-            <p>Address: Add School Address</p>
+            <p>📞 +91 1234567890</p>
+            <p>✉️ DivinePublicSchool@gmail.com</p>
+        </div>
+
+        <div class="footer-box">
+            <h3>Quick Navigation</h3>
+            <p><a href="index.html">Home</a></p>
+            <p><a href="about.html">About Us</a></p>
+            <p><a href="index.html#principal">Principal's Message</a></p>
+            <p><a href="admission.html">Admission</a></p>
+            <p><a href="notice.html">Notices</a></p>
         </div>
 
     </div>
 
     <div class="copyright">
-        © 2026 Divine Public School. All Rights Reserved.
+        <p>
+            © 2026 Divine Public School.
+            All Rights Reserved.
+        </p>
     </div>
 
 </footer>

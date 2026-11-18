@@ -1,0 +1,1271 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>School Results | Divine Public School</title>
+
+<style>
+/* GENERAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #f4f8ff;
+    color: #082d61;
+}
+
+/* HEADER  */
+header {
+    background: linear-gradient(90deg, #032b59, #07509b);
+    color: white;
+    padding: 18px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.logo span {
+    display: block;
+    font-size: 12px;
+    color: #ffca28;
+    letter-spacing: 3px;
+    margin-top: 6px;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    align-items: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+    color: #ffca28;
+}
+
+.login-btn {
+    background: #ffca28;
+    color: #073b78 !important;
+    padding: 11px 22px;
+    border-radius: 25px;
+}
+
+/* HERO SECTION */
+.hero {
+    min-height: 400px;
+    padding: 75px 6%;
+    display: flex;
+    align-items: center;
+    background:
+    linear-gradient(90deg,
+    rgba(2,39,82,0.98),
+    rgba(2,53,105,0.82),
+    rgba(2,53,105,0.15)),
+    url("https://intiau.university/wp-content/uploads/2024/04/v2-z5o8k-qbvxf.jpg");
+    background-position: center;
+    background-size: cover;
+    color: white;
+}
+
+.hero-content {
+    max-width: 700px;
+}
+
+.hero-label {
+    color: #ffca28;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.hero h1 {
+    font-size: clamp(38px, 5vw, 58px);
+    margin: 15px 0;
+}
+
+.hero h1 span {
+    color: #ffca28;
+}
+
+.hero p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #e1edff;
+    margin-bottom: 25px;
+}
+
+.btn {
+    display: inline-block;
+    background: #ffca28;
+    color: #073b78;
+    padding: 13px 22px;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: 0.3s;
+    margin: 5px 8px 5px 0;
+}
+
+.btn:hover {
+    background: white;
+    transform: translateY(-4px);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+}
+
+.btn-outline:hover {
+    background: white;
+    color: #073b78;
+}
+
+/* COMMON SECTION HEADING */
+.section-heading {
+    text-align: center;
+    max-width: 750px;
+    margin: 0 auto 40px;
+}
+
+.section-heading .label {
+    color: #0875dc;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.section-heading h2 {
+    font-size: 32px;
+    margin: 12px 0;
+    color: #073b78;
+}
+
+.section-heading h2 span {
+    color: #0875dc;
+}
+
+.section-heading p {
+    color: #60738b;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.heading-line {
+    width: 65px;
+    height: 4px;
+    background: #ffca28;
+    margin: 15px auto;
+    border-radius: 10px;
+}
+
+/* RESULT OVERVIEW */
+.overview {
+    padding: 65px 6%;
+    background: white;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.stat-card {
+    background: #f1f6ff;
+    border: 1px solid #dce8f6;
+    border-radius: 15px;
+    padding: 28px 15px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.stat-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.stat-icon {
+    font-size: 35px;
+    margin-bottom: 12px;
+}
+
+.stat-card h3 {
+    color: #0875dc;
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+
+.stat-card p {
+    color: #60738b;
+    font-size: 13px;
+}
+
+/* SCHOOL TOPPER */
+.topper-section {
+    padding: 70px 6%;
+    background: linear-gradient(135deg, #eaf4ff, #ffffff);
+}
+
+.topper-card {
+    max-width: 1000px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    background: white;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.09);
+}
+
+.topper-image {
+    min-height: 380px;
+    background: #dcecff;
+}
+
+.topper-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.topper-details {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.topper-badge {
+    background: #fff3c4;
+    color: #8b6500;
+    padding: 9px 16px;
+    border-radius: 25px;
+    width: fit-content;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 18px;
+}
+
+.topper-details h2 {
+    font-size: 30px;
+    color: #073b78;
+    margin-bottom: 8px;
+}
+
+.topper-details h4 {
+    color: #0875dc;
+    margin-bottom: 18px;
+}
+
+.topper-details p {
+    color: #60738b;
+    font-size: 14px;
+    line-height: 1.8;
+    margin: 5px 0;
+}
+
+.topper-percentage {
+    font-size: 42px;
+    color: #0875dc;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.topper-percentage span {
+    font-size: 14px;
+    color: #60738b;
+    font-weight: normal;
+}
+
+/* MERIT LIST */
+.merit-section {
+    padding: 70px 6%;
+}
+
+.merit-container {
+    max-width: 1100px;
+    margin: auto;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+}
+
+.merit-heading {
+    background: #073b78;
+    color: white;
+    padding: 22px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.merit-heading h3 {
+    font-size: 19px;
+}
+
+.merit-heading span {
+    color: #ffca28;
+    font-size: 12px;
+}
+
+.table-container {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    min-width: 650px;
+    border-collapse: collapse;
+}
+
+th {
+    background: #edf4ff;
+    color: #073b78;
+    padding: 17px 12px;
+    font-size: 13px;
+}
+
+td {
+    padding: 16px 12px;
+    text-align: center;
+    color: #60738b;
+    font-size: 13px;
+    border-bottom: 1px solid #e6edf7;
+}
+
+tbody tr:hover {
+    background: #f4f8ff;
+}
+
+td strong {
+    color: #073b78;
+}
+
+.rank {
+    background: #fff3c4;
+    color: #8b6500;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+/* BOARD RESULTS */
+.board-section {
+    padding: 70px 6%;
+    background: #eaf4ff;
+}
+
+.board-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.board-card {
+    background: white;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+    border-top: 4px solid #0875dc;
+}
+
+.board-card h3 {
+    color: #073b78;
+    font-size: 23px;
+    margin-bottom: 8px;
+}
+
+.board-card .session {
+    color: #0875dc;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.board-detail {
+    display: flex;
+    justify-content: space-between;
+    padding: 13px 0;
+    border-bottom: 1px solid #e6edf7;
+    color: #60738b;
+    font-size: 13px;
+}
+
+.board-detail strong {
+    color: #073b78;
+}
+
+/* CLASS TOPPERS */
+.class-section {
+    padding: 70px 6%;
+}
+
+.class-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.class-card {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+    transition: 0.3s;
+    border-bottom: 4px solid #0875dc;
+}
+
+.class-card:hover {
+    transform: translateY(-6px);
+    border-color: #ffca28;
+}
+
+.class-card img {
+    width: 105px;
+    height: 105px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #eaf4ff;
+    margin-bottom: 15px;
+}
+
+.class-card h3 {
+    color: #073b78;
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.class-card p {
+    color: #60738b;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.class-score {
+    font-size: 26px;
+    color: #0875dc;
+    font-weight: bold;
+    margin-top: 12px;
+}
+
+/* ACHIEVEMENTS */
+.achievement-section {
+    padding: 70px 6%;
+}
+
+.achievement-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.achievement-card {
+    background: white;
+    padding: 30px 22px;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.06);
+    transition: 0.3s;
+}
+
+.achievement-card:hover {
+    transform: translateY(-6px);
+}
+
+.achievement-card .icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.achievement-card h3 {
+    color: #073b78;
+    margin-bottom: 12px;
+}
+
+.achievement-card p {
+    color: #60738b;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+/* NOTE */
+.result-note {
+    padding: 25px 6%;
+    background: white;
+    text-align: center;
+}
+
+.result-note p {
+    max-width: 900px;
+    margin: auto;
+    color: #60738b;
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+/* FOOTER */
+footer {
+    background: linear-gradient(90deg, #032b59, #07509b);
+    color: white;
+    padding: 35px 5%;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.footer-box h2,
+.footer-box h3 {
+    margin-bottom: 15px;
+}
+
+.footer-box p {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #e1edff;
+}
+
+.footer-box a {
+    color: #ffca28;
+    text-decoration: none;
+}
+
+.copyright {
+    text-align: center;
+    border-top: 1px solid #557ba5;
+    padding-top: 20px;
+    margin-top: 25px;
+    font-size: 14px;
+}
+
+/* RESPONSIVE DESIGN */
+@media(max-width: 950px) {
+    header {
+        justify-content: center;
+    }
+
+    nav {
+        justify-content: center;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .topper-card {
+        grid-template-columns: 1fr;
+    }
+
+    .topper-image {
+        height: 320px;
+    }
+
+    .achievement-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(max-width: 650px) {
+    .board-grid,
+    .class-grid,
+    .subject-grid,
+    .achievement-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media(max-width: 550px) {
+    .logo {
+        text-align: center;
+        font-size: 21px;
+    }
+
+    nav {
+        gap: 12px;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
+
+    .hero {
+        padding: 55px 6%;
+    }
+
+    .hero h1 {
+        font-size: 37px;
+    }
+
+    .stats-grid,
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+
+    .section-heading h2 {
+        font-size: 26px;
+    }
+
+    .topper-details {
+        padding: 25px;
+    }
+
+    .topper-details h2 {
+        font-size: 25px;
+    }
+
+    .topper-percentage {
+        font-size: 34px;
+    }
+
+    .cta h2 {
+        font-size: 24px;
+    }
+}
+
+.result-search {
+    padding: 65px 20px;
+    background: #eef4fc;
+}
+
+.search-container {
+    max-width: 650px;
+    margin: auto;
+    padding: 35px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+    text-align: center;
+}
+
+.search-tag {
+    color: #d49b00;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 13px;
+}
+
+.search-container h2 {
+    color: #032b59;
+    margin: 12px 0;
+    font-size: 28px;
+}
+
+.search-container p {
+    color: #666;
+    margin-bottom: 25px;
+}
+
+.form-group {
+    text-align: left;
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #082d61;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #ccd6e5;
+    border-radius: 7px;
+    font-size: 15px;
+    box-sizing: border-box;
+}
+
+.search-container button {
+    width: 100%;
+    padding: 14px;
+    background: #ffca28;
+    color: #032b59;
+    border: none;
+    border-radius: 7px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.search-container button:hover {
+    background: #f0b900;
+}
+
+#resultMessage {
+    margin-top: 18px;
+    font-weight: bold;
+    color: #c0392b;
+}
+
+#studentResult {
+    margin-top: 20px;
+    text-align: left;
+    color: #082d61;
+}
+
+.result-details {
+    padding: 20px;
+    border: 1px solid #dce5f1;
+    border-radius: 10px;
+    background: #f8fbff;
+}
+
+.result-details h3 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.result-details p {
+    margin: 10px 0;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HEADER - SAME AS INDEX.HTML -->
+<header>
+
+    <div class="logo">
+        📘 Divine Public School
+        <span>LEARN • GROW • ACHIEVE</span>
+    </div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About US</a>
+        <a href="academics.html">Academics</a>
+        <a href="admission.html">Admission</a>
+        <a href="facilities.html">Facilities</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="notice.html">Notice</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="login.html" class="login-btn">Login</a>
+    </nav>
+
+</header>
+
+<!-- HERO SECTION -->
+<section class="hero">
+
+    <div class="hero-content">
+
+        <span class="hero-label">EXCELLENCE • DEDICATION • SUCCESS</span>
+
+        <h1>
+            Celebrating Our <span>Academic Success</span>
+        </h1>
+
+        <p>
+            Every achievement reflects dedication, hard work
+            and determination. Discover the academic results,
+            outstanding performances and accomplishments
+            of Divine Public School students.
+        </p>
+
+        <a href="#school-topper" class="btn">
+            Meet Our Toppers →
+        </a>
+
+        <a href="#merit-list" class="btn btn-outline">
+            View Merit List
+        </a>
+
+    </div>
+
+</section>
+
+<section class="result-search">
+    <div class="search-container">
+        <span class="search-tag">STUDENT PORTAL</span>
+        <h2>Check Your Examination Result</h2>
+        <p>Enter your details below to view your academic performance.</p>
+
+        <form id="resultForm">
+            <div class="form-group">
+                <label for="studentClass">Select Class</label>
+                <select id="studentClass" required>
+                    <option value="">Choose Class</option>
+                    <option value="X">Class X</option>
+                    <option value="XII">Class XII</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="rollNumber">Roll Number</label>
+                <input type="text" id="rollNumber"
+                       placeholder="Enter your roll number" required>
+            </div>
+
+            <button type="submit">View My Result</button>
+        </form>
+
+        <div id="resultMessage"></div>
+        <div id="studentResult"></div>
+    </div>
+</section>
+
+<!-- RESULT OVERVIEW -->
+<section class="overview">
+
+    <div class="section-heading">
+        <span class="label">OUR PERFORMANCE</span>
+        <h2>School Results <span>At a Glance</span></h2>
+        <div class="heading-line"></div>
+        <p>
+            Celebrating academic progress and the achievements
+            of our students.
+        </p>
+    </div>
+
+    <div class="stats-grid">
+
+        <div class="stat-card">
+            <div class="stat-icon">🎓</div>
+            <h3>95.35%</h3>
+            <p>Overall Pass Percentage</p>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-icon">🏆</div>
+            <h3>48</h3>
+            <p>Students Above 90%</p>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-icon">⭐</div>
+            <h3>126</h3>
+            <p>Subject Distinctions</p>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-icon">📅</div>
+            <h3>2025-26</h3>
+            <p>Academic Session</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- SCHOOL TOPPER -->
+<section class="topper-section" id="school-topper">
+
+    <div class="section-heading">
+        <span class="label">SPECIAL RECOGNITION</span>
+        <h2>Our School <span>Topper</span></h2>
+        <div class="heading-line"></div>
+        <p>
+            Honouring exceptional academic performance
+            and the dedication behind every achievement.
+        </p>
+    </div>
+
+    <div class="topper-card">
+
+        <div class="topper-image">
+            <img
+            src="https://img.freepik.com/premium-photo/student-photo_403587-277.jpg"
+            alt="Sample school topper photograph">
+        </div>
+
+        <div class="topper-details">
+
+            <span class="topper-badge">🏅 SCHOOL TOPPER 2025-26</span>
+
+            <h2>Student Name</h2>
+
+            <h4>Class XII | Board Examination</h4>
+
+            <p><strong>Roll Number:</strong> 12847</p>
+
+            <p><strong>Stream:</strong> Medical</p>
+
+            <p>
+                Congratulations on this remarkable academic
+                achievement. Your dedication, discipline
+                and consistent efforts are an inspiration
+                to other students.
+            </p>
+
+            <div class="topper-percentage">
+                96.5% <span>Overall Percentage</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- TOP 10 MERIT LIST -->
+<section class="merit-section" id="merit-list">
+
+    <div class="section-heading">
+        <span class="label">STUDENT ACHIEVEMENTS</span>
+        <h2>School <span>Merit List</span></h2>
+        <div class="heading-line"></div>
+        <p>
+            Recognising students who achieved outstanding
+            positions in their respective classes.
+        </p>
+    </div>
+
+    <div class="merit-container">
+
+        <div class="merit-heading">
+            <h3>🏆 Top 5 Academic Performers</h3>
+            <span>ACADEMIC SESSION 2025–26</span>
+        </div>
+
+        <div class="table-container">
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Student Name</th>
+                        <th>Class</th>
+                        <th>Roll Number</th>
+                        <th>Percentage</th>
+                        <th>Year</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>01</td>
+                        <td><strong>Aarav Sharma</strong></td>
+                        <td>XII</td>
+                        <td>12847</td>
+                        <td>96.5%</td>
+                        <td><span class="rank">First</span></td>
+                    </tr>
+                    <tr>
+                        <td>02</td>
+                        <td><strong>Rohan Mehta</strong></td>
+                        <td>XII</td>
+                        <td>13416</td>
+                        <td>93.2%</td>
+                        <td><span class="rank">Second</span></td>
+                    </tr>
+		    <tr>
+                        <td>03</td>
+                        <td><strong>Priya Verma</strong></td>
+                        <td>XII</td>
+                        <td>10592</td>
+                        <td>89.7%</td>
+                        <td><span class="rank">Third</span></td>
+                    </tr>
+		    <tr>
+                        <td>04</td>
+                        <td><strong>Arjun Malhotra</strong></td>
+                        <td>X</td>
+                        <td>14259</td>
+                        <td>91.4%</td>
+                        <td><span class="rank">First</span></td>
+                    </tr>
+		    <tr>
+                        <td>05</td>
+                        <td><strong>Ananya Gupta</strong></td>
+                        <td>X</td>
+                        <td>11783</td>
+                        <td>85.6%</td>
+                        <td><span class="rank">Second</span></td>
+                    </tr>
+			</tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- BOARD RESULTS -->
+<section class="board-section">
+
+    <div class="section-heading">
+        <span class="label">BOARD EXAMINATION</span>
+        <h2>Board Examination <span>Results</span></h2>
+        <div class="heading-line"></div>
+        <p>
+            A summary of student performance in
+            secondary and senior secondary examinations.
+        </p>
+    </div>
+
+    <div class="board-grid">
+
+        <div class="board-card">
+
+            <h3>Class X</h3>
+            <p class="session">SECONDARY BOARD EXAMINATION 2026</p>
+
+            <div class="board-detail">
+                <span>Total Students</span>
+                <strong>120</strong>
+            </div>
+
+            <div class="board-detail">
+                <span>Students Passed</span>
+                <strong>114</strong>
+            </div>
+
+            <div class="board-detail">
+                <span>Pass Percentage</span>
+                <strong>95%</strong>
+            </div>
+
+            <div class="board-detail">
+                <span>Highest Score</span>
+                <strong>98.6%</strong>
+            </div>
+
+        </div>
+
+        <div class="board-card">
+
+            <h3>Class XII</h3>
+            <p class="session">SENIOR SECONDARY BOARD EXAMINATION 2026</p>
+
+            <div class="board-detail">
+                <span>Total Students</span>
+                <strong>95</strong>
+            </div>
+
+            <div class="board-detail">
+                <span>Students Passed</span>
+                <strong>89</strong>
+            </div>
+
+            <div class="board-detail">
+                <span>Pass Percentage</span>
+                <strong>95.79%</strong>
+            </div>
+
+            <div class="board-detail">
+                <span>Highest Score</span>
+                <strong>97.8%</strong>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ACADEMIC ACHIEVEMENTS -->
+<section class="achievement-section">
+
+    <div class="section-heading">
+        <span class="label">CELEBRATING SUCCESS</span>
+        <h2>Academic <span>Achievements</span></h2>
+        <div class="heading-line"></div>
+        <p>
+            Every milestone reflects dedication,
+            continuous learning and determination.
+        </p>
+    </div>
+
+    <div class="achievement-grid">
+
+        <div class="achievement-card">
+            <div class="icon">🏆</div>
+            <h3>Board Examination Excellence</h3>
+            <p>
+                Recognising students for their outstanding
+                performance in board examinations.
+            </p>
+        </div>
+
+        <div class="achievement-card">
+            <div class="icon">🥇</div>
+            <h3>Subject Excellence</h3>
+            <p>
+                Appreciating students who demonstrate
+                excellent knowledge in individual subjects.
+            </p>
+        </div>
+
+        <div class="achievement-card">
+            <div class="icon">🌟</div>
+            <h3>Consistent Improvement</h3>
+            <p>
+                Encouraging learners who show continuous
+                academic progress and dedication.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FOOTER - SAME AS INDEX.HTML -->
+<footer id="contact">
+
+    <div class="footer-content">
+
+        <div class="footer-box">
+
+            <h2>📘 Divine Public School</h2>
+
+            <p>Learn • Grow • Achieve</p>
+
+            <p>Shaping Bright Minds for a Better Tomorrow.</p>
+
+        </div>
+
+        <div class="footer-box">
+
+            <h3>School Address</h3>
+
+            <p>📍Divine Public school <br>
+            near institute of technology <br>
+            Delhi,India.</p>
+
+        </div>
+
+        <div class="footer-box">
+
+            <h3>Contact Us</h3>
+
+            <p>📞 +91 1234567890</p>
+
+            <p>✉️ DivinePublicSchool@gmail.com</p>
+
+        </div>
+
+        <div class="footer-box">
+
+            <h3>Quick Navigation</h3>
+
+            <p><a href="index.html">Home</a></p>
+            <p><a href="about.html">About Us</a></p>
+            <p><a href="index.html#principal">Principal's Message</a></p>
+            <p><a href="admission.html">Admission</a></p>
+            <p><a href="notice.html">Notices</a></p>
+
+        </div>
+
+    </div>
+
+    <div class="copyright">
+
+        <p>
+            © 2026 Divine Public School.
+            All Rights Reserved.
+        </p>
+
+    </div>
+
+</footer>
+<script>
+const studentRecords = [
+    {
+        roll: "1201",
+        className: "XII",
+        name: "Aarav Sharma",
+        year: "2026",
+        percentage: "95%",
+        status: "PASS"
+    },
+    {
+        roll: "1001",
+        className: "X",
+        name: "Priya Verma",
+        year: "2026",
+        percentage: "93%",
+        status: "PASS"
+    }
+];
+
+document.getElementById("resultForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const roll = document.getElementById("rollNumber").value.trim();
+    const className = document.getElementById("studentClass").value;
+
+    const student = studentRecords.find(function(record) {
+        return record.roll === roll &&
+               record.className === className;
+    });
+
+    const message = document.getElementById("resultMessage");
+    const result = document.getElementById("studentResult");
+
+    result.innerHTML = "";
+    
+    if (student) {
+        message.textContent = "";
+
+        result.innerHTML = `
+            <div class="result-details">
+                <h3>Divine Public School</h3>
+                <h3>Student Examination Result</h3>
+                <p><strong>Student Name:</strong> ${student.name}</p>
+                <p><strong>Roll Number:</strong> ${student.roll}</p>
+                <p><strong>Class:</strong> ${student.className}</p>
+                <p><strong>Academic Year:</strong> ${student.year}</p>
+                <p><strong>Percentage:</strong> ${student.percentage}</p>
+                <p><strong>Result:</strong> ${student.status}</p>
+            </div>
+        `;
+    } else {
+        message.textContent =
+            "No result found. Please check your class and roll number.";
+    }
+});
+</script>
+</body>
+</html>
