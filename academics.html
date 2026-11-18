@@ -1,0 +1,1487 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Academics | Divine Public School</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --navy: #071b3a;
+    --blue: #123b70;
+    --gold: #e5b94b;
+    --light: #f4f7fc;
+    --text: #536176;
+}
+
+body {
+    background: white;
+    color: var(--text);
+}
+
+/* HEADER */
+
+header {
+    background: linear-gradient(120deg, #06152e, #12396c);
+    padding: 17px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+.logo {
+    color: white;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.logo span {
+    color: var(--gold);
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 19px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+    color: var(--gold);
+}
+
+/* HERO */
+
+.hero {
+    min-height: 440px;
+    background:
+    linear-gradient(rgba(3,17,40,0.82), rgba(3,17,40,0.82)),
+    url("https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1600&q=85");
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 20px;
+    color: white;
+}
+
+.hero-content {
+    max-width: 850px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.hero h1 span {
+    color: var(--gold);
+}
+
+.hero p {
+    font-size: 15px;
+    line-height: 1.9;
+    color: #dce6f5;
+}
+
+.hero-btn {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 13px 28px;
+    background: var(--gold);
+    color: var(--navy);
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.hero-btn:hover {
+    background: white;
+    transform: translateY(-3px);
+}
+
+/* COMMON SECTION */
+
+section {
+    padding: 75px 8%;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.section-heading h2 {
+    color: var(--navy);
+    font-size: 30px;
+    margin-bottom: 12px;
+}
+
+.section-heading h2 span {
+    color: #bd8c20;
+}
+
+.section-heading p {
+    max-width: 750px;
+    margin: auto;
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.line {
+    width: 65px;
+    height: 4px;
+    background: var(--gold);
+    margin: 15px auto;
+    border-radius: 10px;
+}
+
+/* INTRO */
+
+.intro {
+    background: var(--light);
+    text-align: center;
+}
+
+.intro p {
+    max-width: 900px;
+    margin: auto;
+    line-height: 2;
+    font-size: 14px;
+}
+
+/* PROGRAMME CARDS */
+
+.programmes {
+    background: white;
+}
+
+.programme-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+.programme-card {
+    background: white;
+    border: 1px solid #e5eaf2;
+    border-radius: 13px;
+    overflow: hidden;
+    box-shadow: 0 7px 24px rgba(0,0,0,0.06);
+    transition: 0.3s;
+}
+
+.programme-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+}
+
+.card-top {
+    background: linear-gradient(120deg, #0a2043, #174477);
+    padding: 27px;
+    color: white;
+}
+
+.card-top .number {
+    font-size: 12px;
+    color: var(--gold);
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.card-top h3 {
+    font-size: 21px;
+    margin: 10px 0;
+}
+
+.card-top .classes {
+    color: #dbe6f5;
+    font-size: 13px;
+}
+
+.card-body {
+    padding: 25px;
+}
+
+.card-body h4 {
+    color: var(--navy);
+    font-size: 14px;
+    margin: 17px 0 8px;
+}
+
+.card-body p {
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.card-body ul {
+    padding-left: 19px;
+}
+
+.card-body li {
+    font-size: 13px;
+    line-height: 2;
+}
+
+.tag {
+    display: inline-block;
+    background: #fff5d9;
+    color: #8a6518;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+/* BEYOND ACADEMICS */
+
+.beyond {
+    background: var(--light);
+}
+
+.beyond-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 23px;
+}
+
+.beyond-card {
+    background: white;
+    padding: 30px 25px;
+    border-radius: 12px;
+    border-bottom: 4px solid var(--gold);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    transition: 0.3s;
+}
+
+.beyond-card:hover {
+    transform: translateY(-7px);
+}
+
+.beyond-icon {
+    width: 58px;
+    height: 58px;
+    border-radius: 12px;
+    background: #edf3fb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    margin-bottom: 18px;
+}
+
+.beyond-card h3 {
+    color: var(--navy);
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+
+.beyond-card p {
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+/* TEACHING APPROACH */
+
+.approach {
+    background: white;
+}
+
+.approach-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.approach-card {
+    padding: 25px;
+    background: var(--light);
+    border-radius: 10px;
+    border-left: 4px solid var(--gold);
+}
+
+.approach-card h3 {
+    color: var(--navy);
+    margin-bottom: 10px;
+    font-size: 17px;
+}
+
+.approach-card p {
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+/* ASSESSMENT */
+
+.assessment {
+    background: var(--light);
+}
+
+.assessment-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.assessment-card {
+    background: white;
+    padding: 24px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+}
+
+.assessment-card h3 {
+    color: var(--navy);
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.assessment-card p {
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+/* FACILITIES */
+
+.facilities {
+    background: white;
+}
+
+.facility-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 22px;
+}
+
+.facility-card {
+    text-align: center;
+    padding: 25px 20px;
+    border: 1px solid #e5eaf2;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.facility-card:hover {
+    border-color: var(--gold);
+    transform: translateY(-5px);
+}
+
+.facility-card .icon {
+    font-size: 35px;
+    margin-bottom: 12px;
+}
+
+.facility-card h3 {
+    color: var(--navy);
+    margin-bottom: 9px;
+    font-size: 16px;
+}
+
+.facility-card p {
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+/* ACADEMIC GALLERY */
+
+.academic-gallery {
+    background: #ffffff;
+}
+
+.academic-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 22px;
+}
+
+.academic-image-card {
+    position: relative;
+    height: 260px;
+    overflow: hidden;
+    border-radius: 13px;
+    box-shadow: 0 7px 22px rgba(0,0,0,0.10);
+}
+
+.academic-image-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.academic-image-card:hover img {
+    transform: scale(1.1);
+}
+
+.academic-image-card .image-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 25px 18px 17px;
+    background: linear-gradient(transparent, rgba(4,19,41,0.95));
+    color: white;
+}
+
+.image-caption h3 {
+    font-size: 17px;
+    margin-bottom: 5px;
+}
+
+.image-caption p {
+    font-size: 12px;
+    color: #e2e9f4;
+}
+
+/* FAQ SECTION */
+
+.faq-section {
+    background: #f4f7fc;
+}
+
+.faq-container {
+    max-width: 900px;
+    margin: auto;
+}
+
+.faq-item {
+    background: white;
+    margin-bottom: 15px;
+    border-radius: 9px;
+    border: 1px solid #e3e9f1;
+    overflow: hidden;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.04);
+}
+
+.faq-item summary {
+    padding: 19px 22px;
+    cursor: pointer;
+    color: #071b3a;
+    font-size: 15px;
+    font-weight: 600;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-item summary::after {
+    content: "+";
+    color: #bd8c20;
+    font-size: 24px;
+    flex-shrink: 0;
+}
+
+.faq-item[open] summary::after {
+    content: "−";
+}
+
+.faq-item[open] summary {
+    color: #bd8c20;
+    border-bottom: 1px solid #edf0f5;
+}
+
+.faq-answer {
+    padding: 18px 22px;
+    font-size: 13px;
+    line-height: 1.9;
+    color: #536176;
+}
+
+/* MOBILE GALLERY */
+
+@media(max-width: 600px) {
+    .academic-image-card {
+        height: 230px;
+    }
+
+    .faq-item summary {
+        font-size: 13px;
+        padding: 16px;
+    }
+}
+
+
+/* RESULTS */
+
+.results {
+    background: var(--light);
+}
+
+.result-content {
+    background: white;
+    padding: 35px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+.result-content h3 {
+    color: var(--navy);
+    margin-bottom: 12px;
+}
+
+.result-content p {
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.result-btn {
+    display: inline-block;
+    margin-top: 20px;
+    background: var(--navy);
+    color: white;
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.result-btn:hover {
+    background: var(--gold);
+    color: var(--navy);
+}
+
+/* CTA */
+
+.cta {
+    background: linear-gradient(120deg, #071b3a, #174477);
+    text-align: center;
+    color: white;
+}
+
+.cta h2 {
+    font-size: 29px;
+    margin-bottom: 15px;
+}
+
+.cta p {
+    color: #dce6f5;
+    line-height: 1.8;
+    font-size: 14px;
+}
+
+.cta a {
+    display: inline-block;
+    margin-top: 23px;
+    padding: 13px 28px;
+    background: var(--gold);
+    color: var(--navy);
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* FOOTER */
+
+footer {
+    background: #041329;
+    color: white;
+    padding: 45px 8% 18px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+footer h3 {
+    color: var(--gold);
+    margin-bottom: 15px;
+}
+
+footer p,
+footer a {
+    color: #c6d1e0;
+    font-size: 13px;
+    line-height: 2;
+    text-decoration: none;
+    display: block;
+}
+
+footer a:hover {
+    color: var(--gold);
+}
+
+.copyright {
+    text-align: center;
+    border-top: 1px solid #29405f;
+    padding-top: 18px;
+    color: #aebbd0;
+    font-size: 12px;
+}
+
+/* MOBILE */
+
+@media(max-width: 768px) {
+    header {
+        justify-content: center;
+        text-align: center;
+    }
+
+    nav {
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    section {
+        padding: 55px 6%;
+    }
+
+    .section-heading h2 {
+        font-size: 25px;
+    }
+}
+/* Automatic Image Slider */
+.slider-section {
+    padding: 60px 8%;
+    background: #f4f7fc;
+    text-align: center;
+}
+
+.slider-section h2 {
+    color: #071b3a;
+    font-size: 30px;
+    margin-bottom: 12px;
+}
+
+.slider-section p {
+    color: #64748b;
+    margin-bottom: 30px;
+}
+
+.image-slider {
+    max-width: 1000px;
+    height: 450px;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.image-slider img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.image-slider img.active {
+    opacity: 1;
+}
+
+@media(max-width: 600px) {
+    .image-slider {
+        height: 250px;
+    }
+
+    .slider-section h2 {
+        font-size: 23px;
+    }
+}
+/* CORPORATE PARTNERS */
+
+.partners-section {
+    background: #f4f7fc;
+}
+
+.partners-intro {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.partners-intro h3 {
+    color: #071b3a;
+    font-size: 23px;
+    margin-bottom: 10px;
+}
+
+.partners-intro p {
+    max-width: 750px;
+    margin: auto;
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+.partners-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 22px;
+}
+
+.partner-card {
+    background: white;
+    padding: 30px 20px;
+    text-align: center;
+    border-radius: 13px;
+    border: 1px solid #e5eaf2;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    transition: 0.4s;
+}
+
+.partner-card:hover {
+    transform: translateY(-9px);
+    border-color: #e5b94b;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+}
+
+.partner-logo {
+    height: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.partner-logo img {
+    max-width: 150px;
+    max-height: 75px;
+    object-fit: contain;
+}
+
+.partner-card h3 {
+    color: #071b3a;
+    font-size: 19px;
+    margin-bottom: 8px;
+}
+
+.partner-card p {
+    color: #64748b;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.partner-note {
+    margin-top: 35px;
+    padding: 30px;
+    background: linear-gradient(120deg, #071b3a, #174477);
+    border-radius: 12px;
+    text-align: center;
+    color: white;
+}
+
+.partner-note h3 {
+    color: #e5b94b;
+    margin-bottom: 12px;
+}
+
+.partner-note p {
+    font-size: 13px;
+    line-height: 1.9;
+    color: #dce6f5;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+    <div class="logo">DIVINE <span>PUBLIC SCHOOL</span></div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="academics.html" class="active">Academics</a>
+        <a href="admission.html">Admission</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="notice.html">Notices</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+
+<!-- HERO -->
+
+<div class="hero">
+    <div class="hero-content">
+        <h1>Our <span>Academic Programmes</span></h1>
+
+        <p>
+            Every child has the potential to achieve greatness.
+            At Divine Public School, we provide a structured learning
+            journey that develops knowledge, confidence, creativity
+            and essential life skills.
+        </p>
+
+        <a href="#programmes" class="hero-btn">Explore Our Programmes</a>
+    </div>
+</div>
+
+
+<!-- INTRODUCTION -->
+
+<section class="intro">
+
+    <div class="section-heading">
+        <h2>Education Beyond <span>Classrooms</span></h2>
+        <div class="line"></div>
+    </div>
+
+    <p>
+        Our academic framework is designed to support students at every
+        stage of their educational journey. From early childhood learning
+        to senior secondary education, we focus on conceptual understanding,
+        individual development, practical knowledge and academic excellence.
+        Our aim is to prepare responsible, confident and capable individuals
+        for the future.
+    </p>
+
+</section>
+
+
+<!-- 1 TO 4: LEVEL-WISE PROGRAMMES -->
+
+<section class="programmes" id="programmes">
+
+    <div class="section-heading">
+        <h2>Academic Curriculum & <span>Learning Wings</span></h2>
+        <div class="line"></div>
+        <p>
+            A level-wise educational structure that provides
+            age-appropriate learning experiences and academic support.
+        </p>
+    </div>
+
+    <div class="programme-grid">
+
+        <!-- NURSERY TO UKG -->
+
+        <div class="programme-card">
+
+            <div class="card-top">
+                <div class="number">01 / EARLY YEARS</div>
+                <h3>Early Years Programme</h3>
+                <div class="classes">Nursery to UKG</div>
+            </div>
+
+            <div class="card-body">
+
+                <span class="tag">Learn Through Play</span>
+
+                <h4>Our Focus</h4>
+                <p>
+                    We create a joyful learning environment where young
+                    children develop foundational skills through play,
+                    exploration, interaction and creative activities.
+                </p>
+
+                <h4>Key Features</h4>
+                <ul>
+                    <li>Child-centred learning approach</li>
+                    <li>Language and number recognition</li>
+                    <li>Storytelling and creative activities</li>
+                    <li>Social and emotional development</li>
+                    <li>Safe and hygienic learning spaces</li>
+                    <li>Individual attention and care</li>
+                </ul>
+
+            </div>
+        </div>
+
+
+        <!-- CLASS 1 TO 5 -->
+
+        <div class="programme-card">
+
+            <div class="card-top">
+                <div class="number">02 / PRIMARY</div>
+                <h3>Primary Learning Programme</h3>
+                <div class="classes">Class I to V</div>
+            </div>
+
+            <div class="card-body">
+
+                <span class="tag">Explore & Grow</span>
+
+                <h4>Our Focus</h4>
+                <p>
+                    We focus on overall development by strengthening
+                    communication, reading, writing, listening and
+                    speaking skills along with academic learning.
+                </p>
+
+                <h4>Key Features</h4>
+                <ul>
+                    <li>Experiential and activity-based learning</li>
+                    <li>Reading and communication development</li>
+                    <li>Group activities and teamwork</li>
+                    <li>Emotional and social development</li>
+                    <li>Personalised academic support</li>
+                    <li>Creative projects and assignments</li>
+                </ul>
+
+            </div>
+        </div>
+
+
+        <!-- CLASS 6 TO 10 -->
+
+        <div class="programme-card">
+
+            <div class="card-top">
+                <div class="number">03 / MIDDLE & SECONDARY</div>
+                <h3>Academic Excellence Programme</h3>
+                <div class="classes">Class VI to X</div>
+            </div>
+
+            <div class="card-body">
+
+                <span class="tag">Think • Analyse • Achieve</span>
+
+                <h4>Our Focus</h4>
+                <p>
+                    Students develop strong subject knowledge,
+                    analytical thinking, problem-solving abilities
+                    and confidence to face academic challenges.
+                </p>
+
+                <h4>Key Features</h4>
+                <ul>
+                    <li>Concept-based classroom teaching</li>
+                    <li>Regular tests and academic evaluation</li>
+                    <li>Science and technology activities</li>
+                    <li>Competitive learning opportunities</li>
+                    <li>Time management and study skills</li>
+                    <li>Student guidance and wellness support</li>
+                </ul>
+
+            </div>
+        </div>
+
+
+        <!-- CLASS 11 TO 12 -->
+
+        <div class="programme-card">
+
+            <div class="card-top">
+                <div class="number">04 / SENIOR SECONDARY</div>
+                <h3>Senior Secondary Programme</h3>
+                <div class="classes">Class XI to XII</div>
+            </div>
+
+            <div class="card-body">
+
+                <span class="tag">Prepare for the Future</span>
+
+                <h4>Our Focus</h4>
+                <p>
+                    Our senior secondary programme focuses on board
+                    examination preparation, subject specialisation,
+                    career awareness and future opportunities.
+                </p>
+
+                <h4>Key Features</h4>
+                <ul>
+                    <li>Stream-based subject learning</li>
+                    <li>Board examination preparation</li>
+                    <li>Practical and project-based learning</li>
+                    <li>Career guidance and counselling</li>
+                    <li>Communication and leadership skills</li>
+                    <li>Higher education awareness</li>
+                </ul>
+
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- 5. BEYOND ACADEMICS -->
+
+<section class="beyond">
+
+    <div class="section-heading">
+        <h2>Beyond <span>Academics</span></h2>
+        <div class="line"></div>
+        <p>
+            Education is not limited to textbooks. We encourage students
+            to develop physical fitness, confidence, creativity and
+            emotional well-being.
+        </p>
+    </div>
+
+    <div class="beyond-grid">
+
+        <div class="beyond-card">
+            <div class="beyond-icon">⚽</div>
+            <h3>Sports & Fitness</h3>
+            <p>
+                Age-appropriate sports activities encourage physical
+                fitness, teamwork, discipline, sportsmanship and a
+                healthy lifestyle.
+            </p>
+        </div>
+
+        <div class="beyond-card">
+            <div class="beyond-icon">🎤</div>
+            <h3>Soft Skills Development</h3>
+            <p>
+                Students get opportunities to improve communication,
+                public speaking, leadership, confidence and
+                interpersonal skills.
+            </p>
+        </div>
+
+        <div class="beyond-card">
+            <div class="beyond-icon">🧠</div>
+            <h3>Mental Wellness</h3>
+            <p>
+                A supportive environment encourages emotional awareness,
+                positive thinking, stress management and access to
+                appropriate guidance.
+            </p>
+        </div>
+
+        <div class="beyond-card">
+            <div class="beyond-icon">🎨</div>
+            <h3>Creative Activities</h3>
+            <p>
+                Art, music, dance, cultural events and creative projects
+                help students express their ideas and discover
+                their interests.
+            </p>
+        </div>
+
+        <div class="beyond-card">
+            <div class="beyond-icon">🌱</div>
+            <h3>Personality Development</h3>
+            <p>
+                Activities focused on values, responsibility,
+                teamwork and decision-making help students
+                become confident individuals.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- TEACHING METHODOLOGY -->
+
+<section class="approach">
+
+    <div class="section-heading">
+        <h2>Our Teaching <span>Methodology</span></h2>
+        <div class="line"></div>
+        <p>
+            We combine traditional classroom teaching with modern,
+            interactive and student-centred learning methods.
+        </p>
+    </div>
+
+    <div class="approach-grid">
+
+        <div class="approach-card">
+            <h3>Concept-Based Teaching</h3>
+            <p>
+                Focus on understanding fundamental concepts instead
+                of memorising information.
+            </p>
+        </div>
+
+        <div class="approach-card">
+            <h3>Interactive Learning</h3>
+            <p>
+                Discussions, presentations, questions and group
+                activities make learning engaging.
+            </p>
+        </div>
+
+        <div class="approach-card">
+            <h3>Experiential Learning</h3>
+            <p>
+                Projects, practical work and experiments connect
+                academic knowledge with real-life situations.
+            </p>
+        </div>
+
+        <div class="approach-card">
+            <h3>Continuous Feedback</h3>
+            <p>
+                Regular feedback and academic guidance help students
+                identify areas for improvement.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ASSESSMENT SCHEME -->
+
+<section class="assessment">
+
+    <div class="section-heading">
+        <h2>Assessment & <span>Evaluation</span></h2>
+        <div class="line"></div>
+        <p>
+            Regular evaluation helps monitor academic progress
+            and supports continuous student improvement.
+        </p>
+    </div>
+
+    <div class="assessment-grid">
+
+        <div class="assessment-card">
+            <h3>Periodic Tests</h3>
+            <p>To evaluate understanding of recently taught topics.</p>
+        </div>
+
+        <div class="assessment-card">
+            <h3>Projects & Assignments</h3>
+            <p>To develop research, creativity and practical knowledge.</p>
+        </div>
+
+        <div class="assessment-card">
+            <h3>Half-Yearly Exams</h3>
+            <p>To review learning progress during the academic session.</p>
+        </div>
+
+        <div class="assessment-card">
+            <h3>Annual Exams</h3>
+            <p>To evaluate overall subject knowledge and achievement.</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FACULTY & INFRASTRUCTURE -->
+
+<section class="facilities">
+
+    <div class="section-heading">
+        <h2>Learning Environment & <span>Facilities</span></h2>
+        <div class="line"></div>
+        <p>
+            A positive learning environment supported by dedicated
+            educators and educational facilities.
+        </p>
+    </div>
+
+    <div class="facility-grid">
+
+        <div class="facility-card">
+            <div class="icon">👩‍🏫</div>
+            <h3>Dedicated Faculty</h3>
+            <p>Supportive teachers who guide students throughout their learning journey.</p>
+        </div>
+
+        <div class="facility-card">
+            <div class="icon">🏫</div>
+            <h3>Smart Classrooms</h3>
+            <p>Comfortable spaces that support interactive classroom learning.</p>
+        </div>
+
+        <div class="facility-card">
+            <div class="icon">🔬</div>
+            <h3>Science Laboratories</h3>
+            <p>Practical learning through experiments and demonstrations.</p>
+        </div>
+
+        <div class="facility-card">
+            <div class="icon">💻</div>
+            <h3>Computer Lab</h3>
+            <p>Opportunities to develop digital literacy and technology skills.</p>
+        </div>
+
+        <div class="facility-card">
+            <div class="icon">📚</div>
+            <h3>Library</h3>
+            <p>A reading space that encourages curiosity and independent learning.</p>
+        </div>
+
+        <div class="facility-card">
+            <div class="icon">🏅</div>
+            <h3>Sports Facilities</h3>
+            <p>Activities that encourage fitness, teamwork and discipline.</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+</section>
+<!-- SUPPORTING OVERALL DEVELOPMENT - OUR PARTNERS -->
+
+<section class="partners-section">
+
+    <div class="section-heading">
+        <h2>Supporting Overall <span>Development</span></h2>
+        <div class="line"></div>
+
+        <p>
+            We believe in connecting education with the real world.
+            Through industry exposure, corporate collaborations and
+            educational partnerships, students can explore future
+            opportunities and develop practical knowledge.
+        </p>
+    </div>
+
+    <div class="partners-intro">
+        <h3>Industry Exposure & Corporate Connections</h3>
+        <p>
+            Collaborations and industry interactions can help students
+            understand modern industries, technology, innovation
+            and professional career opportunities.
+        </p>
+    </div>
+
+    <div class="partners-grid">
+
+        <div class="partner-card">
+            <div class="partner-logo">
+                <img src="https://static.vecteezy.com/system/resources/previews/022/424/653/original/bmw-logo-free-vector.jpg" alt="BMW Logo">
+            </div>
+            <h3>BMW</h3>
+            <p>Automotive Industry & Innovation</p>
+        </div>
+
+        <div class="partner-card">
+            <div class="partner-logo">
+                <img src="https://logodownload.org/wp-content/uploads/2014/04/microsoft-logo-1.png" alt="Microsoft Logo">
+            </div>
+            <h3>Microsoft</h3>
+            <p>Technology & Digital Learning</p>
+        </div>
+
+        <div class="partner-card">
+            <div class="partner-logo">
+                <img src="https://cdn.dribbble.com/users/904380/screenshots/2233565/attachments/415915/revised-google-logo.png" alt="Google Logo">
+            </div>
+            <h3>Google</h3>
+            <p>Digital Technology & Innovation</p>
+        </div>
+
+        <div class="partner-card">
+            <div class="partner-logo">
+                <img src="https://static.vecteezy.com/system/resources/previews/020/336/437/non_2x/tata-logo-tata-icon-free-free-vector.jpg" alt="Tata Logo">
+            </div>
+            <h3>Tata Group</h3>
+            <p>Business & Industrial Development</p>
+        </div>
+
+        <div class="partner-card">
+            <div class="partner-logo">
+                <img src="https://1000logos.net/wp-content/uploads/2017/02/IBM-Logo-1967.jpg" alt="IBM Logo">
+            </div>
+            <h3>IBM</h3>
+            <p>Technology & Artificial Intelligence</p>
+        </div>
+
+        <div class="partner-card">
+            <div class="partner-logo">
+                <img src="https://logos-world.net/wp-content/uploads/2025/07/Infosys-Logo.jpg" alt="Infosys Logo">
+            </div>
+            <h3>Infosys</h3>
+            <p>Information Technology & Innovation</p>
+        </div>
+
+    </div>
+
+    <div class="partner-note">
+        <h3>Learning Beyond the Classroom</h3>
+        <p>
+            Industry visits, expert interactions, workshops and
+            career awareness programmes can help students connect
+            classroom learning with real-world experiences.
+        </p>
+    </div>
+
+</section><!-- Automatic Image Slider -->
+<section class="slider-section">
+
+    <h2>Glimpses of Divine Public School</h2>
+
+    <p>Explore our learning environment and school activities.</p>
+
+    <div class="image-slider">
+
+        <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7"
+             class="active" alt="Classroom Learning">
+
+        <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d"
+             alt="Science Laboratory">
+
+        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b"
+             alt="Student Learning">
+
+        <img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66"
+             alt="School Library">
+
+        <img src="https://images.unsplash.com/photo-1529390079861-591de354faf5"
+             alt="Sports Activities">
+
+        <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f"
+             alt="Art and Creativity">
+
+    </div>
+
+</section>
+<!-- ACHIEVEMENTS & RESULTS -->
+
+<section class="results">
+
+    <div class="section-heading">
+        <h2>Achievements & <span>Board Results</span></h2>
+        <div class="line"></div>
+        <p>
+            Recognising student dedication, academic progress
+            and achievements in different fields.
+        </p>
+    </div>
+
+    <div class="result-content">
+
+        <h3>Celebrating Every Achievement</h3>
+
+        <p>
+            At Divine Public School, we value the hard work and
+            determination of every student. Our achievements section
+            highlights academic excellence, board examination results,
+            sports accomplishments and participation in cultural
+            and educational activities.
+        </p>
+
+        <a href="result.html" class="result-btn">
+            View School Results →
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- CALL TO ACTION -->
+
+<section class="cta">
+
+    <h2>Every Child Has the Potential to Shine</h2>
+
+    <p>
+        Discover a learning environment where knowledge,
+        confidence and creativity grow together.
+    </p>
+
+    <a href="admission.html">Explore Admissions</a>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="footer-grid">
+
+        <div>
+            <h3>Divine Public School</h3>
+            <p>
+                Empowering students with knowledge, confidence,
+                creativity and strong values.
+            </p>
+        </div>
+
+        <div>
+            <h3>Quick Links</h3>
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="academics.html">Academics</a>
+            <a href="admission.html">Admissions</a>
+            <a href="gallery.html">Gallery</a>
+        </div>
+
+        <div>
+            <h3>Student Corner</h3>
+            <a href="notice.html">School Notices</a>
+            <a href="result.html">Results</a>
+            <a href="event.html">Events</a>
+            <a href="examination.html">Examinations</a>
+        </div>
+
+        <div>
+            <h3>Contact Us</h3>
+            <p>Divine Public School</p>
+            <p>Email: info@divinepublicschool.com</p>
+            <p>Phone: +91 XXXXX XXXXX</p>
+            <p>Address: Add School Address</p>
+        </div>
+
+    </div>
+
+    <div class="copyright">
+        © 2026 Divine Public School. All Rights Reserved.
+    </div>
+
+</footer>
+<script>
+const slides = document.querySelectorAll(".image-slider img");
+
+let currentSlide = 0;
+
+function showNextImage() {
+
+    slides[currentSlide].classList.remove("active");
+
+    currentSlide = (currentSlide + 1) % slides.length;
+
+    slides[currentSlide].classList.add("active");
+}
+
+// Change image every 3 seconds
+setInterval(showNextImage, 3000);
+</script>
+</body>
+</html>

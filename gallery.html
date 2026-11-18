@@ -434,15 +434,15 @@ footer {
 <!-- GALLERY -->
 <section class="gallery" id="gallery">
 
-    <div class="gallery-item academic" onclick="openImage(this)">
-        <img src="https://static.vecteezy.com/system/resources/thumbnails/075/427/205/small_2x/classroom-with-wooden-desks-and-chairs-and-whiteboard-wall-and-clock-hanging-free-photo.jpeg" alt="Classroom learning">
+    <div class="gallery-item academic" onclick="openImagePage('classroom')">
+      <img src="https://static.vecteezy.com/system/resources/thumbnails/075/427/205/small_2x/classroom-with-wooden-desks-and-chairs-and-whiteboard-wall-and-clock-hanging-free-photo.jpeg" alt="Classroom learning">
         <div class="gallery-caption">
             <h3>Classroom Learning</h3>
             <p>Creating a positive learning environment where students gain knowledge, develop skills, and build a bright future.</p>
         </div>
     </div>
 
-    <div class="gallery-item sports" onclick="openImage(this)">
+    <div class="gallery-item sports" onclick="openImagePage('sports')">
         <img src="https://tse1.mm.bing.net/th/id/OIP.bp75jBatEx2mPSmqw075fQHaE8?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt="School sports">
         <div class="gallery-caption">
             <h3>Sports Activities</h3>
@@ -450,7 +450,7 @@ footer {
         </div>
     </div>
 
-    <div class="gallery-item events" onclick="openImage(this)">
+    <div class="gallery-item events" onclick="openImagePage('events')">
         <img src="https://sdplanets.com/wp-content/uploads/2022/12/annualfunction-19.jpg" alt="Annual function">
         <div class="gallery-caption">
             <h3>Annual Function</h3>
@@ -458,7 +458,7 @@ footer {
         </div>
     </div>
 
-    <div class="gallery-item activities" onclick="openImage(this)">
+    <div class="gallery-item activities" onclick="openImagePage('activities')">
         <img src="https://static.wixstatic.com/media/cf3ea2_104917770eda42f0ac90a0945e1636d9~mv2.webp/v1/fill/w_980,h_551,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/cf3ea2_104917770eda42f0ac90a0945e1636d9~mv2.webp" alt="Art and creativity">
         <div class="gallery-caption">
             <h3>Art & Creativity</h3>
@@ -466,7 +466,7 @@ footer {
         </div>
     </div>
 
-    <div class="gallery-item events" onclick="openImage(this)">
+    <div class="gallery-item events" onclick="openImagePage('events')">
         <img src="https://img.freepik.com/premium-photo/indian-independence-day-celebration-school-kids-with-flags-illustration_960080-642.jpg?w=2000" alt="Independence Day">
         <div class="gallery-caption">
             <h3>Independence Day</h3>
@@ -474,7 +474,7 @@ footer {
         </div>
     </div>
 
-    <div class="gallery-item academic" onclick="openImage(this)">
+    <div class="gallery-item academic" onclick="openImagePage('academic')">
         <img src="https://thumbs.dreamstime.com/b/school-library-bookshelves-filled-reading-materials-students-faculty-school-library-bookshelves-filled-276133085.jpg" alt="School library">
         <div class="gallery-caption">
             <h3>Library</h3>
@@ -482,7 +482,7 @@ footer {
         </div>
     </div>
 
-    <div class="gallery-item sports" onclick="openImage(this)">
+    <div class="gallery-item sports" onclick="openImagePage('sports')">
         <img src="https://www.cambridgeindependent.co.uk/_media/img/G1T2DZJH0T22RASKAZ4W.jpg" alt="Football activity">
         <div class="gallery-caption">
             <h3>Football Competition</h3>
@@ -490,7 +490,7 @@ footer {
         </div>
     </div>
 
-    <div class="gallery-item activities" onclick="openImage(this)">
+    <div class="gallery-item activities" onclick="openImagePage('activities')">
         <img src="https://img.freepik.com/premium-photo/group-elementary-school-students-work-science-experiment-classroom_14117-737127.jpg" alt="Science activity">
         <div class="gallery-caption">
             <h3>Science Activities</h3>
@@ -498,7 +498,7 @@ footer {
         </div>
     </div>
 
-    <div class="gallery-item events" onclick="openImage(this)">
+    <div class="gallery-item events" onclick="openImagePage('events')">
         <img src="https://resources.finalsite.net/images/t_image_size_4/v1684172892/tulsaschoolsorg/uga5ldzxovhixlchscrc/CooperFashion-49.jpg" alt="Fashion show">
         <div class="gallery-caption">
             <h3>School Fashion Show</h3>
@@ -582,25 +582,10 @@ function filterGallery(category, button) {
     });
 }
 
-// OPEN IMAGE
-function openImage(element) {
-    let image = element.querySelector("img");
-    document.getElementById("lightbox-img").src = image.src;
-    document.getElementById("lightbox").style.display = "flex";
+// OPEN IMAGE.HTML PAGE
+function openImagePage(category) {
+    window.location.href = "image.html?category=" + encodeURIComponent(category);
 }
-
-// CLOSE IMAGE
-function closeImage() {
-    document.getElementById("lightbox").style.display = "none";
-    document.getElementById("lightbox-img").src = "";
-}
-
-// CLOSE WITH ESCAPE KEY
-document.addEventListener("keydown", function(event) {
-    if (event.key === "Escape") {
-        closeImage();
-    }
-});
 </script>
 
 </body>
