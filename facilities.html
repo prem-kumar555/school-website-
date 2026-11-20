@@ -1,0 +1,1411 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Campus Facilities | Divine Public School</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================
+   GLOBAL
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --navy: #06264b;
+    --blue: #0b477e;
+    --gold: #d9a928;
+    --light: #f4f7fa;
+    --text: #536579;
+    --white: #ffffff;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    color: #26384d;
+    background: white;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    background: linear-gradient(90deg, #032b59, #07509b);
+    color: white;
+    padding: 18px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.logo span {
+    display: block;
+    font-size: 12px;
+    color: #ffca28;
+    letter-spacing: 3px;
+    margin-top: 6px;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    align-items: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+    color: #ffca28;
+}
+
+nav .login-btn {
+    background: #ffca28;
+    color: #073b78;
+    padding: 11px 22px;
+    border-radius: 25px;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 520px;
+    display: flex;
+    align-items: center;
+    background:
+    linear-gradient(90deg, rgba(4,29,58,.96), rgba(4,29,58,.58)),
+    url("https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1800&q=85");
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+.hero-content {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    margin-left: 8%;
+    text-left: left;
+}
+
+.hero-label {
+    color: var(--gold);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 4px;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(38px, 5vw, 65px);
+    max-width: 720px;
+    line-height: 1.2;
+    margin: 22px 0;
+}
+
+.hero p {
+    color: #d5e0ed;
+    max-width: 570px;
+    font-size: 14px;
+    line-height: 2;
+}
+
+.hero-button {
+    display: inline-block;
+    margin-top: 30px;
+    background: var(--gold);
+    color: var(--navy);
+    padding: 14px 25px;
+    font-size: 12px;
+    font-weight: 700;
+    border-radius: 3px;
+    transition: .3s;
+}
+
+.hero-button:hover {
+    background: white;
+    transform: translateY(-3px);
+}
+
+/* =========================
+   INTRODUCTION
+========================= */
+
+.intro {
+    padding: 85px 0;
+    text-align: center;
+}
+
+.small-label {
+    color: #b48720;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
+
+.intro h2,
+.section-title {
+    font-family: 'Playfair Display', serif;
+    color: var(--navy);
+    font-size: 36px;
+    margin: 14px 0;
+}
+
+.intro p {
+    max-width: 800px;
+    margin: auto;
+    color: var(--text);
+    font-size: 13px;
+    line-height: 2;
+}
+
+/* =========================
+   LEARNING FACILITIES
+========================= */
+
+.learning-section {
+    padding: 80px 0;
+    background: var(--light);
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 55px;
+}
+
+.section-header p {
+    max-width: 700px;
+    margin: 12px auto 0;
+    color: var(--text);
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+/* ALTERNATING FACILITY ROWS */
+
+.facility-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 65px;
+    margin-bottom: 65px;
+    background: white;
+    padding: 22px;
+    border-radius: 8px;
+    box-shadow: 0 8px 30px rgba(6,38,75,.045);
+}
+
+.facility-row:last-child {
+    margin-bottom: 0;
+}
+
+.facility-row.reverse .facility-image {
+    order: 2;
+}
+
+.facility-row.reverse .facility-info {
+    order: 1;
+}
+
+.facility-image {
+    height: 310px;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.facility-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .5s;
+}
+
+.facility-row:hover .facility-image img {
+    transform: scale(1.05);
+}
+
+.facility-info {
+    padding: 15px 20px;
+}
+
+.facility-number {
+    color: var(--gold);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.facility-info h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 27px;
+    color: var(--navy);
+    margin: 14px 0;
+}
+
+.facility-info p {
+    color: var(--text);
+    font-size: 13px;
+    line-height: 2;
+}
+
+.facility-feature {
+    margin-top: 18px;
+    padding-left: 0;
+    list-style: none;
+}
+
+.facility-feature li {
+    font-size: 12px;
+    color: #43576e;
+    margin-bottom: 11px;
+}
+
+.facility-feature li::before {
+    content: "✓";
+    color: #b48720;
+    font-weight: 800;
+    margin-right: 10px;
+}
+
+/* =========================
+   GREEN CAMPUS
+========================= */
+
+.green-section {
+    padding: 90px 0;
+    background: var(--navy);
+    color: white;
+}
+
+.green-section .section-title {
+    color: white;
+}
+
+.green-section .section-header p {
+    color: #bdcbdc;
+}
+
+.green-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 45px;
+    align-items: center;
+}
+
+.green-image {
+    height: 470px;
+    overflow: hidden;
+    border-radius: 6px;
+}
+
+.green-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.green-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+
+.green-item {
+    padding: 23px 17px;
+    background: rgba(255,255,255,.07);
+    border: 1px solid rgba(255,255,255,.12);
+    border-radius: 5px;
+    transition: .3s;
+}
+
+.green-item:hover {
+    background: rgba(255,255,255,.13);
+    transform: translateY(-4px);
+}
+
+.green-item .symbol {
+    font-size: 25px;
+    margin-bottom: 12px;
+}
+
+.green-item h3 {
+    font-size: 14px;
+    color: #f6d77e;
+    margin-bottom: 9px;
+}
+
+.green-item p {
+    font-size: 11px;
+    color: #d1dce8;
+    line-height: 1.9;
+}
+
+/* =========================
+   SUSTAINABILITY STATEMENT
+========================= */
+
+.sustainability {
+    margin-top: 45px;
+    padding: 32px;
+    background: #f5f1e7;
+    border-left: 5px solid var(--gold);
+    color: var(--navy);
+}
+
+.sustainability h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.sustainability p {
+    font-size: 12px;
+    line-height: 1.9;
+    color: #536579;
+}
+
+/* =========================
+   PARENT INFORMATION
+========================= */
+
+.parent-section {
+    padding: 90px 0;
+    background: #f4f7fa;
+}
+
+.parent-layout {
+    display: grid;
+    grid-template-columns: 1.1fr .9fr;
+    gap: 30px;
+}
+
+.parent-panel {
+    background: white;
+    border-radius: 6px;
+    padding: 32px;
+    border: 1px solid #e5ebf2;
+}
+
+.panel-heading {
+    border-bottom: 1px solid #e7edf3;
+    padding-bottom: 18px;
+    margin-bottom: 20px;
+}
+
+.panel-heading span {
+    color: #b48720;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.panel-heading h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--navy);
+    font-size: 25px;
+    margin-top: 8px;
+}
+
+.parent-panel > p {
+    color: var(--text);
+    font-size: 12px;
+    line-height: 1.9;
+}
+
+/* TRANSPORT TABLE */
+
+.transport-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 11px;
+}
+
+.transport-table th {
+    text-align: left;
+    background: var(--navy);
+    color: white;
+    padding: 14px 10px;
+}
+
+.transport-table td {
+    padding: 14px 10px;
+    border-bottom: 1px solid #e7edf3;
+    color: #536579;
+}
+
+.transport-table tr:hover td {
+    background: #f5f8fc;
+}
+
+
+
+/* CAFETERIA */
+
+.cafe-banner {
+    margin-top: 22px;
+    height: 180px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.cafe-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cafe-list {
+    list-style: none;
+    margin-top: 18px;
+}
+
+.cafe-list li {
+    color: #536579;
+    font-size: 12px;
+    line-height: 1.8;
+    padding: 11px 0;
+    border-bottom: 1px solid #e9edf2;
+}
+
+.cafe-list li span {
+    color: #b48720;
+    font-weight: 800;
+    margin-right: 9px;
+}
+
+/* =========================
+   ACCESSIBILITY
+========================= */
+
+.accessibility-section {
+    padding: 85px 0;
+    background: white;
+}
+
+.access-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 55px;
+}
+
+.access-image {
+    height: 350px;
+    overflow: hidden;
+    border-radius: 6px;
+}
+
+.access-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.access-content h2 {
+    font-family: 'Playfair Display', serif;
+    color: var(--navy);
+    font-size: 32px;
+    margin: 13px 0;
+}
+
+.access-content p {
+    color: var(--text);
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+.access-list {
+    list-style: none;
+    margin-top: 22px;
+}
+
+.access-list li {
+    padding: 14px 0;
+    border-bottom: 1px solid #e9edf2;
+    color: #42566d;
+    font-size: 12px;
+}
+
+.access-list li span {
+    color: #b48720;
+    font-weight: 800;
+    margin-right: 10px;
+}
+
+/* =========================
+   CONTACT BANNER
+========================= */
+
+.contact-banner {
+    padding: 70px 20px;
+    text-align: center;
+    color: white;
+    background:
+    linear-gradient(rgba(3,32,67,.91), rgba(3,32,67,.91)),
+    url("https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1500&q=85");
+    background-size: cover;
+    background-position: center;
+}
+
+.contact-banner h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 34px;
+    margin-bottom: 13px;
+}
+
+.contact-banner p {
+    color: #d6e1ef;
+    font-size: 13px;
+    line-height: 1.9;
+    margin-bottom: 25px;
+}
+
+.contact-btn {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--navy);
+    padding: 13px 25px;
+    font-size: 12px;
+    font-weight: 800;
+    border-radius: 3px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: linear-gradient(90deg, #032b59, #07509b);
+    color: white;
+    padding: 35px 5%;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.footer-box h2,
+.footer-box h3 {
+    margin-bottom: 15px;
+}
+
+.footer-box p {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #e1edff;
+}
+
+.footer-box a {
+    color: #ffca28;
+    text-decoration: none;
+}
+
+.copyright {
+    text-align: center;
+    border-top: 1px solid #557ba5;
+    padding-top: 20px;
+    margin-top: 25px;
+    font-size: 14px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width: 950px) {
+
+    .learning-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .facility-row {
+        gap: 25px;
+    }
+
+    .green-layout,
+    .parent-layout,
+    .access-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(max-width: 650px) {
+
+    header {
+        justify-content: center;
+        text-align: center;
+    }
+
+    nav {
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .hero {
+        min-height: 390px;
+    }
+
+    .hero h1 {
+        font-size: 37px;
+    }
+
+    .intro h2,
+    .section-title {
+        font-size: 27px;
+    }
+
+    .facility-row {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 14px;
+        margin-bottom: 30px;
+    }
+
+    .facility-row.reverse .facility-image,
+    .facility-row.reverse .facility-info {
+        order: initial;
+    }
+
+    .facility-image {
+        height: 230px;
+    }
+
+    .facility-info {
+        padding: 15px 8px;
+    }
+
+    .facility-info h3 {
+        font-size: 23px;
+    }
+
+    .green-features {
+        grid-template-columns: 1fr;
+    }
+
+    .green-image,
+    .access-image {
+        height: 260px;
+    }
+
+    .parent-panel {
+        padding: 20px;
+        overflow-x: auto;
+    }
+
+    .transport-table {
+        min-width: 420px;
+    }
+
+    .contact-banner h2 {
+        font-size: 26px;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+
+    <div class="logo">
+        📘 Divine Public School
+        <span>LEARN • GROW • ACHIEVE</span>
+    </div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About US</a>
+        <a href="academics.html">Academics</a>
+        <a href="admission.html">Admission</a>
+        <a href="facilities.html" class="active">Facilities</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="notice.html">Notice</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="login.html" class="login-btn">Login</a>
+    </nav>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <span class="hero-label">
+            OUR CAMPUS • OUR COMMITMENT
+        </span>
+
+        <h1>Spaces That Inspire Learning & Excellence</h1>
+
+        <p>
+            Discover a thoughtfully designed educational environment
+            where modern learning, sustainability and student well-being
+            come together to create meaningful experiences.
+        </p>
+
+        <a href="#learning" class="hero-button">
+            EXPLORE OUR FACILITIES →
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- INTRODUCTION -->
+
+<section class="intro">
+
+    <div class="container">
+
+        <span class="small-label">THE DIVINE EXPERIENCE</span>
+
+        <h2>A Campus Designed Around Students</h2>
+
+        <p>
+            A great school environment goes beyond classrooms.
+            We aim to create spaces where students can communicate,
+            experiment, explore their interests, develop confidence
+            and become responsible individuals.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- LEARNING ZONES -->
+
+<section class="learning-section" id="learning">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <span class="small-label">01 — ACADEMIC ENVIRONMENT</span>
+
+            <h2 class="section-title">
+                Specialized Learning Zones
+            </h2>
+
+            <p>
+                Purpose-oriented spaces that encourage practical
+                understanding, communication, creativity and
+                intellectual development.
+            </p>
+
+        </div>
+
+
+        <!-- LANGUAGE LAB -->
+
+        <div class="facility-row">
+
+            <div class="facility-image">
+                <img src="https://gpsgobindgarh.in/wp-content/uploads/2024/08/Language-Lab-2-min.jpg"
+                     alt="Language learning space">
+            </div>
+
+            <div class="facility-info">
+
+                <span class="facility-number">01 / COMMUNICATION</span>
+
+                <h3>Language & Communication Lab</h3>
+
+                <p>
+                    An interactive learning environment designed to
+                    strengthen language abilities and communication
+                    confidence through listening and speaking activities.
+                </p>
+
+                <ul class="facility-feature">
+                    <li>Headset-based listening activities</li>
+                    <li>Pronunciation and spoken English practice</li>
+                    <li>Public speaking and communication exercises</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+
+        <!-- PLAY ZONE -->
+
+        <div class="facility-row reverse">
+
+            <div class="facility-image">
+                <img src="https://img1.wsimg.com/isteam/ip/47ed418d-7d1a-467a-b6b3-49bd0bb152c3/IMG_6675.jpg"
+                     alt="Junior activity zone">
+            </div>
+
+            <div class="facility-info">
+
+                <span class="facility-number">02 / EARLY DEVELOPMENT</span>
+
+                <h3>Activity & Play Zone</h3>
+
+                <p>
+                    A welcoming environment for pre-primary and junior
+                    students where play-based experiences help develop
+                    imagination, coordination and early learning skills.
+                </p>
+
+                <ul class="facility-feature">
+                    <li>Educational toys and Montessori resources</li>
+                    <li>Colourful activity-based learning areas</li>
+                    <li>Age-appropriate soft-floor play arrangements</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+
+        <!-- COUNSELLING -->
+
+        <div class="facility-row">
+
+            <div class="facility-image">
+                <img src="https://www.adityabirlaschools.co.in/site/assets/files/18014/career_counselling2.jpg"
+                     alt="Student counselling">
+            </div>
+
+            <div class="facility-info">
+
+                <span class="facility-number">03 / STUDENT GUIDANCE</span>
+
+                <h3>Counselling & Career Guidance Cell</h3>
+
+                <p>
+                    A supportive and private environment where students
+                    can seek guidance about academic concerns, personal
+                    growth and future educational opportunities.
+                </p>
+
+                <ul class="facility-feature">
+                    <li>Academic guidance and student support</li>
+                    <li>Subject selection after Class 10</li>
+                    <li>Career guidance after Class 12</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+
+        <!-- MATH LAB -->
+
+        <div class="facility-row reverse">
+
+            <div class="facility-image">
+                <img src="https://www.mietschool.ac.in/mawana/wp-content/uploads/2024/01/math-lab-2.jpg"
+                     alt="Mathematics models">
+            </div>
+
+            <div class="facility-info">
+
+                <span class="facility-number">04 / MATHEMATICAL THINKING</span>
+
+                <h3>Mathematics Laboratory</h3>
+
+                <p>
+                    A practical learning space that helps students
+                    understand mathematical ideas using physical
+                    models, visual resources and interactive activities.
+                </p>
+
+                <ul class="facility-feature">
+                    <li>3D geometric shapes and models</li>
+                    <li>Mathematical puzzles and activity charts</li>
+                    <li>Visual and hands-on concept learning</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+
+        <!-- GEOGRAPHY LAB -->
+
+        <div class="facility-row">
+
+            <div class="facility-image">
+                <img src="https://images.stockcake.com/public/7/8/2/7820f397-eb61-409c-94bb-64df494b454e_large/geography-classroom-interior-stockcake.jpg"
+                     alt="Geography learning">
+            </div>
+
+            <div class="facility-info">
+
+                <span class="facility-number">05 / WORLD EXPLORATION</span>
+
+                <h3>Geography Laboratory</h3>
+
+                <p>
+                    A visual learning environment that makes geography
+                    more engaging by helping students explore the
+                    physical world and understand geographical patterns.
+                </p>
+
+                <ul class="facility-feature">
+                    <li>Globes and geographical maps</li>
+                    <li>Topographical maps and visual charts</li>
+                    <li>Models for geographical understanding</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- GREEN CAMPUS -->
+
+<section class="green-section">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <span class="small-label">02 — SUSTAINABILITY & INNOVATION</span>
+
+            <h2 class="section-title">
+                A Greener & Smarter Campus
+            </h2>
+
+            <p>
+                Encouraging environmental responsibility and
+                thoughtful use of technology through sustainable
+                campus initiatives.
+            </p>
+
+        </div>
+
+
+        <div class="green-layout">
+
+            <div class="green-image">
+                <img src="https://realestatetarneit.com.au/wp-content/uploads/2024/11/The-Best-Schools-and-Education-Options-Near-Tarneit.jpg"
+                     alt="Green natural environment">
+            </div>
+
+
+            <div class="green-features">
+
+                <div class="green-item">
+                    <div class="symbol">☀️</div>
+                    <h3>Solar Energy</h3>
+                    <p>
+                        Sustainable energy initiatives that introduce
+                        students to renewable power.
+                    </p>
+                </div>
+
+                <div class="green-item">
+                    <div class="symbol">💧</div>
+                    <h3>Rainwater Harvesting</h3>
+                    <p>
+                        Water conservation awareness and responsible
+                        use of natural resources.
+                    </p>
+                </div>
+
+                <div class="green-item">
+                    <div class="symbol">🌿</div>
+                    <h3>Botanical Garden</h3>
+                    <p>
+                        Nature-based learning through plant study,
+                        gardening and plantation activities.
+                    </p>
+                </div>
+
+                <div class="green-item">
+                    <div class="symbol">📶</div>
+                    <h3>Campus Wi-Fi</h3>
+                    <p>
+                        Controlled digital connectivity to support
+                        educational and academic activities.
+                    </p>
+                </div>
+
+                <div class="green-item">
+                    <div class="symbol">🔋</div>
+                    <h3>Power Backup</h3>
+                    <p>
+                        Backup arrangements to support essential
+                        school operations during power interruptions.
+                    </p>
+                </div>
+
+                <div class="green-item">
+                    <div class="symbol">♻️</div>
+                    <h3>Green Initiatives</h3>
+                    <p>
+                        Awareness of recycling, cleanliness and
+                        environmental protection.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="sustainability">
+
+            <h3>Building a Sustainable Tomorrow</h3>
+
+            <p>
+                Environmental education helps students understand
+                the importance of protecting natural resources.
+                Through plantation drives, conservation activities
+                and responsible daily habits, young learners can
+                become more environmentally aware.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PARENT INFORMATION -->
+
+<section class="parent-section">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <span class="small-label">03 — FAMILY INFORMATION CENTRE</span>
+
+            <h2 class="section-title">
+                Everything Parents Need to Know
+            </h2>
+
+            <p>
+                Useful information about transportation, dining
+                arrangements and everyday campus facilities.
+            </p>
+
+        </div>
+
+
+        <div class="parent-layout">
+
+
+            <!-- TRANSPORT -->
+
+            <div class="parent-panel">
+
+                <div class="panel-heading">
+
+                    <span>STUDENT TRANSPORTATION</span>
+
+                    <h3>Bus Routes & Pickup Zones</h3>
+
+                </div>
+
+                <p>
+                    Explore the sample transport schedule below.
+                    Please contact the school office for verified
+                    routes, timings and availability.
+                </p>
+
+                <table class="transport-table">
+
+                    <thead>
+                        <tr>
+                            <th>Bus No.</th>
+                            <th>Pickup Zone</th>
+                            <th>Morning</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td>4512</td>
+                            <td>sector 8,9,&10(Delhi)</td>
+                            <td>7:15 AM</td>
+                        </tr>
+
+                        <tr>
+                            <td>4518</td>
+                            <td>sector 15,16,&17(Delhi)</td>
+                            <td>7:25 AM</td>
+                        </tr>
+
+                        <tr>
+                            <td>4519</td>
+                            <td>DLF Hyde Park & Eco City(Delhi)</td>
+                            <td>7:35 AM</td>
+                        </tr>
+
+                        <tr>
+                            <td>4520</td>
+                            <td>omaxe cassia & Mullanpur Barrier</td>
+                            <td>7:45 AM</td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+                <a href="transport.pdf" download="transport schedule" style="display:inline-block;margin-top:20px;color:#0b477e;font-size:12px;font-weight:700;">
+                    TRANSPORT ENQUIRY →
+                </a>
+
+            </div>
+
+
+            <!-- CAFETERIA -->
+
+            <div class="parent-panel">
+
+                <div class="panel-heading">
+
+                    <span>FOOD & WELL-BEING</span>
+
+                    <h3>School Cafeteria</h3>
+
+                </div>
+
+                <p>
+                    A hygienic dining environment and thoughtful
+                    food choices can help students develop
+                    healthy eating habits.
+                </p>
+
+                <div class="cafe-banner">
+
+                    <img src="https://img.freepik.com/premium-photo/school-canteen-design-professional-advertising-photography-ai-generated_925376-3447.jpg"
+                         alt="Fresh food and healthy meal">
+
+                </div>
+
+                <ul class="cafe-list">
+
+                    <li>
+                        <span>01</span>
+                        Freshly prepared and balanced food choices.
+                    </li>
+
+                    <li>
+                        <span>02</span>
+                        Clean and hygienic dining arrangements.
+                    </li>
+
+                    <li>
+                        <span>03</span>
+                        Drinking water and food safety awareness.
+                    </li>
+
+                    <li>
+                        <span>04</span>
+                        Menu highlights based on school policy.
+                    </li>
+
+                </ul>
+                <a href="schoolcafe.pdf" download="school cafeteria menu" style="display:inline-block;margin-top:20px;color:#0b477e;font-size:12px;font-weight:700;">
+                    CAFETERIA MENU →
+                </a>
+            </div>
+                
+        </div>
+    </div>
+
+</section>
+
+
+<!-- ACCESSIBILITY -->
+
+<section class="accessibility-section">
+
+    <div class="container">
+
+        <div class="access-layout">
+
+            <div class="access-image">
+
+                <img src="https://tse2.mm.bing.net/th/id/OIP.cYwSvzSeDCNgTo2x9GpHiwHaE6?r=0&w=626&h=415&rs=1&pid=ImgDetMain&o=7&rm=3"
+                     alt="Accessible and spacious building interior">
+
+            </div>
+
+
+            <div class="access-content">
+
+                <span class="small-label">04 — INCLUSIVE ENVIRONMENT</span>
+
+                <h2>Accessibility for Everyone</h2>
+
+                <p>
+                    An inclusive campus should provide comfortable
+                    and convenient movement for students, parents,
+                    staff members and visitors.
+                </p>
+
+                <ul class="access-list">
+
+                    <li>
+                        <span>✓</span>
+                        Ramp access and step-free movement arrangements
+                    </li>
+
+                    <li>
+                        <span>✓</span>
+                        Spacious corridors and accessible pathways
+                    </li>
+
+                    <li>
+                        <span>✓</span>
+                        Accessible washroom arrangements
+                    </li>
+
+                    <li>
+                        <span>✓</span>
+                        A welcoming environment for every visitor
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section class="contact-banner">
+
+    <h2>Experience the Divine Difference</h2>
+
+    <p>
+        Have questions about our campus, learning facilities
+        or student services? Our school team is here to help.
+    </p>
+
+    <a href="contact.html" class="contact-btn">
+        CONTACT OUR SCHOOL →
+    </a>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="footer-content">
+
+        <div class="footer-box">
+
+            <h2>📘 Divine Public School</h2>
+
+            <p>Learn • Grow • Achieve</p>
+
+            <p>Shaping Bright Minds for a Better Tomorrow.</p>
+
+        </div>
+
+        <div class="footer-box">
+            <h3>School Address</h3>
+            <p>📍 Divine Public School <br>Near Institute of Technology <br>Delhi, India.</p>
+        </div>
+
+        <div class="footer-box">
+            <h3>Contact Us</h3>
+            <p>📞 +91 1234567890</p>
+            <p>✉️ DivinePublicSchool@gmail.com</p>
+        </div>
+
+        <div class="footer-box">
+            <h3>Quick Navigation</h3>
+            <p><a href="index.html">Home</a></p>
+            <p><a href="about.html">About Us</a></p>
+            <p><a href="index.html#principal">Principal's Message</a></p>
+            <p><a href="admission.html">Admission</a></p>
+            <p><a href="notice.html">Notices</a></p>
+        </div>
+
+    </div>
+
+    <div class="copyright">
+        <p>
+            © 2026 Divine Public School.
+            All Rights Reserved.
+        </p>
+
+    </div>
+
+</footer>
+
+</body>
+</html>

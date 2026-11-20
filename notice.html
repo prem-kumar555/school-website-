@@ -359,7 +359,6 @@ button {
 .notice-list {
     display: flex;
     flex-direction: column;
-    gap: 18px;
 }
 
 .notice-item {
@@ -457,81 +456,157 @@ button {
     font-size: 14px;
 }
 
-/* EVENTS */
-.events-section {
-    padding: 65px 0;
-    background: #eaf1fa;
-}
+
+
+/* SUPPORT CARDS */
 
 .events-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    gap: 25px;
 }
 
 .event-card {
+    position: relative;
     background: white;
-    border-radius: 10px;
-    padding: 30px;
-    border-top: 4px solid #ffca28;
-    box-shadow: 0 5px 18px rgba(0,0,0,0.04);
+    padding: 35px 28px;
+    border-radius: 14px;
+    border: 1px solid #e5ebf4;
+    box-shadow: 0 8px 25px rgba(3, 43, 89, 0.06);
+    transition: all 0.35s ease;
+    overflow: hidden;
+}
+
+.event-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, #032b59, #ffca28);
+}
+
+.event-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(3, 43, 89, 0.13);
+    border-color: #c9d8ec;
 }
 
 .event-icon {
-    font-size: 29px;
-    margin-bottom: 15px;
+    width: 65px;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #edf4fc;
+    border-radius: 14px;
+    font-size: 30px;
+    margin-bottom: 22px;
 }
 
 .event-card h3 {
     color: #032b59;
-    font-size: 18px;
-    margin-bottom: 12px;
+    font-size: 19px;
+    font-weight: 700;
+    margin-bottom: 13px;
 }
 
 .event-card p {
-    color: #78879b;
-    font-size: 14px;
-    line-height: 1.8;
+    color: #718096;
+    font-size: 13px;
+    line-height: 1.9;
+    min-height: 75px;
 }
 
 .event-card span {
     display: inline-block;
-    margin-top: 16px;
-    color: #07509b;
-    background: #edf4fc;
-    padding: 7px 12px;
-    border-radius: 5px;
+    margin-top: 20px;
+    padding: 8px 14px;
+    background: #fff5d9;
+    color: #956900;
+    border-radius: 25px;
     font-size: 11px;
     font-weight: 700;
 }
 
-/* NOTICE GUIDELINES */
+/* IMPORTANT INFORMATION SECTION*/
+
 .guidelines-section {
-    padding: 65px 0;
+    padding: 70px 0;
+    background: #f4f7fc;
 }
 
 .guidelines-box {
-    background: white;
-    padding: 100px;
-    border-radius: 10px;
-    border: 1px solid #e7edf5;
+    position: relative;
+    background: linear-gradient(120deg, #032b59, #07509b);
+    padding: 45px 50px;
+    border-radius: 15px;
+    border-left: 6px solid #ffca28;
+    box-shadow: 0 12px 30px rgba(3,43,89,0.12);
+    overflow: hidden;
 }
 
 .guidelines-box h2 {
-    color: #032b59;
-    font-size: 40px;
-    margin-bottom: 5px;
+    color: white;
+    font-size: 27px;
+    font-weight: 800;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    position: relative;
+}
+
+.guidelines-box h2::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 65px;
+    height: 3px;
+    background: #ffca28;
+    border-radius: 10px;
 }
 
 .guidelines-box ul {
-    padding-left: 20px;
+    padding-left: 22px;
+    max-width: 900px;
 }
 
 .guidelines-box li {
-    color: #4f73aa;
-    font-size: 12px;
-    line-height: 2.1;
+    color: #e4edfa;
+    font-size: 14px;
+    line-height: 2;
+    padding: 5px 0;
 }
+
+.guidelines-box li::marker {
+    color: #ffca28;
+}
+
+/* RESPONSIVE */
+
+@media(max-width: 650px) {
+
+    .guidelines-section {
+        padding: 45px 0;
+    }
+
+    .guidelines-box {
+        padding: 28px 22px;
+    }
+
+    .guidelines-box h2 {
+        font-size: 21px;
+    }
+
+    .guidelines-box li {
+        font-size: 12px;
+        line-height: 1.9;
+    }
+
+}
+
+
 
 /* FOOTER */
 footer {
@@ -765,7 +840,7 @@ footer {
 
             <div class="search-box">
                 <input type="text" id="noticeSearch"
-                       placeholder="🔍 Search notices by title...">
+                       placeholder="Search notices by title...">
             </div>
 
             <div class="filter-box">
@@ -793,11 +868,11 @@ footer {
 
                 <div class="notice-info">
                     <span class="notice-category">ACADEMIC</span>
-                    <h3>Parent-Teacher Meeting Notice</h3>
+                    <h3>Teacher Details</h3>
                     <p>
-                        Parents are invited to discuss their child's
-                        academic progress and overall development.
-                        Please check the school communication for details.
+                        Parents and students can find the list of
+                        teachers, their subjects and contact details
+                        on the official school website.
                     </p>
                     <div class="notice-meta">
                         Academic Session 2026–27
@@ -805,7 +880,7 @@ footer {
                 </div>
 
                 <div class="notice-action">
-                    <a href="contact.html">Enquire Now →</a>
+                    <a href="teacher.pdf" download="Teacher Details">Enquire Now</a>
                 </div>
 
             </article>
@@ -813,17 +888,15 @@ footer {
             <article class="notice-item" data-category="academic">
 
                 <div class="notice-date">
-                    <strong>20</strong>
+                    <strong>26</strong>
                     <span>NOV 2026</span>
                 </div>
 
                 <div class="notice-info">
                     <span class="notice-category">ACADEMIC</span>
-                    <h3>Assignment Submission Guidelines</h3>
+                    <h3>Pre-Board Practical & Viva Schedule</h3>
                     <p>
-                        Students are requested to complete and submit
-                        their pending assignments to their respective
-                        subject teachers.
+                        Practical files and lab records must be verified by subject teachers prior to the upcoming practical assessment dates.
                     </p>
                     <div class="notice-meta">
                         For All Classes
@@ -831,7 +904,7 @@ footer {
                 </div>
 
                 <div class="notice-action">
-                    <a href="contact.html">Enquire Now →</a>
+                    <a href="Pre-Board Practical.pdf" download="Pre-Board Practical & Viva Schedule">Enquire Now</a>
                 </div>
 
             </article>
@@ -857,7 +930,7 @@ footer {
                 </div>
 
                 <div class="notice-action">
-                    <a href="contact.html">Enquire Now →</a>
+                    <a href="contact.html">Enquire Now</a>
                 </div>
 
             </article>
@@ -865,8 +938,8 @@ footer {
             <article class="notice-item" data-category="event">
 
                 <div class="notice-date">
-                    <strong>02</strong>
-                    <span>DEC 2026</span>
+                    <strong>19</strong>
+                    <span>NOV 2026</span>
                 </div>
 
                 <div class="notice-info">
@@ -883,7 +956,7 @@ footer {
                 </div>
 
                 <div class="notice-action">
-                    <a href="contact.html">Enquire Now →</a>
+                    <a href="annual.pdf" download="Annual Function Announcement">Enquire Now</a>
                 </div>
 
             </article>
@@ -891,13 +964,13 @@ footer {
             <article class="notice-item" data-category="event">
 
                 <div class="notice-date">
-                    <strong>10</strong>
-                    <span>DEC 2026</span>
+                    <strong>19</strong>
+                    <span>NOV 2026</span>
                 </div>
 
                 <div class="notice-info">
                     <span class="notice-category">EVENT</span>
-                    <h3>Annual Sports Competition</h3>
+                    <h3> Sports Competition</h3>
                     <p>
                         Students are encouraged to participate in
                         different sporting activities and demonstrate
@@ -909,7 +982,7 @@ footer {
                 </div>
 
                 <div class="notice-action">
-                    <a href="contact.html">Enquire Now →</a>
+                    <a href="sport.pdf" download="Sports Competition">Enquire Now</a>
                 </div>
 
             </article>
@@ -935,7 +1008,7 @@ footer {
                 </div>
 
                 <div class="notice-action">
-                    <a href="contact.html">Enquire Now →</a>
+                    <a href="contact.html">Enquire Now</a>
                 </div>
 
             </article>
@@ -945,75 +1018,57 @@ footer {
         <div class="no-notice" id="noNotice">
             No matching notices found. Please try another search.
         </div>
+    </article>
+            <article class="notice-item" data-category="event">
 
+                <div class="notice-date">
+                    <strong>11</strong>
+                    <span>DEC 2026</span>
+                </div>
+
+                <div class="notice-info">
+                    <span class="notice-category">EVENTS</span>
+                    <h3>Student Health & Eye Check-Up Camp</h3>
+                    <p>
+                        A routine vision and general health screening will be conducted on campus by visiting medical professionals during school hours.
+                    </p>
+                    <div class="notice-meta">
+                        classes 1 to 10
+                    </div>
+                </div>
+
+                <div class="notice-action">
+                    <a href="checkupchamp.pdf" download="Student Health & Eye Check-Up Camp">Enquire Now</a>
+                </div>
+
+            </article>
+
+        </div>
+
+        <div class="no-notice" id="noNotice">
+            No matching notices found. Please try another search.
+        </div>
     </section>
 
-</div>
 
-<!-- UPCOMING EVENTS -->
-<section class="events-section">
 
-    <div class="container">
-
-        <div class="section-heading">
-            <span>SCHOOL CALENDAR</span>
-            <h2>Upcoming Events</h2>
-            <p>Stay connected with upcoming school activities.</p>
-        </div>
-
-        <div class="events-grid">
-
-            <div class="event-card">
-                <div class="event-icon">🎭</div>
-                <h3>Annual Function</h3>
-                <p>
-                    A celebration of students' talent, creativity
-                    and achievements through cultural performances.
-                </p>
-                <span>02 December 2026</span>
-            </div>
-
-            <div class="event-card">
-                <div class="event-icon">🏆</div>
-                <h3>Sports Competition</h3>
-                <p>
-                    An opportunity for students to demonstrate
-                    teamwork, sportsmanship and sporting skills.
-                </p>
-                <span>10 December 2026</span>
-            </div>
-
-            <div class="event-card">
-                <div class="event-icon">🎨</div>
-                <h3>Art & Creativity Day</h3>
-                <p>
-                    Students showcase their imagination and
-                    artistic abilities through creative activities.
-                </p>
-                <span>15 December 2026</span>
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- GUIDELINES -->
+<!-- IMPORTANT INFORMATION -->
 <section class="guidelines-section">
 
     <div class="container">
 
         <div class="guidelines-box">
-            <h2>Important Notice Board Guidelines</h2>
+
+            <h2>Important Information for Parents & Students</h2>
 
             <ul>
-                <li>Students should check the notice board regularly.</li>
-                <li>Parents should read important school announcements carefully.</li>
-                <li>Follow the dates and instructions mentioned in official circulars.</li>
-                <li>Contact the school office for clarification about any notice.</li>
-                <li>Only official school communications should be treated as confirmed announcements.</li>
+                <li>Regularly check the school website for the latest notices and announcements.</li>
+                <li>Read all school circulars and instructions carefully.</li>
+                <li>Download required documents and schedules from the provided links.</li>
+                <li>Contact the school office if you need clarification about any announcement.</li>
+                <li>Parents should stay connected with teachers regarding student progress.</li>
             </ul>
+
         </div>
 
     </div>
