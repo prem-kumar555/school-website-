@@ -305,119 +305,320 @@ nav a:hover {
     margin-top: 20px;
 }
 
-/* INFORMATION */
-.information {
-    padding: 20px 5% 50px;
+
+/* SCHOOL ACHIEVEMENTS & STATS */
+
+.school-stats {
+    padding: 80px 6%;
+    background: #f4f8fd;
+}
+
+.stats-heading {
+    max-width: 720px;
+    margin: 0 auto 45px;
+    text-align: center;
+}
+
+.stats-heading h2 {
+    font-size: 36px;
+    color: #073b78;
+    margin: 13px 0;
+    font-weight: 700;
+}
+
+.stats-heading p {
+    color: #64748b;
+    line-height: 1.8;
+    font-size: 15px;
+}
+
+.stats-container {
     display: grid;
-    grid-template-columns: 1.3fr 1fr;
-    gap: 25px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
 }
 
-.panel {
-    background: white;
-    border: 1px solid #d7e7fa;
-    border-radius: 16px;
-    padding: 25px;
-    box-shadow: 0 5px 18px rgba(0,0,0,0.06);
+.stat-card {
+    background: #ffffff;
+    padding: 28px 23px;
+    border: 1px solid #e0e9f4;
+    border-radius: 12px;
+    transition: 0.3s ease;
 }
 
-.panel h2 {
-    font-size: 23px;
-    margin-bottom: 18px;
+.stat-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 12px 28px rgba(3, 43, 89, 0.09);
+    border-color: #9fc8ef;
 }
 
-.notice {
-    padding: 15px 0;
-    border-bottom: 1px solid #dce8f6;
+.stat-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
 }
 
-.notice:last-child {
-    border-bottom: none;
+.stat-icon {
+    font-size: 27px;
 }
 
-.notice strong {
-    display: block;
+.stat-label {
+    font-size: 10px;
+    letter-spacing: 1px;
+    color: #71839b;
+    font-weight: 600;
+}
+
+.stat-card h2 {
+    font-size: 39px;
+    color: #07509b;
     margin-bottom: 7px;
 }
 
-.notice p {
-    font-size: 14px;
-    color: #60738b;
-    line-height: 1.5;
+.stat-card h2 span {
+    color: #f0b323;
 }
 
-/* QUICK LINKS */
-.quick-links {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
-}
-
-.quick-links a {
-    padding: 20px 8px;
-    background: #edf5ff;
-    color: #074b91;
-    text-align: center;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 12px;
-    transition: 0.3s;
-}
-
-.quick-links a:hover {
-    background: #07509b;
-    color: white;
-    transform: translateY(-5px);
-}
-
-.quick-links span {
-    display: block;
-    font-size: 30px;
+.stat-card h3 {
+    color: #073b78;
+    font-size: 16px;
     margin-bottom: 10px;
 }
 
-/* EXTRA SECTIONS */
-.extra-sections {
-    padding: 25px 5% 50px;
+.stat-card p {
+    color: #718096;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.stats-footer {
+    margin-top: 30px;
+    padding: 32px 35px;
+    background: linear-gradient(100deg, #032b59, #07509b);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    color: white;
+}
+
+.stats-footer-tag {
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: #ffca28;
+}
+
+.stats-footer h3 {
+    font-size: 23px;
+    margin: 10px 0;
+}
+
+.stats-footer p {
+    color: #dceaff;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.stats-link {
+    color: #073b78;
+    background: #ffca28;
+    padding: 13px 22px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    white-space: nowrap;
+    transition: 0.3s;
+}
+
+.stats-link:hover {
+    background: white;
+}
+
+@media(max-width: 950px) {
+    .stats-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(max-width: 600px) {
+    .school-stats {
+        padding: 55px 5%;
+    }
+
+    .stats-heading h2 {
+        font-size: 28px;
+    }
+
+    .stats-container {
+        grid-template-columns: 1fr;
+    }
+
+    .stats-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 25px;
+    }
+}
+
+
+/* ACADEMIC PROGRAMS / WINGS */
+
+.academic-wings {
+    padding: 80px 6%;
+    background: #ffffff;
+}
+
+.wings-heading {
+    max-width: 720px;
+    text-align: center;
+    margin: 0 auto 45px;
+}
+
+.wings-heading h2 {
+    font-size: 36px;
+    color: #073b78;
+    margin: 13px 0;
+}
+
+.wings-heading p {
+    color: #64748b;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.wings-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 15px;
+    gap: 22px;
 }
 
-.extra-card {
-    padding: 25px 15px;
-    text-align: center;
-    background: #dcecff;
-    border-radius: 14px;
+.wing-card {
+    background: #ffffff;
+    border: 1px solid #e1eaf4;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: 0.35s ease;
+}
+
+.wing-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 14px 30px rgba(3, 43, 89, 0.11);
+}
+
+.wing-image {
+    height: 205px;
+    position: relative;
+    overflow: hidden;
+}
+
+.wing-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s ease;
+}
+
+.wing-card:hover .wing-image img {
+    transform: scale(1.06);
+}
+
+.wing-badge {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    background: #ffca28;
+    color: #073b78;
+    padding: 7px 12px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    border-radius: 3px;
+}
+
+.wing-content {
+    padding: 25px 21px;
+}
+
+.wing-number {
+    font-size: 13px;
+    color: #0875dc;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.wing-content h3 {
+    color: #073b78;
+    font-size: 19px;
+    line-height: 1.4;
+    margin: 10px 0;
+    min-height: 53px;
+}
+
+.wing-content p {
+    color: #64748b;
+    font-size: 13px;
+    line-height: 1.8;
+    min-height: 94px;
+}
+
+.wing-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    align-items: center;
+    padding: 12px 0;
+    border-top: 1px solid #e6edf5;
+    border-bottom: 1px solid #e6edf5;
+    color: #526781;
+    font-size: 12px;
+}
+
+.wing-content a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 17px;
+    color: #07509b;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.wing-content a span {
+    font-size: 19px;
     transition: 0.3s;
 }
 
-.extra-card:hover {
-    transform: translateY(-5px);
-    background: #07509b;
+.wing-content a:hover span {
+    transform: translateX(5px);
 }
 
-.extra-card .icon {
-    font-size: 40px;
-    margin-bottom: 12px;
+@media(max-width: 1100px) {
+    .wings-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
-.extra-card h3 {
-    margin-bottom: 10px;
-}
+@media(max-width: 600px) {
+    .academic-wings {
+        padding: 55px 5%;
+    }
 
-.extra-card p {
-    font-size: 14px;
-    line-height: 1.6;
-}
+    .wings-heading h2 {
+        font-size: 28px;
+    }
 
-.admission-card {
-    background: #dcecff;
-    color: white;
-}
+    .wings-container {
+        grid-template-columns: 1fr;
+    }
 
-.admission-card:hover {
-    background: #07509b;
+    .wing-content h3,
+    .wing-content p {
+        min-height: auto;
+    }
 }
 
 /* FOOTER */
@@ -746,133 +947,200 @@ footer {
 
 </section>
 
-<!-- NEWS AND QUICK LINKS -->
-<section class="information">
 
-    <!-- NEWS -->
-    <div class="panel" id="notice">
+<!-- SCHOOL ACHIEVEMENTS & STATS -->
+<section class="school-stats">
 
-        <h2>📢 Latest News & Notices</h2>
-
-        <div class="notice">
-            <strong>📅 Admission Open for Session 2026 –27</strong>
-            <p>Contact the school office for admission information.</p>
-        </div>
-
-        <div class="notice">
-            <strong>📝 Mid-Term Examination</strong>
-            <p>Please check the school notice board for the schedule.</p>
-        </div>
-
-        <div class="notice">
-            <strong>🏅 Annual Sports Activities</strong>
-            <p>More information will be announced by the school.</p>
-        </div>
-
-    </div>
-
-    <!-- QUICK LINKS -->
-    <div class="panel">
-
-        <h2>🔗 Quick Links</h2>
-
-        <div class="quick-links">
-
-            <a href="admission.html">
-                <span>📝</span>
-                Admission
-            </a>
-
-            <a href="academics.html">
-                <span>📚</span>
-                Academics
-            </a>
-
-            <a href="result.html">
-                <span>🏆</span>
-                Results
-            </a>
-
-            <a href="gallery.html">
-                <span>🖼️</span>
-                Gallery
-            </a>
-
-            <a href="notice.html">
-                <span>🔔</span>
-                Notices
-            </a>
-
-            <a href="contact.html">
-                <span>📞</span>
-                Contact
-            </a>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- EXTRA SECTIONS -->
-<section class="extra-sections">
-
-    <div class="extra-card" id="academics">
-
-        <div class="icon">📚</div>
-
-        <h3>Our Academics</h3>
-
+    <div class="stats-heading">
+        <span class="section-label">OUR PERFORMANCE</span>
+        <h2>Achievements & Excellence</h2>
         <p>
-            Encouraging curiosity, creativity
-            and lifelong learning.
+            Measuring our journey through academic excellence,
+            student development and achievements.
         </p>
+    </div>
+
+    <div class="stats-container">
+
+        <div class="stat-card">
+            <div class="stat-top">
+                <span class="stat-icon">🎓</span>
+                <span class="stat-label">OUR COMMUNITY</span>
+            </div>
+            <h2>1,200<span>+</span></h2>
+            <h3>Students Enrolled</h3>
+            <p>A vibrant community of young learners.</p>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-top">
+                <span class="stat-icon">👨‍🏫</span>
+                <span class="stat-label">OUR FACULTY</span>
+            </div>
+            <h2>65<span>+</span></h2>
+            <h3>Qualified Educators</h3>
+            <p>Dedicated professionals inspiring success.</p>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-top">
+                <span class="stat-icon">🏆</span>
+                <span class="stat-label">ACADEMIC RECORD</span>
+            </div>
+            <h2>95<span>%</span></h2>
+            <h3>Academic Success</h3>
+            <p>Striving for excellence in education.</p>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-top">
+                <span class="stat-icon">📚</span>
+                <span class="stat-label">OUR JOURNEY</span>
+            </div>
+            <h2>20<span>+</span></h2>
+            <h3>Years of Experience</h3>
+            <p>Building knowledge, values and bright futures.</p>
+        </div>
 
     </div>
 
-    <div class="extra-card admission-card" id="admission">
-
-        <div class="icon">📢</div>
-
-        <h3>Admissions</h3>
-
-        <p>
-            Interested in joining Divine Public School?
-        </p>
-
-        <a href="admission.html" class="btn">
-            Contact Our School
+    <div class="stats-footer">
+        <div>
+            <span class="stats-footer-tag">OUR COMMITMENT</span>
+            <h3>Excellence in Education, Values for Life.</h3>
+            <p>
+                We believe in nurturing confident individuals
+                equipped with knowledge and essential life skills.
+            </p>
+        </div>
+        <a href="about.html" class="stats-link">
+            Discover Our Journey →
         </a>
-
     </div>
 
-    <div class="extra-card" id="results">
+</section>
 
-        <div class="icon">🏆</div>
 
-        <h3>Student Results</h3>
+<!-- ACADEMIC PROGRAMS / WINGS -->
+<section class="academic-wings">
 
+    <div class="wings-heading">
+        <span class="section-label">ACADEMIC STRUCTURE</span>
+        <h2>Learning at Every Stage</h2>
         <p>
-            Examination result information
-            will be available here.
+            A structured learning journey designed to support
+            students at every stage of their academic development.
         </p>
-
     </div>
 
-    <div class="extra-card" id="gallery">
+    <div class="wings-container">
 
-        <div class="icon">📸</div>
+        <!-- PRE PRIMARY -->
+        <div class="wing-card">
+            <div class="wing-image">
+                <img src="https://sherwoodpublicschool.edu.in/static/media/preschool_image3.e0c52e6cd33704c71035.png"
+                alt="Pre Primary programme">
+                <span class="wing-badge">EARLY YEARS</span>
+            </div>
 
-        <h3>School Gallery</h3>
+            <div class="wing-content">
+                <span class="wing-number">01</span>
+                <h3>Pre-Primary programme</h3>
+                <p>
+                    Nurturing young minds through interactive storytelling, sensory play, creative expression, and early social skills.
+                </p>
 
-        <p>
-            Photos of school events and
-            student activities will appear here.
-        </p>
+                <div class="wing-details">
+                    <span>Nursery</span>
+                    <span>•</span>
+                    <span>LKG</span>
+                    <span>•</span>
+                    <span>UKG</span>
+                </div>
+
+                <a href="academics.html">Discover More <span>→</span></a>
+            </div>
+        </div>
+
+        <!-- PRIMARY -->
+        <div class="wing-card">
+            <div class="wing-image">
+                <img src="https://images.pexels.com/photos/8617765/pexels-photo-8617765.jpeg?cs=srgb&dl=pexels-yankrukov-8617765.jpg&fm=jpg"
+                alt="Primary programme">
+                <span class="wing-badge">FOUNDATION</span>
+            </div>
+
+            <div class="wing-content">
+                <span class="wing-number">02</span>
+                <h3>Primary programme</h3>
+                <p>
+                    Fostering reading fluency, mathematical confidence, inquisitiveness, and active classroom participation.
+                </p>
+
+                <div class="wing-details">
+                    <span>Class I</span>
+                    <span>–</span>
+                    <span>Class V</span>
+                </div>
+
+                <a href="academics.html">Discover More <span>→</span></a>
+            </div>
+        </div>
+
+        <!-- MIDDLE -->
+        <div class="wing-card">
+            <div class="wing-image">
+                <img src="https://img1.wsimg.com/isteam/getty/2203067666/:/rs=w:800"
+                alt="Middle programme">
+                <span class="wing-badge">DEVELOPMENT</span>
+            </div>
+
+            <div class="wing-content">
+                <span class="wing-number">03</span>
+                <h3>Middle programme</h3>
+                <p>
+                    Encouraging deeper inquiry, logical reasoning, collaborative projects, and steady academic discipline.
+                </p>
+
+                <div class="wing-details">
+                    <span>Class VI</span>
+                    <span>–</span>
+                    <span>Class VIII</span>
+                </div>
+
+                <a href="academics.html">Discover More <span>→</span></a>
+            </div>
+        </div>
+
+        <!-- SENIOR SECONDARY -->
+        <div class="wing-card">
+            <div class="wing-image">
+                <img src="https://www.billabonghighschool.com/blogs/wp-content/uploads/2026/07/ChatGPT-Image-Jul-6-2026-11_49_22-AM.webp"
+                alt="Senior Secondary programme">
+                <span class="wing-badge">FUTURE READY</span>
+            </div>
+
+            <div class="wing-content">
+                <span class="wing-number">04</span>
+                <h3>Senior Secondary programme</h3>
+                <p>
+                    Guiding learners through stream-specific mastery, analytical research, exam readiness, and higher-education planning.
+                </p>
+
+                <div class="wing-details">
+                    <span>Class XI</span>
+                    <span>–</span>
+                    <span>Class XII</span>
+                </div>
+
+                <a href="academics.html">Discover More <span>→</span></a>
+            </div>
+        </div>
 
     </div>
 
 </section>
+
 
 <!-- FOOTER -->
 <footer id="contact">
@@ -925,7 +1193,7 @@ footer {
 
         <p>
             © 2026 Divine Public School.
-            All Rights Reserved.
+            School Website Project.
         </p>
 
     </div>
