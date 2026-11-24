@@ -603,10 +603,6 @@ section {
     transition: .3s;
 }
 
-.submit-btn:hover {
-    background: #bd8b20;
-    color: var(--navy);
-}
 
 #formMessage {
     color: #176b3a;
@@ -615,36 +611,7 @@ section {
     margin-top: 15px;
 }
 
-/* CTA Section*/
-.cta {
-    background: var(--navy);
-    padding: 45px 8%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 25px;
-}
 
-.cta h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 30px;
-    color:#d6ad16
-}
-
-.cta p {
-    color: #d6ad16;
-    margin-top: 7px;
-    font-size: 14px;
-}
-
-.cta a {
-    background: var(--navy);
-    color:#d6ad16;
-    padding: 15px 25px;
-    border-radius: 5px;
-    font-weight: 700;
-    white-space: nowrap;
-}
 
 /* FOOTER */
 footer {
@@ -1069,7 +1036,7 @@ footer {
                     <div class="field">
                         <label for="email">Email Address</label>
                         <input type="email" id="email"
-                               placeholder="Enter email address">
+                               placeholder="example@gmail.com" >
                     </div>
 
                     <div class="field">
@@ -1118,15 +1085,6 @@ footer {
     </div>
 </section>
 
-<!-- CTA -->
-<div class="cta">
-    <div>
-    <h2>Admissions Open at Divine Public School</h2>
-    <p style="color:white;">Discover quality education, strong values and opportunities for success.</p>
-</div>
-    <a href="#application">Enquire Now →</a>
-</div>
-
 <!-- FOOTER -->
 <footer id="contact">
 
@@ -1173,8 +1131,8 @@ document.getElementById("admissionForm").addEventListener("submit", function(eve
     const name = document.getElementById("studentName").value.trim();
 
     document.getElementById("formMessage").textContent =
-        "Thank you, " + name +
-        "! Your admission enquiry was submitted.";
+        alert("Thank you, " + name +
+        "! Your admission enquiry was submitted.");
 
     this.reset();
 });

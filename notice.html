@@ -133,24 +133,8 @@ nav a.active {
     margin-bottom: 25px;
 }
 
-.hero-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    margin-top: 25px;
-    border-radius: 50px;
-}
-button {
-    border-radius: 25px;
-}
-.hero-btn {
-    display: inline-block;
-    padding: 13px 25px;
-    border-radius: 5px;
-    font-size: 13px;
-    font-weight: 700;
-    transition: 0.3s;
-}
+
+
 
 .hero-btn-primary {
     background: #ffca28;
@@ -763,11 +747,6 @@ footer {
 <section class="notice-hero">
 
     <div class="hero-content">
-
-        <span class="hero-tag">
-            DIVINE PUBLIC SCHOOL • INFORMATION CENTRE
-        </span>
-
         <h1>
             Stay Updated With
             <span>School Notices</span>
@@ -779,16 +758,6 @@ footer {
             activities and upcoming events. Find all essential
             school information in one place.
         </p>
-
-        <div class="hero-buttons">
-
-            <a href="#noticeList" class="hero-btn hero-btn-primary">
-                Explore Notices →
-            </a>
-
-            <a href="contact.html" class="hero-btn hero-btn-outline">
-                Contact School
-            </a>
         </div>
     </div>
 </section>
@@ -850,7 +819,6 @@ footer {
                     <option value="academic">Academic</option>
                     <option value="examination">Examination</option>
                     <option value="event">Events</option>
-                    <option value="general">General</option>
                     <option value="holiday">Holiday</option>
                 </select>
             </div>
@@ -886,56 +854,7 @@ footer {
 
             </article>
 
-            <article class="notice-item" data-category="academic">
-
-                <div class="notice-date">
-                    <strong>26</strong>
-                    <span>NOV 2026</span>
-                </div>
-
-                <div class="notice-info">
-                    <span class="notice-category">ACADEMIC</span>
-                    <h3>Pre-Board Practical & Viva Schedule</h3>
-                    <p>
-                        Practical files and lab records must be verified by subject teachers prior to the upcoming practical assessment dates.
-                    </p>
-                    <div class="notice-meta">
-                        For All Classes
-                    </div>
-                </div>
-
-                <div class="notice-action">
-                    <a href="Pre-Board Practical.pdf" download="Pre-Board Practical & Viva Schedule">Enquire Now</a>
-                </div>
-
-            </article>
-
-            <article class="notice-item" data-category="examination">
-
-                <div class="notice-date">
-                    <strong>24</strong>
-                    <span>NOV 2026</span>
-                </div>
-
-                <div class="notice-info">
-                    <span class="notice-category">EXAMINATION</span>
-                    <h3>Examination Preparation Guidelines</h3>
-                    <p>
-                        Students should complete their syllabus,
-                        revise important topics and follow the
-                        instructions provided by subject teachers.
-                    </p>
-                    <div class="notice-meta">
-                        Classes X and XII
-                    </div>
-                </div>
-
-                <div class="notice-action">
-                    <a href="contact.html">Enquire Now</a>
-                </div>
-
-            </article>
-
+            
             <article class="notice-item" data-category="event">
 
                 <div class="notice-date">
@@ -988,6 +907,84 @@ footer {
 
             </article>
 
+            <article class="notice-item" data-category="examination">
+
+                <div class="notice-date">
+                    <strong>21</strong>
+                    <span>NOV 2026</span>
+                </div>
+
+                <div class="notice-info">
+                    <span class="notice-category">EVENT</span>
+                    <h3>Drawing Competition</h3>
+                    <p>
+                        Students are invited to participate in the
+                        upcoming drawing competition. Please refer to
+                        the attached guidelines for submission details.
+                    </p>
+                    <div class="notice-meta">
+                        Classes X and XII
+                    </div>
+                </div>
+
+                <div class="notice-action">
+                    <a href="drawing.pdf" download="DRAWING COMPETITION">Enquire Now</a>
+                </div>
+
+            </article>
+            <article class="notice-item" data-category="academic">
+
+                <div class="notice-date">
+                    <strong>26</strong>
+                    <span>NOV 2026</span>
+                </div>
+
+                <div class="notice-info">
+                    <span class="notice-category">ACADEMIC</span>
+                    <h3>Pre-Board Practical & Viva Schedule</h3>
+                    <p>
+                        Practical files and lab records must be verified by subject teachers prior to the upcoming practical assessment dates.
+                    </p>
+                    <div class="notice-meta">
+                        For All Classes
+                    </div>
+                </div>
+
+                <div class="notice-action">
+                    <a href="Pre-Board Practical.pdf" download="Pre-Board Practical & Viva Schedule">Enquire Now</a>
+                </div>
+
+            </article>
+            
+            <article class="notice-item" data-category="event">
+
+                <div class="notice-date">
+                    <strong>11</strong>
+                    <span>DEC 2026</span>
+                </div>
+
+                <div class="notice-info">
+                    <span class="notice-category">EVENTS</span>
+                    <h3>Student Health & Eye Check-Up Camp</h3>
+                    <p>
+                        A routine vision and general health screening will be conducted on campus by visiting medical professionals during school hours.
+                    </p>
+                    <div class="notice-meta">
+                        classes 1 to 10
+                    </div>
+                </div>
+
+                <div class="notice-action">
+                    <a href="checkupchamp.pdf" download="Student Health & Eye Check-Up Camp">Enquire Now</a>
+                </div>
+
+            </article>
+
+        </div>
+
+        <div class="no-notice" id="noNotice">
+            No matching notices found. Please try another search.
+        </div>
             <article class="notice-item" data-category="holiday">
 
                 <div class="notice-date">
@@ -1020,35 +1017,7 @@ footer {
             No matching notices found. Please try another search.
         </div>
     
-            <article class="notice-item" data-category="event">
-
-                <div class="notice-date">
-                    <strong>11</strong>
-                    <span>DEC 2026</span>
-                </div>
-
-                <div class="notice-info">
-                    <span class="notice-category">EVENTS</span>
-                    <h3>Student Health & Eye Check-Up Camp</h3>
-                    <p>
-                        A routine vision and general health screening will be conducted on campus by visiting medical professionals during school hours.
-                    </p>
-                    <div class="notice-meta">
-                        classes 1 to 10
-                    </div>
-                </div>
-
-                <div class="notice-action">
-                    <a href="checkupchamp.pdf" download="Student Health & Eye Check-Up Camp">Enquire Now</a>
-                </div>
-
-            </article>
-
-        </div>
-
-        <div class="no-notice" id="noNotice">
-            No matching notices found. Please try another search.
-        </div>
+            
     </section>
 
 

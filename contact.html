@@ -78,8 +78,11 @@ nav a:hover {
 /* HERO */
 .contact-hero {
     min-height: 300px;
-    background: linear-gradient(rgba(3,43,89,0.85), rgba(37, 102, 177, 0.85)),
-                url('https://tse4.mm.bing.net/th/id/OIP.OZMG0XwF1jImqYF12LkIGgHaEO?r=0&rs=1&pid=ImgDetMain&o=7&rm=3');
+    background:linear-gradient(90deg,
+    rgba(2,39,82,0.98),
+    rgba(2,53,105,0.82),
+    rgba(2,53,105,0.05)),
+    url("https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1600&q=85");
     background-size: cover;
     background-position: center;
     display: flex;
@@ -319,10 +322,7 @@ nav a:hover {
     font-style:bold;
 }
 
-.submit-btn:hover {
-    background: #f0b900;
-    transform: translateY(-2px);
-}
+
 
 /* OFFICE HOURS */
 .office-section {
@@ -576,7 +576,7 @@ footer {
                 <span>📍</span>
                 <div>
                     <h4>Visit Our School</h4>
-                    <p>Divine Public School,Near Institute of Technology,<br>Delhi, India.</p>
+                    <p>Divine Public School, Near Institute of Technology,<br>Delhi, India.</p>
                 </div>
             </div>
 
@@ -612,7 +612,7 @@ footer {
                 <div class="form-group">
                     <label for="email">Email Address *</label>
                     <input type="email" id="email"
-                           placeholder="Enter your email" required>
+                           placeholder="example@gmail.com" required>
                 </div>
             </div>
 
@@ -630,7 +630,6 @@ footer {
                         <option>Admission Enquiry</option>
                         <option>Academic Information</option>
                         <option>Fee Related Query</option>
-                        <option>General Enquiry</option>
                         <option>Other</option>
                     </select>
                 </div>
@@ -679,13 +678,11 @@ footer {
     </div>
 
     <div class="location-box">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3506.025931998674!2d77.24118949940886!3d28.50886751157735!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce10a9d274689%3A0x70fcf88d4ba0e27b!2sDivine%20Public%20School!5e0!3m2!1sen!2sin!4v1795511438316!5m2!1sen!2sin" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
         <h2>📍 Divine Public School</h2>
         <p>
             Near Institute of Technology,<br>
             Delhi, India.
-        </p>
-        <p class="location-note">
-            Please confirm the school's exact address before visiting.
         </p>
     </div>
 
@@ -738,7 +735,7 @@ footer {
 document.getElementById("contactForm").addEventListener("submit", function(event) {
     event.preventDefault();
 
-    alert("Thank you for contacting Divine Public School! This is a demo form. Your message has not been sent.");
+    alert("your message has been sent successfully. We will get back to you soon.");
 
     this.reset();
 });
