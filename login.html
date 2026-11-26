@@ -85,10 +85,7 @@ nav a:hover {
     gap: 65px;
     align-items: center;
     background:
-    linear-gradient(90deg,
-    rgba(2,39,82,0.98),
-    rgba(2,53,105,0.82),
-    rgba(2,53,105,0.05)),
+    linear-gradient(90deg, rgba(3,20,43,.95), rgba(3,20,43,.70), rgba(3,20,43,.22)),
     url("https://static.vecteezy.com/system/resources/thumbnails/048/068/285/small_2x/exterior-of-a-modern-school-building-with-stairs-going-up-and-down-photo.jpeg");
 
     background-position: center;
@@ -260,12 +257,23 @@ nav a:hover {
 }
 
 .show-password {
-    padding: 10px;
+    .show-password {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
-    color: #0875c9;
+    color: #64748b;
     border: none;
     background: transparent;
-    font-size: 18px;
+    font-size: 17px;
+    transition: 0.3s ease;
+}
+
+.show-password:hover {
+    color: #0875c9;
+}
 }
 
 /* OPTIONS */
@@ -567,7 +575,9 @@ footer {
                         class="show-password"
                         id="togglePassword"
                         aria-label="Show password"
-                    >👁</button>
+                    >
+                        <i class="fas fa-eye-slash"></i>
+                    </button>
 
                 </div>
 
@@ -662,71 +672,75 @@ footer {
 <!-- JAVASCRIPT -->
 <script>
 
-const passwordInput = document.getElementById("password");
-
+// GET HTML ELEMENTS
 const togglePassword = document.getElementById("togglePassword");
-
+const passwordInput = document.getElementById("password");
 const loginForm = document.getElementById("loginForm");
-
 const message = document.getElementById("message");
+const remember = document.getElementById("remember");
+
 
 // SHOW / HIDE PASSWORD
+togglePassword.addEventListener("click", function () {
 
-togglePassword.addEventListener("click", function() {
+    const icon = togglePassword.querySelector("i");
 
     if (passwordInput.type === "password") {
 
         passwordInput.type = "text";
 
-        togglePassword.textContent = "🙈";
+        icon.classList.remove("fa-eye-slash");
+        icon.classList.add("fa-eye");
 
-        togglePassword.setAttribute(
-            "aria-label",
-            "Hide password"
-        );
+        togglePassword.setAttribute("aria-label", "Hide password");
 
     } else {
 
         passwordInput.type = "password";
 
-        togglePassword.textContent = "👁";
+        icon.classList.remove("fa-eye");
+        icon.classList.add("fa-eye-slash");
 
-        togglePassword.setAttribute(
-            "aria-label",
-            "Show password"
-        );
+        togglePassword.setAttribute("aria-label", "Show password");
 
     }
 
 });
 
-// LOGIN FORM
 
-loginForm.addEventListener("submit", function(event) {
+// LOGIN FORM
+loginForm.addEventListener("submit", function (event) {
 
     event.preventDefault();
 
     const role = document.getElementById("role").value;
-
     const username = document.getElementById("username").value.trim();
-
     const password = passwordInput.value;
 
+    // CHECK EMPTY FIELDS
     if (!role || !username || !password) {
 
-        message.style.color = "red";
-
-        message.textContent = "Please fill in all fields.";
+        alert("Please fill in all fields.");
 
         return;
 
     }
 
-    message.style.color = "#0875c9";
+    // CHECK HUMAN CONFIRMATION
+    if (!remember.checked) {
 
-    message.textContent =
-        "Demo only: Login form submitted for " + role +
-        ". A secure school login system is required to verify your account.";
+        alert("Please confirm that you are human.");
+
+        return;
+
+    }
+
+    // SAVE LOGIN DETAILS
+    sessionStorage.setItem("schoolUsername", username);
+    sessionStorage.setItem("schoolRole", role);
+
+    // SUCCESS MESSAGE
+    alert("Connecting to the Divine Public School");
 
 });
 

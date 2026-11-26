@@ -1,0 +1,985 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dashboard | Divine Public School</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #f4f6fb;
+    color: #26344a;
+}
+
+.dashboard {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* SIDEBAR */
+
+.sidebar {
+    width: 255px;
+    background: #102b50;
+    color: white;
+    padding: 28px 18px;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    height: 100vh;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 8px 35px;
+}
+
+.logo-icon {
+    width: 45px;
+    height: 45px;
+    background: #e9b949;
+    color: #102b50;
+    border-radius: 12px;
+    display: grid;
+    place-items: center;
+    font-size: 23px;
+}
+
+.logo h2 {
+    font-size: 19px;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: #cbd6e5;
+}
+
+.menu-title {
+    font-size: 10px;
+    color: #8fa5c1;
+    letter-spacing: 2px;
+    padding: 0 12px 13px;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.menu a,
+.sidebar-bottom a,
+.logout {
+    text-decoration: none;
+    color: #c8d5e7;
+    padding: 13px 14px;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    font-family: inherit;
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+.menu a:hover,
+.menu a.active {
+    background: #21446f;
+    color: white;
+}
+
+.menu a.active {
+    border-left: 3px solid #e9b949;
+}
+
+.sidebar-bottom {
+    margin-top: auto;
+    border-top: 1px solid #294361;
+    padding-top: 18px;
+}
+
+.logout {
+    width: 100%;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    text-align: left;
+}
+
+.logout:hover {
+    background: #21446f;
+    color: white;
+}
+
+
+/* MAIN CONTENT */
+
+.main-content {
+    width: calc(100% - 255px);
+    margin-left: 255px;
+    padding: 28px 35px;
+}
+
+
+/* TOPBAR */
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 28px;
+}
+
+.topbar h2 {
+    font-size: 23px;
+    color: #142d4e;
+}
+
+.topbar p {
+    font-size: 12px;
+    color: #8995a7;
+    margin-top: 4px;
+}
+
+.top-profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.notification {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: white;
+    display: grid;
+    place-items: center;
+    position: relative;
+    color: #183b65;
+}
+
+.notification span {
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    background: #e9b949;
+    border-radius: 50%;
+    top: 9px;
+    right: 10px;
+}
+
+.user-avatar {
+    width: 42px;
+    height: 42px;
+    background: #e7edf6;
+    color: #183b65;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+}
+
+.top-profile h4 {
+    font-size: 12px;
+    color: #183b65;
+}
+
+.top-profile small {
+    color: #8995a7;
+    font-size: 10px;
+}
+
+
+/* WELCOME */
+
+.welcome {
+    background: linear-gradient(115deg, #153a67, #245789);
+    border-radius: 17px;
+    padding: 32px 38px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.welcome-tag {
+    color: #f3ce75;
+    font-size: 10px;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+
+.welcome h1 {
+    font-size: 27px;
+    margin: 12px 0 7px;
+}
+
+.welcome p {
+    color: #d4e0ef;
+    font-size: 12px;
+}
+
+.welcome-icon {
+    font-size: 85px;
+    color: rgba(255,255,255,0.12);
+    padding-right: 30px;
+}
+
+
+/* STATS */
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin: 25px 0 32px;
+}
+
+.stat-card {
+    background: white;
+    padding: 20px;
+    border-radius: 13px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 3px 15px rgba(20,45,78,0.04);
+}
+
+.stat-icon {
+    width: 47px;
+    height: 47px;
+    border-radius: 12px;
+    display: grid;
+    place-items: center;
+    font-size: 18px;
+}
+
+.blue {
+    background: #e8f0fc;
+    color: #2863a6;
+}
+
+.gold {
+    background: #fff5dc;
+    color: #c18b19;
+}
+
+.green {
+    background: #e5f7ef;
+    color: #269b68;
+}
+
+.stat-card p {
+    color: #8995a7;
+    font-size: 11px;
+}
+
+.stat-card h2 {
+    font-size: 17px;
+    color: #183b65;
+    margin: 3px 0;
+}
+
+.stat-card small {
+    font-size: 9px;
+    color: #9ba5b4;
+}
+
+
+/* QUICK ACCESS */
+
+.section {
+    margin-bottom: 30px;
+}
+
+.section-heading {
+    margin-bottom: 17px;
+}
+
+.section-heading h2,
+.panel-heading h2 {
+    font-size: 17px;
+    color: #183b65;
+}
+
+.section-heading p,
+.panel-heading p {
+    font-size: 11px;
+    color: #99a3b1;
+    margin-top: 4px;
+}
+
+.quick-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.quick-card {
+    background: white;
+    padding: 21px;
+    border-radius: 13px;
+    text-decoration: none;
+    color: #183b65;
+    border: 1px solid #edf0f5;
+    transition: 0.3s;
+}
+
+.quick-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(20,45,78,0.09);
+}
+
+.quick-icon {
+    width: 43px;
+    height: 43px;
+    border-radius: 11px;
+    background: #edf3fb;
+    color: #245789;
+    display: grid;
+    place-items: center;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.quick-card h3 {
+    font-size: 13px;
+    margin-bottom: 12px;
+}
+
+.quick-card span {
+    font-size: 10px;
+    color: #8b99aa;
+}
+
+.quick-card span i {
+    margin-left: 5px;
+    color: #c18b19;
+}
+
+
+/* BOTTOM PANELS */
+
+.bottom-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 18px;
+}
+
+.panel {
+    background: white;
+    border-radius: 14px;
+    padding: 23px;
+    box-shadow: 0 3px 15px rgba(20,45,78,0.04);
+}
+
+.panel-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 23px;
+}
+
+.panel-heading > i {
+    font-size: 21px;
+    color: #c18b19;
+}
+
+.notice {
+    display: flex;
+    gap: 13px;
+    padding: 13px 0;
+    border-bottom: 1px solid #f0f2f6;
+}
+
+.notice:last-child {
+    border-bottom: none;
+}
+
+.notice-dot {
+    width: 9px;
+    height: 9px;
+    background: #3676bd;
+    border-radius: 50%;
+    margin-top: 5px;
+    flex-shrink: 0;
+}
+
+.gold-dot {
+    background: #e5b13d;
+}
+
+.green-dot {
+    background: #35a878;
+}
+
+.notice h4 {
+    font-size: 12px;
+    color: #263f60;
+}
+
+.notice p {
+    font-size: 10px;
+    color: #8b99aa;
+    margin: 5px 0;
+}
+
+.notice small {
+    font-size: 9px;
+    color: #b0a06d;
+}
+
+
+/* PROFILE */
+
+.profile-panel {
+    text-align: center;
+}
+
+.profile-panel .panel-heading {
+    text-align: left;
+}
+
+.profile-avatar {
+    width: 65px;
+    height: 65px;
+    background: #eaf0f9;
+    color: #245789;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 25px;
+    margin: 5px auto 12px;
+}
+
+.profile-panel h3 {
+    color: #183b65;
+    font-size: 15px;
+}
+
+.role-label {
+    display: inline-block;
+    background: #fff4d8;
+    color: #a97913;
+    padding: 5px 13px;
+    border-radius: 20px;
+    font-size: 10px;
+    margin-top: 7px;
+}
+
+.profile-info {
+    text-align: left;
+    margin-top: 20px;
+}
+
+.profile-info div {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 11px 0;
+    border-top: 1px solid #f0f2f6;
+    font-size: 10px;
+}
+
+.profile-info span {
+    color: #9aa4b2;
+}
+
+.profile-info strong {
+    color: #344b69;
+    text-align: right;
+}
+
+
+/* FOOTER */
+
+footer {
+    margin-top: 30px;
+    padding: 20px 0 5px;
+    border-top: 1px solid #e7ebf1;
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    color: #9ba5b4;
+    font-size: 10px;
+}
+
+footer span {
+    color: #b38b35;
+    letter-spacing: 1px;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 1000px) {
+    .main-content {
+        padding: 25px 20px;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+    .quick-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .bottom-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 650px) {
+    .sidebar {
+        width: 70px;
+        padding: 20px 9px;
+    }
+
+    .logo {
+        justify-content: center;
+        padding: 0 0 30px;
+    }
+
+    .logo > div:last-child,
+    .menu-title {
+        display: none;
+    }
+
+    .menu a,
+    .sidebar-bottom a,
+    .logout {
+        justify-content: center;
+        padding: 14px 5px;
+        font-size: 0;
+    }
+
+    .menu a i,
+    .sidebar-bottom i,
+    .logout i {
+        font-size: 17px;
+    }
+
+    .main-content {
+        width: calc(100% - 70px);
+        margin-left: 70px;
+        padding: 20px 12px;
+    }
+
+    .topbar h2 {
+        font-size: 18px;
+    }
+
+    .top-profile {
+        gap: 7px;
+    }
+
+    .top-profile h4,
+    .top-profile small {
+        display: none;
+    }
+
+    .welcome {
+        padding: 25px 20px;
+    }
+
+    .welcome h1 {
+        font-size: 21px;
+    }
+
+    .welcome-icon {
+        display: none;
+    }
+
+    .quick-grid {
+        grid-template-columns: 1fr;
+    }
+
+    footer {
+        flex-direction: column;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            <div class="logo-icon">
+                <i class="fas fa-graduation-cap"></i>
+            </div>
+            <div>
+                <h2>DIVINE</h2>
+                <span>PUBLIC SCHOOL</span>
+            </div>
+        </div>
+
+        <div class="menu-title">MAIN MENU</div>
+
+        <nav class="menu">
+            <a href="#" class="active">
+                <i class="fas fa-th-large"></i> Dashboard
+            </a>
+
+            <a href="#profile">
+                <i class="fas fa-user"></i> My Profile
+            </a>
+
+            <a href="#attendance">
+                <i class="fas fa-calendar-check"></i> Attendance
+            </a>
+
+            <a href="#academics">
+                <i class="fas fa-book-open"></i> Academics
+            </a>
+
+            <a href="#examination">
+                <i class="fas fa-file-alt"></i> Examination
+            </a>
+
+            <a href="#notices">
+                <i class="fas fa-bullhorn"></i> Notices
+            </a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <a href="index.html">
+                <i class="fas fa-home"></i> School Website
+            </a>
+
+            <button onclick="logout()" class="logout">
+                <i class="fas fa-sign-out-alt"></i> Logout
+            </button>
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <header class="topbar">
+            <div>
+                <h2>Dashboard</h2>
+                <p>Divine Public School / Portal</p>
+            </div>
+
+            <div class="top-profile">
+                <div class="notification">
+                    <i class="far fa-bell"></i>
+                    <span></span>
+                </div>
+
+                <div class="user-avatar">
+                    <i class="fas fa-user"></i>
+                </div>
+
+                <div>
+                    <h4 id="topUsername">User</h4>
+                    <small id="topRole">Student</small>
+                </div>
+            </div>
+        </header>
+
+
+        <section class="welcome">
+            <div>
+                <span class="welcome-tag">WELCOME TO YOUR PORTAL</span>
+                <h1 id="welcomeName">Welcome!</h1>
+                <p id="welcomeText">
+                    Manage your school activities from one place.
+                </p>
+            </div>
+
+            <div class="welcome-icon">
+                <i class="fas fa-graduation-cap"></i>
+            </div>
+        </section>
+
+
+        <!-- STATS -->
+        <section class="stats">
+
+            <div class="stat-card">
+                <div class="stat-icon blue">
+                    <i class="fas fa-calendar-check"></i>
+                </div>
+                <div>
+                    <p>Attendance</p>
+                    <h2 id="attendanceValue">--</h2>
+                    <small>Attendance overview</small>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon gold">
+                    <i class="fas fa-book"></i>
+                </div>
+                <div>
+                    <p>Academic</p>
+                    <h2>2026-27</h2>
+                    <small>Academic session</small>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon green">
+                    <i class="fas fa-bullhorn"></i>
+                </div>
+                <div>
+                    <p>Announcements</p>
+                    <h2>03</h2>
+                    <small>Latest school updates</small>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- QUICK ACCESS -->
+        <section class="section" id="academics">
+
+            <div class="section-heading">
+                <h2>Quick Access</h2>
+                <p>Explore your portal services</p>
+            </div>
+
+            <div class="quick-grid" id="quickGrid"></div>
+
+        </section>
+
+
+        <!-- BOTTOM SECTION -->
+        <section class="bottom-grid">
+
+            <div class="panel" id="notices">
+
+                <div class="panel-heading">
+                    <div>
+                        <h2>Latest Announcements</h2>
+                        <p>Important school updates</p>
+                    </div>
+                    <i class="fas fa-bullhorn"></i>
+                </div>
+
+                <div class="notice">
+                    <span class="notice-dot"></span>
+                    <div>
+                        <h4>School Announcement</h4>
+                        <p>Please check the school notice section regularly.</p>
+                        <small>School Information</small>
+                    </div>
+                </div>
+
+                <div class="notice">
+                    <span class="notice-dot gold-dot"></span>
+                    <div>
+                        <h4>Academic Updates</h4>
+                        <p>Stay updated with examination and academic schedules.</p>
+                        <small>Academic Department</small>
+                    </div>
+                </div>
+
+                <div class="notice">
+                    <span class="notice-dot green-dot"></span>
+                    <div>
+                        <h4>School Activities</h4>
+                        <p>Visit the events page for upcoming school activities.</p>
+                        <small>Activity Department</small>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- PROFILE -->
+            <div class="panel profile-panel" id="profile">
+
+                <div class="panel-heading">
+                    <div>
+                        <h2>Account Information</h2>
+                        <p>Your login details</p>
+                    </div>
+                    <i class="fas fa-user-circle"></i>
+                </div>
+
+                <div class="profile-avatar">
+                    <i class="fas fa-user"></i>
+                </div>
+
+                <h3 id="profileName">User Name</h3>
+                <span class="role-label" id="profileRole">Student</span>
+
+                <div class="profile-info">
+                    <div>
+                        <span>Username</span>
+                        <strong id="profileUsername">--</strong>
+                    </div>
+
+                    <div>
+                        <span>Account Type</span>
+                        <strong id="profileType">--</strong>
+                    </div>
+
+                    <div>
+                        <span>School</span>
+                        <strong>Divine Public School</strong>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <footer>
+            <div>© 2026 Divine Public School. All Rights Reserved.</div>
+            <span>LEARN • GROW • ACHIEVE</span>
+        </footer>
+
+    </main>
+
+</div>
+
+
+<script>
+
+// GET LOGIN INFORMATION
+const username = sessionStorage.getItem("schoolUsername");
+const role = sessionStorage.getItem("schoolRole");
+
+// CHECK LOGIN
+if (!username || !role) {
+    window.location.href = "login.html";
+}
+
+// FORMAT ROLE
+const formattedRole = role
+    ? role.charAt(0).toUpperCase() + role.slice(1).toLowerCase()
+    : "";
+
+// DISPLAY USER DETAILS
+document.getElementById("welcomeName").textContent =
+    "Welcome, " + username + "!";
+
+document.getElementById("topUsername").textContent = username;
+document.getElementById("topRole").textContent = formattedRole;
+document.getElementById("profileName").textContent = username;
+document.getElementById("profileUsername").textContent = username;
+document.getElementById("profileRole").textContent = formattedRole;
+document.getElementById("profileType").textContent = formattedRole;
+
+
+// ROLE BASED DASHBOARD
+const dashboardData = {
+
+    student: {
+        attendance: "View Records",
+        cards: [
+            ["My Profile", "fa-user", "profile"],
+            ["My Attendance", "fa-calendar-check", "attendance"],
+            ["Study Material", "fa-book-open", "academics"],
+            ["Examination", "fa-file-alt", "examination"],
+            ["My Results", "fa-chart-line", "results"],
+            ["Time Table", "fa-clock", "timetable"]
+        ]
+    },
+
+    teacher: {
+        attendance: "Manage Records",
+        cards: [
+            ["My Profile", "fa-user", "profile"],
+            ["Student Attendance", "fa-calendar-check", "attendance"],
+            ["Study Material", "fa-book-open", "academics"],
+            ["Examination", "fa-file-alt", "examination"],
+            ["Student Records", "fa-users", "students"],
+            ["Class Time Table", "fa-clock", "timetable"]
+        ]
+    },
+
+    parent: {
+        attendance: "View Child Records",
+        cards: [
+            ["My Profile", "fa-user", "profile"],
+            ["Child Attendance", "fa-calendar-check", "attendance"],
+            ["Academic Progress", "fa-chart-line", "academics"],
+            ["Examination Details", "fa-file-alt", "examination"],
+            ["School Notices", "fa-bullhorn", "notices"],
+            ["Contact School", "fa-phone", "contact"]
+        ]
+    }
+
+};
+
+const currentRole = (role || "").toLowerCase();
+const data = dashboardData[currentRole];
+
+if (data) {
+
+    document.getElementById("attendanceValue").textContent =
+        data.attendance;
+
+    const grid = document.getElementById("quickGrid");
+
+    data.cards.forEach(item => {
+
+        const card = document.createElement("a");
+
+        card.className = "quick-card";
+        card.href = "#" + item[2];
+
+        card.innerHTML = `
+            <div class="quick-icon">
+                <i class="fas ${item[1]}"></i>
+            </div>
+            <h3>${item[0]}</h3>
+            <span>Open Section <i class="fas fa-arrow-right"></i></span>
+        `;
+
+        grid.appendChild(card);
+
+    });
+
+} else {
+
+    document.getElementById("welcomeText").textContent =
+        "Your account role was not recognised. Please log in again.";
+
+}
+
+
+// LOGOUT
+function logout() {
+
+    sessionStorage.removeItem("schoolUsername");
+    sessionStorage.removeItem("schoolRole");
+
+    window.location.href = "login.html";
+
+}
+
+</script>
+
+</body>
+</html>
